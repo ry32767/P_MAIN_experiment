@@ -129,14 +129,15 @@ bool saveLine(int fd,const char *line,bool checksum=true) {
 }
 bool openLogs() {
   if(!card.begin()) return false;
+  char path[64];
   int id=0;
   for(;id<100000;id++) {
     snprintf(imuPath,sizeof(imuPath),"/mnt/sd0/I%05d.CSV",id);
     snprintf(gpsPath,sizeof(gpsPath),"/mnt/sd0/G%05d.CSV",id);
-    if(access(imuPath,F_OK)!=0 && access(gpsPath,F_OK)!=0) break;
+    snprintf(path,sizeof(path),"/mnt/sd0/V%05d.BIN",id);
+    if(access(imuPath,F_OK)!=0 && access(gpsPath,F_OK)!=0 && access(path,F_OK)!=0) break;
   }
   if(id==100000) return false;
-  char path[64]; snprintf(path,sizeof(path),"/mnt/sd0/V%05d.BIN",id);
   int test=open(path,O_CREAT|O_EXCL|O_RDWR,0666);
   if(test<0) return false;
   uint8_t pattern[512], back[512];
@@ -150,7 +151,11 @@ bool openLogs() {
   if(!ok) return false;
   imuFile=open(imuPath,O_CREAT|O_EXCL|O_WRONLY,0666);
   gpsFile=open(gpsPath,O_CREAT|O_EXCL|O_WRONLY,0666);
-  if(imuFile<0 || gpsFile<0) return false;
+  if(imuFile<0 || gpsFile<0) {
+    if(imuFile>=0) close(imuFile);
+    if(gpsFile>=0) close(gpsFile);
+    imuFile=gpsFile=-1; return false;
+  }
   return saveLine(imuFile,"seq,received_mono_us,sensor_timestamp_raw,temp,gx,gy,gz,ax,ay,az,crc32\n",false) &&
     saveLine(gpsFile,"seq,received_mono_us,utc_s,nav_usec,flags,fix,satellites,lat_e7,lon_e7,altitude_mm,imu_samples,imu_errors,imu_gaps,sd_errors,sd_rows,crc32\n",false);
 }
