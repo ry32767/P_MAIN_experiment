@@ -1,0 +1,30 @@
+# sync=0 packets=0 PPS=0 period_us=0 uart_age_us=0 heap=423096 sd=MOUNT_FAILED file= rows=0
+# WIFI password=[REDACTED] url=http://192.168.4.1/
+# sync=0 packets=0 pps=0 sd_rows=0 sd_errors=1 imu=0 heap=423096
+# sync=0 packets=0 pps=0 sd_rows=0 sd_errors=1 imu=0 heap=423096
+# sync=0 packets=0 pps=0 sd_rows=0 sd_errors=1 imu=0 heap=423096
+# sync=0 packets=0 pps=0 sd_rows=0 sd_errors=1 imu=0 heap=423096
+# sync=0 packets=0 pps=0 sd_rows=0 sd_errors=1 imu=0 heap=423096
+# sync=0 packets=0 pps=0 sd_rows=0 sd_errors=1 imu=0 heap=423096
+# sync=0 packets=0 pps=0 sd_rows=0 sd_errors=1 imu=0 heap=423096
+# sync=0 packets=0 pps=0 sd_rows=0 sd_errors=1 imu=0 heap=423096
+# sync=0 packets=0 pps=0 sd_rows=0 sd_errors=1 imu=0 heap=423096
+# sync=0 packets=0 pps=0 sd_rows=0 sd_errors=1 imu=0 heap=423096
+# sync=0 packets=0 pps=0 sd_rows=0 sd_errors=1 imu=0 heap=423096
+# sync=0 packets=0 pps=0 sd_rows=0 sd_errors=1 imu=0 heap=423096
+# sync=0 packets=0 pps=0 sd_rows=0 sd_errors=1 imu=0 heap=423096
+# sync=0 packets=0 pps=0 sd_rows=0 sd_errors=1 imu=0 heap=423096
+# sync=0 packets=0 pps=0 sd_rows=0 sd_errors=1 imu=0 heap=423096
+# STOPPED_REMOVE_SD
+# SD_ERROR MOUNT_FAILED
+# sync=0 packets=0 PPS=0 period_us=0 uart_age_us=0 heap=423096 sd=MOUNT_FAILED file= rows=0
+# WIFI password=[REDACTED] url=http://192.168.4.1/
+# sync=0 packets=0 pps=0 sd_rows=0 sd_errors=2 imu=0 heap=423096
+# sync=0 packets=0 pps=0 sd_rows=0 sd_errors=2 imu=0 heap=423096
+# sync=0 packets=0 pps=0 sd_rows=0 sd_errors=2 imu=0 heap=423096
+# sync=0 packets=0 pps=0 sd_rows=0 sd_errors=2 imu=0 heap=423096
+# sync=0 packets=0 pps=0 sd_rows=0 sd_errors=2 imu=0 heap=423096
+# sync=0 packets=0 pps=0 sd_rows=0 sd_errors=2 imu=0 heap=423096
+# sync=0 packets=0 pps=0 sd_rows=0 sd_errors=2 imu=0 heap=423096
+# sync=0 packets=0 pps=0 sd_rows=0 sd_errors=2 imu=0 heap=423096
+
