@@ -10,7 +10,7 @@ P-MAIN（Pico **2 W**）＋P-PWRと、Sony Spresense＋マルチIMU Add-onの取
 | P-MAIN | GP7のPIO UART受信、GP6のPPS割り込み、UTC対応候補の検査、10 HzのCSV記録、電源基板INA226の電圧・電流監視 |
 | 両SD | 512バイトの書き込み→保存確定→閉じる→開き直して読み戻し、既存ログを上書きしない採番、データ行CRC32、保存エラーの記録 |
 | スマホ | PicoのWi-Fi APに接続し状態表示、記録停止・再開、P-MAINの確定済みログを取得 |
-| GitHub Pages | ログビューアと機体ページへの入口を用意。**公開範囲の承認待ちのため未公開**。CSVは端末内で解析 |
+| GitHub Pages | [ログビューア](https://ry32767.github.io/P_MAIN_experiment/)と機体ページへの入口。CSVは端末内で解析 |
 
 RX基板、水温・水圧センサー、テザー、LCDは無効です。今回の対象に送信実験は含めず、**TX_PWM GP16はLow固定**です。P-PWRには別のCPUはなく、PicoからINA226を読み取ります。電源スイッチ・レギュレーターをソフトウェアで制御する機能はありません。
 
@@ -100,7 +100,7 @@ python scripts/verify_logs.py P00001.CSV --require-sync --output outdoor-result.
 
 ## 開発とGitHub
 
-`common/AquaBeacon` が通信・時刻判定、`firmware/pico` がPlatformIO、`firmware/spresense` がSony、`web` が画面です。GitHub Actionsで両ファームとテストをビルドします。現在は非公開リポジトリで管理し、Pages公開は公開範囲の承認後に行います。Pagesには `web` だけを配信する設定です。生ログ・認証情報・開発環境はコミットしません。
+`common/AquaBeacon` が通信・時刻判定、`firmware/pico` がPlatformIO、`firmware/spresense` がSony、`web` が画面です。GitHub Actionsで両ファームとテストをビルドします。全ソースを公開リポジトリで管理し、Pagesには `web` だけを配信します。生ログ・認証情報・開発環境はコミットしません。
 
 ```sh
 g++ -std=c++17 -Wall -Wextra -Werror -Icommon/AquaBeacon/src tests/test_core.cpp -o test_core
@@ -109,3 +109,11 @@ python -m unittest discover -s tests -v
 ```
 
 Windowsの今回の環境では `.venv/Scripts/python.exe -m ziglang c++` をg++の代わりに使用しました。
+
+## 実験・検証レポート
+
+実験・検証ごとに `reports/YYYY-MM-DD_NNN_識別名/` を作成し、ピン配置・接続機器・前提条件・実施内容・結果を簡潔に記録します。グラフや図、公開可能な根拠も同じフォルダに保存します。同じ目的の途中ビルド・再テストは1レポートにまとめます。
+
+- [今回の動作確認レポート](reports/2026-09-20_001_initial_validation/README.md)
+- [レポート一覧](reports/README.md)
+- [テンプレート](docs/REPORT_TEMPLATE.md)

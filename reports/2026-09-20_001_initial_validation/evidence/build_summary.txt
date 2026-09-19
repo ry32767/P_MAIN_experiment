@@ -1,0 +1,12 @@
+Sources: final local build logs retained in .tools/ (not published).
+These are compiler-reported sizes, not runtime measurements.
+
+RAM:   [==        ]  17.4% (used 91268 bytes from 524288 bytes)
+Flash: [=         ]  10.3% (used 432100 bytes from 4190208 bytes)
+RAM:   [=         ]  14.2% (used 74432 bytes from 524288 bytes)
+Flash: [=         ]   8.6% (used 361036 bytes from 4190208 bytes)
+pico2w         SUCCESS   00:00:03.531
+pico2w_logger  SUCCESS   00:00:02.794
+
+Sketch uses 243024 bytes (30%) of program storage space. Maximum is 786432 bytes.
+Global variables use 243024 bytes (30%) of dynamic memory, leaving 543408 bytes for local variables. Maximum is 786432 bytes.

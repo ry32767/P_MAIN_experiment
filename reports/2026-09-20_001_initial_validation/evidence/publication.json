@@ -1,0 +1,15 @@
+{
+  "title_verified": true,
+  "repository": {
+    "isPrivate": false,
+    "url": "https://github.com/ry32767/P_MAIN_experiment"
+  },
+  "checked_at": "2026-09-20T00:19:22.8108920+09:00",
+  "http_status": 200,
+  "deployment": {
+    "conclusion": "success",
+    "status": "completed",
+    "url": "https://github.com/ry32767/P_MAIN_experiment/actions/runs/35451024534"
+  },
+  "page_url": "https://ry32767.github.io/P_MAIN_experiment/"
+}

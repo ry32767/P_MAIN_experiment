@@ -1,0 +1,23 @@
+{
+  "tested_commit": "821317766d7bf26252876a9c14f72dfe5324145d",
+  "kind": "build_output_not_runtime_measurement",
+  "pico": {
+    "wifi": {
+      "ram_used": 91268,
+      "ram_capacity": 524288,
+      "flash_used": 432100,
+      "flash_capacity": 4190208
+    },
+    "logger": {
+      "ram_used": 74432,
+      "ram_capacity": 524288,
+      "flash_used": 361036,
+      "flash_capacity": 4190208
+    }
+  },
+  "spresense": {
+    "reported_used": 243024,
+    "reported_capacity": 786432
+  },
+  "ci_url": "https://github.com/ry32767/P_MAIN_experiment/actions/runs/35450727902"
+}
