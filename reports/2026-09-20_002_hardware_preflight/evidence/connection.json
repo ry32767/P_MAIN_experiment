@@ -1,0 +1,17 @@
+{
+  "measurement_type": "actual_usb_preflight",
+  "serial_capture_start_utc": "2026-09-19T15:50:04.198558+00:00",
+  "port": "COM6",
+  "usb_vid_pid": "2E8A:F00F",
+  "target_identity_confirmed": false,
+  "spresense_detected": false,
+  "removable_volumes_detected": 0,
+  "baudrate": 115200,
+  "dtr_requested": false,
+  "rts_requested": false,
+  "capture_duration_s": 10,
+  "received_bytes": 0,
+  "transmitted_bytes": 0,
+  "firmware_flashed": false,
+  "sensor_accuracy_evaluated": false
+}
