@@ -65,4 +65,6 @@ flowchart LR
 
 ## 残件
 
+診断追加コミット`e8f7a8e740b8c16f092b405f12023eb981bcfda8`の[GitHub Actions](https://github.com/ry32767/P_MAIN_experiment/actions/runs/35456568217)も完了し、共通C++/Pythonテスト・Spresenseビルド・Pico両構成ビルドがすべて成功した。これはソフトウェア検証であり、以下の実機残件を合格に変更しない。
+
 SD型番・容量、電源断後の挿し直し、SD端子電圧、別カードの比較が必要。RTCのGNSSによる設定・校正、バックアップ保持、ボタン・LEDの実操作、磁気センサの接続確認、EEPROMの機種/保存領域確認は未実施。GPS受信・時刻同期・IMU/GPS精度はSpresense起動後に検証する。

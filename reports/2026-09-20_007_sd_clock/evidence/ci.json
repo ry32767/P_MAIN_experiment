@@ -1,0 +1,8 @@
+{
+  "commit": "e8f7a8e740b8c16f092b405f12023eb981bcfda8",
+  "url": "https://github.com/ry32767/P_MAIN_experiment/actions/runs/35456568217",
+  "status": "completed",
+  "conclusion": "success",
+  "jobs": {"tests": "success", "pico": "success", "spresense": "success"},
+  "scope": "Software tests and builds only; not hardware accuracy validation"
+}
