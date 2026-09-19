@@ -9,6 +9,8 @@
 | 2026-09-20 | [003 親機への書き込み・起動・SD確認](2026-09-20_003_parent_bringup/README.md) | 書込・USB応答成功、SDマウント失敗 |
 | 2026-09-20 | [004 SD・USBの切り分け](2026-09-20_004_sd_usb_diagnostics/README.md) | INA226通信成功、SD初期化失敗、Spresenseドライバー待ち |
 | 2026-09-20 | [005 Spresense導入・転送](2026-09-20_005_spresense_bringup/README.md) | ドライバー・転送成功、取得アプリ起動未達 |
+| 2026-09-20 | [006 Spresense起動原因](2026-09-20_006_spresense_bootloader/README.md) | 公式資料でブートローダー未導入に一致、書込承認待ち |
+| 2026-09-20 | [007 親機SD・I²C・RTC](2026-09-20_007_sd_clock/README.md) | SD低速化で改善なし、RTC進行確認・時刻未設定 |
 
 ```text
 reports/

@@ -1,0 +1,12 @@
+Capture: baseline.bin
+# DIAG power_started=1 buttons_adc=4095 sd_cd=0 sd_code=0x17 sd_data=0x01 ina_ok=1 bus_v=12.24125 current_a=0.079250 alert=1
+Capture: 100khz.bin
+# DIAG power_started=1 buttons_adc=4095 sd_cd=0 sd_code=0x17 sd_data=0x01 ina_ok=1 bus_v=12.24000 current_a=0.075500 alert=1
+Capture: inventory_after_upload.bin
+# DIAG power_started=1 buttons_adc=4095 sd_cd=0 sd_code=0x17 sd_data=0x01 ina_ok=1 bus_v=12.23625 current_a=0.080125 alert=1
+# I2C_ACK 0x40 0x57 0x68
+Capture: rtc.bin
+# I2C_ACK 0x40 0x57 0x68
+# RTC68_REGS 05 46 02 01 01 01 00 00 00 00 00 00 00 00 1c 88 00 1b 00
+# I2C_ACK 0x40 0x57 0x68
+# RTC68_REGS 10 46 02 01 01 01 00 00 00 00 00 00 00 00 1c 88 00 1a c0

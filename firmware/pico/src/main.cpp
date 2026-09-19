@@ -304,7 +304,7 @@ void setup() {
 #if AQ_WIFI
   startWeb();
 #endif
-  Serial.println("# q=stop r=start s=SD verify/remount h=status");
+  Serial.println("# q=stop r=start s=SD verify/remount h=status i=I2C inventory (stopped only)");
 }
 void loop() {
   static uint32_t lastPower=0,lastRow=0,lastStatus=0;
@@ -321,6 +321,26 @@ void loop() {
   if(Serial.available()) {
     int c=Serial.read();
     if(c=='q') stopLog(); if(c=='r') startLog(); if(c=='s') mountSd();
+    if(c=='i') {
+      // Address-only probes; no register or configuration bytes are written.
+      // Keep this diagnostic out of recording sessions to avoid timing stalls.
+      if(!powerReady || logging) Serial.println("# I2C_SCAN_REFUSED stop recording and check power");
+      else {
+        Serial.print("# I2C_ACK");
+        for(uint8_t address=8;address<0x78;++address) {
+          Wire.beginTransmission(address);
+          if(Wire.endTransmission()==0) Serial.printf(" 0x%02x",address);
+        }
+        Serial.println();
+        // DS3231 candidate: read time/control/status/temperature without setting it.
+        Wire.beginTransmission(0x68); Wire.write(0x00);
+        if(Wire.endTransmission(false)==0 && Wire.requestFrom(0x68,19)==19) {
+          Serial.print("# RTC68_REGS");
+          while(Wire.available()) Serial.printf(" %02x",Wire.read());
+          Serial.println();
+        } else Serial.println("# RTC68_READ_FAILED");
+      }
+    }
     if(c=='h') {
       Snapshot s=snapshot();
       Serial.printf("# DIAG power_started=%u buttons_adc=%u sd_cd=%u sd_code=0x%02x sd_data=0x%02x ina_ok=%u bus_v=%.5f current_a=%.6f alert=%u\n",powerReady,analogRead(pins::buttons),digitalRead(pins::sd_cd),SD.sdErrorCode(),SD.sdErrorData(),inaOk,busV,currentA,digitalRead(pins::ina_alert));
