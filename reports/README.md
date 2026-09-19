@@ -13,6 +13,7 @@
 | 2026-09-20 | [007 親機SD・I²C・RTC](2026-09-20_007_sd_clock/README.md) | SD低速化で改善なし、RTC進行確認・時刻未設定 |
 | 2026-09-20 | [008 Spresense公式導入再開](2026-09-20_008_spresense_boot/README.md) | 公式6パッケージ検証・取得アプリ起動成功 |
 | 2026-09-20 | [009 IMU・GNSS・SD取得](2026-09-20_009_initial_sensors/README.md) | IMU取得を88→121Hzへ改善、SD検証成功。測位・統合同期は未達 |
+| 2026-09-20 | [010 窓際GNSS・UART/PPS再検証](2026-09-20_010_window_link/README.md) | 衛星信号あり、測位・親機への通信と同期は未達 |
 
 ```text
 reports/

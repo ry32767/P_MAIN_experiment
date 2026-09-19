@@ -21,7 +21,7 @@
 struct Snapshot {
   aq::Nav nav;
   uint64_t sampled_us=0, utc_us=0, received_us=0, pps_us=0;
-  uint32_t packets=0, crc_errors=0, rejected=0, pps_count=0, period_us=0, uart_age_us=0, rx_overflows=0;
+  uint32_t packets=0, crc_errors=0, rejected=0, pps_count=0, period_us=0, uart_age_us=0, rx_overflows=0, rx_bytes=0;
   bool synchronized=false;
 };
 mutex_t snapshotMutex;
@@ -52,6 +52,7 @@ void loop1() {
   aq::Nav nav;
   if(timeLink.overflow()) { ++current.rx_overflows; parser.reset(); clock.invalidate(); }
   while(timeLink.available()) {
+    ++current.rx_bytes;
     if(parser.push(uint8_t(timeLink.read()),nav)) {
       // This core never performs SD, I2C or Wi-Fi operations.
       current.received_us=time_us_64(); current.nav=nav; ++current.packets;
@@ -343,6 +344,10 @@ void loop() {
     }
     if(c=='h') {
       Snapshot s=snapshot();
+      Serial.printf("# LINK bytes=%lu crc_errors=%lu overflows=%lu rejected=%lu rx_level=%u pps_level=%u last_pps_age_us=%llu nav_seq=%lu fix=%u satellites=%u flags=%u\n",
+        (unsigned long)s.rx_bytes,(unsigned long)s.crc_errors,(unsigned long)s.rx_overflows,(unsigned long)s.rejected,
+        digitalRead(pins::spresense_rx),digitalRead(pins::pps),(unsigned long long)(s.pps_count ? time_us_64()-s.pps_us : 0),
+        (unsigned long)s.nav.sequence,s.nav.fix,s.nav.satellites,s.nav.flags);
       Serial.printf("# DIAG power_started=%u buttons_adc=%u sd_cd=%u sd_code=0x%02x sd_data=0x%02x ina_ok=%u bus_v=%.5f current_a=%.6f alert=%u\n",powerReady,analogRead(pins::buttons),digitalRead(pins::sd_cd),SD.sdErrorCode(),SD.sdErrorData(),inaOk,busV,currentA,digitalRead(pins::ina_alert));
       Serial.printf("# sync=%u packets=%lu PPS=%lu period_us=%lu uart_age_us=%lu heap=%lu sd=%s file=%s rows=%lu\n",s.synchronized,(unsigned long)s.packets,(unsigned long)s.pps_count,(unsigned long)s.period_us,(unsigned long)s.uart_age_us,(unsigned long)rp2040.getFreeHeap(),sdError,logName,(unsigned long)rows);
 #if AQ_WIFI

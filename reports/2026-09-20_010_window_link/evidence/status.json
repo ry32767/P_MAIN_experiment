@@ -1,0 +1,3027 @@
+[
+  {
+    "elapsed_s": 0.069,
+    "device": "pico",
+    "line": "# LINK bytes=14 crc_errors=0 overflows=0 rejected=0 rx_level=1 pps_level=1 last_pps_age_us=0 nav_seq=0 fix=0 satellites=0 flags=0"
+  },
+  {
+    "elapsed_s": 0.069,
+    "device": "pico",
+    "line": "# DIAG power_started=1 buttons_adc=4095 sd_cd=0 sd_code=0x17 sd_data=0x01 ina_ok=1 bus_v=12.15000 current_a=0.080375 alert=1"
+  },
+  {
+    "elapsed_s": 0.069,
+    "device": "pico",
+    "line": "# sync=0 packets=0 PPS=0 period_us=0 uart_age_us=0 heap=422856 sd=MOUNT_FAILED file= rows=0"
+  },
+  {
+    "elapsed_s": 0.638,
+    "device": "sony",
+    "line": "# imu=2134 imu_errors=0 gaps=0 queue_drops=0 gps_drops=0 sd=1 sd_rows=2150 sd_errors=0"
+  },
+  {
+    "elapsed_s": 0.638,
+    "device": "sony",
+    "line": "# gps_seq=16 fix=1 satellites=0 visible=2 max_signal=29.0 flags=12 tx_bytes=1024 tx_errors=0"
+  },
+  {
+    "elapsed_s": 0.826,
+    "device": "pico",
+    "line": "# sync=0 packets=0 pps=0 sd_rows=0 sd_errors=1 imu=0 heap=422856"
+  },
+  {
+    "elapsed_s": 1.692,
+    "device": "sony",
+    "line": "# imu=2255 imu_errors=0 gaps=0 queue_drops=0 gps_drops=0 sd=1 sd_rows=2274 sd_errors=0"
+  },
+  {
+    "elapsed_s": 1.692,
+    "device": "sony",
+    "line": "# gps_seq=17 fix=1 satellites=0 visible=2 max_signal=28.7 flags=12 tx_bytes=1088 tx_errors=0"
+  },
+  {
+    "elapsed_s": 1.859,
+    "device": "pico",
+    "line": "# sync=0 packets=0 pps=0 sd_rows=0 sd_errors=1 imu=0 heap=422856"
+  },
+  {
+    "elapsed_s": 2.671,
+    "device": "sony",
+    "line": "# imu=2376 imu_errors=0 gaps=0 queue_drops=0 gps_drops=0 sd=1 sd_rows=2396 sd_errors=0"
+  },
+  {
+    "elapsed_s": 2.671,
+    "device": "sony",
+    "line": "# gps_seq=18 fix=1 satellites=0 visible=2 max_signal=28.8 flags=12 tx_bytes=1152 tx_errors=0"
+  },
+  {
+    "elapsed_s": 2.857,
+    "device": "pico",
+    "line": "# sync=0 packets=0 pps=0 sd_rows=0 sd_errors=1 imu=0 heap=422856"
+  },
+  {
+    "elapsed_s": 3.69,
+    "device": "sony",
+    "line": "# imu=2496 imu_errors=0 gaps=0 queue_drops=0 gps_drops=0 sd=1 sd_rows=2517 sd_errors=0"
+  },
+  {
+    "elapsed_s": 3.69,
+    "device": "sony",
+    "line": "# gps_seq=19 fix=1 satellites=0 visible=2 max_signal=29.6 flags=12 tx_bytes=1216 tx_errors=0"
+  },
+  {
+    "elapsed_s": 3.843,
+    "device": "pico",
+    "line": "# sync=0 packets=0 pps=0 sd_rows=0 sd_errors=1 imu=0 heap=422856"
+  },
+  {
+    "elapsed_s": 4.673,
+    "device": "sony",
+    "line": "# imu=2617 imu_errors=0 gaps=0 queue_drops=0 gps_drops=0 sd=1 sd_rows=2639 sd_errors=0"
+  },
+  {
+    "elapsed_s": 4.673,
+    "device": "sony",
+    "line": "# gps_seq=20 fix=1 satellites=0 visible=2 max_signal=29.0 flags=12 tx_bytes=1280 tx_errors=0"
+  },
+  {
+    "elapsed_s": 4.826,
+    "device": "pico",
+    "line": "# sync=0 packets=0 pps=0 sd_rows=0 sd_errors=1 imu=0 heap=422856"
+  },
+  {
+    "elapsed_s": 5.691,
+    "device": "sony",
+    "line": "# imu=2738 imu_errors=0 gaps=0 queue_drops=0 gps_drops=0 sd=1 sd_rows=2761 sd_errors=0"
+  },
+  {
+    "elapsed_s": 5.691,
+    "device": "sony",
+    "line": "# gps_seq=21 fix=1 satellites=0 visible=2 max_signal=29.0 flags=12 tx_bytes=1344 tx_errors=0"
+  },
+  {
+    "elapsed_s": 5.859,
+    "device": "pico",
+    "line": "# sync=0 packets=0 pps=0 sd_rows=0 sd_errors=1 imu=0 heap=422856"
+  },
+  {
+    "elapsed_s": 6.685,
+    "device": "sony",
+    "line": "# imu=2859 imu_errors=0 gaps=0 queue_drops=0 gps_drops=0 sd=1 sd_rows=2883 sd_errors=0"
+  },
+  {
+    "elapsed_s": 6.685,
+    "device": "sony",
+    "line": "# gps_seq=22 fix=1 satellites=0 visible=2 max_signal=29.1 flags=12 tx_bytes=1408 tx_errors=0"
+  },
+  {
+    "elapsed_s": 6.855,
+    "device": "pico",
+    "line": "# sync=0 packets=0 pps=0 sd_rows=0 sd_errors=1 imu=0 heap=422856"
+  },
+  {
+    "elapsed_s": 7.692,
+    "device": "sony",
+    "line": "# imu=2979 imu_errors=0 gaps=0 queue_drops=0 gps_drops=0 sd=1 sd_rows=3004 sd_errors=0"
+  },
+  {
+    "elapsed_s": 7.692,
+    "device": "sony",
+    "line": "# gps_seq=23 fix=1 satellites=0 visible=2 max_signal=29.4 flags=12 tx_bytes=1472 tx_errors=0"
+  },
+  {
+    "elapsed_s": 7.856,
+    "device": "pico",
+    "line": "# sync=0 packets=0 pps=0 sd_rows=0 sd_errors=1 imu=0 heap=422856"
+  },
+  {
+    "elapsed_s": 8.665,
+    "device": "sony",
+    "line": "# imu=3100 imu_errors=0 gaps=0 queue_drops=0 gps_drops=0 sd=1 sd_rows=3126 sd_errors=0"
+  },
+  {
+    "elapsed_s": 8.665,
+    "device": "sony",
+    "line": "# gps_seq=24 fix=1 satellites=0 visible=2 max_signal=29.4 flags=12 tx_bytes=1536 tx_errors=0"
+  },
+  {
+    "elapsed_s": 8.861,
+    "device": "pico",
+    "line": "# sync=0 packets=0 pps=0 sd_rows=0 sd_errors=1 imu=0 heap=422856"
+  },
+  {
+    "elapsed_s": 9.692,
+    "device": "sony",
+    "line": "# imu=3221 imu_errors=0 gaps=0 queue_drops=0 gps_drops=0 sd=1 sd_rows=3248 sd_errors=0"
+  },
+  {
+    "elapsed_s": 9.692,
+    "device": "sony",
+    "line": "# gps_seq=25 fix=1 satellites=0 visible=3 max_signal=30.0 flags=12 tx_bytes=1600 tx_errors=0"
+  },
+  {
+    "elapsed_s": 9.86,
+    "device": "pico",
+    "line": "# sync=0 packets=0 pps=0 sd_rows=0 sd_errors=1 imu=0 heap=422856"
+  },
+  {
+    "elapsed_s": 10.09,
+    "device": "pico",
+    "line": "# LINK bytes=14 crc_errors=0 overflows=0 rejected=0 rx_level=1 pps_level=1 last_pps_age_us=0 nav_seq=0 fix=0 satellites=0 flags=0"
+  },
+  {
+    "elapsed_s": 10.09,
+    "device": "pico",
+    "line": "# DIAG power_started=1 buttons_adc=4095 sd_cd=0 sd_code=0x17 sd_data=0x01 ina_ok=1 bus_v=12.15125 current_a=0.076250 alert=1"
+  },
+  {
+    "elapsed_s": 10.09,
+    "device": "pico",
+    "line": "# sync=0 packets=0 PPS=0 period_us=0 uart_age_us=0 heap=422856 sd=MOUNT_FAILED file= rows=0"
+  },
+  {
+    "elapsed_s": 10.669,
+    "device": "sony",
+    "line": "# imu=3342 imu_errors=0 gaps=0 queue_drops=0 gps_drops=0 sd=1 sd_rows=3370 sd_errors=0"
+  },
+  {
+    "elapsed_s": 10.669,
+    "device": "sony",
+    "line": "# gps_seq=26 fix=1 satellites=0 visible=3 max_signal=29.7 flags=12 tx_bytes=1664 tx_errors=0"
+  },
+  {
+    "elapsed_s": 10.859,
+    "device": "pico",
+    "line": "# sync=0 packets=0 pps=0 sd_rows=0 sd_errors=1 imu=0 heap=422856"
+  },
+  {
+    "elapsed_s": 11.694,
+    "device": "sony",
+    "line": "# imu=3463 imu_errors=0 gaps=0 queue_drops=0 gps_drops=0 sd=1 sd_rows=3492 sd_errors=0"
+  },
+  {
+    "elapsed_s": 11.694,
+    "device": "sony",
+    "line": "# gps_seq=27 fix=1 satellites=0 visible=2 max_signal=29.8 flags=12 tx_bytes=1728 tx_errors=0"
+  },
+  {
+    "elapsed_s": 11.859,
+    "device": "pico",
+    "line": "# sync=0 packets=0 pps=0 sd_rows=0 sd_errors=1 imu=0 heap=422856"
+  },
+  {
+    "elapsed_s": 12.673,
+    "device": "sony",
+    "line": "# imu=3583 imu_errors=0 gaps=0 queue_drops=0 gps_drops=0 sd=1 sd_rows=3613 sd_errors=0"
+  },
+  {
+    "elapsed_s": 12.673,
+    "device": "sony",
+    "line": "# gps_seq=28 fix=1 satellites=0 visible=2 max_signal=29.6 flags=12 tx_bytes=1792 tx_errors=0"
+  },
+  {
+    "elapsed_s": 12.859,
+    "device": "pico",
+    "line": "# sync=0 packets=0 pps=0 sd_rows=0 sd_errors=1 imu=0 heap=422856"
+  },
+  {
+    "elapsed_s": 13.689,
+    "device": "sony",
+    "line": "# imu=3704 imu_errors=0 gaps=0 queue_drops=0 gps_drops=0 sd=1 sd_rows=3735 sd_errors=0"
+  },
+  {
+    "elapsed_s": 13.689,
+    "device": "sony",
+    "line": "# gps_seq=29 fix=1 satellites=0 visible=2 max_signal=30.2 flags=12 tx_bytes=1856 tx_errors=0"
+  },
+  {
+    "elapsed_s": 13.857,
+    "device": "pico",
+    "line": "# sync=0 packets=0 pps=0 sd_rows=0 sd_errors=1 imu=0 heap=422856"
+  },
+  {
+    "elapsed_s": 14.681,
+    "device": "sony",
+    "line": "# imu=3825 imu_errors=0 gaps=0 queue_drops=0 gps_drops=0 sd=1 sd_rows=3857 sd_errors=0"
+  },
+  {
+    "elapsed_s": 14.681,
+    "device": "sony",
+    "line": "# gps_seq=30 fix=1 satellites=0 visible=2 max_signal=30.0 flags=12 tx_bytes=1920 tx_errors=0"
+  },
+  {
+    "elapsed_s": 14.841,
+    "device": "pico",
+    "line": "# sync=0 packets=0 pps=0 sd_rows=0 sd_errors=1 imu=0 heap=422856"
+  },
+  {
+    "elapsed_s": 15.689,
+    "device": "sony",
+    "line": "# imu=3946 imu_errors=0 gaps=0 queue_drops=0 gps_drops=0 sd=1 sd_rows=3979 sd_errors=0"
+  },
+  {
+    "elapsed_s": 15.689,
+    "device": "sony",
+    "line": "# gps_seq=31 fix=1 satellites=0 visible=2 max_signal=30.2 flags=12 tx_bytes=1984 tx_errors=0"
+  },
+  {
+    "elapsed_s": 15.855,
+    "device": "pico",
+    "line": "# sync=0 packets=0 pps=0 sd_rows=0 sd_errors=1 imu=0 heap=422856"
+  },
+  {
+    "elapsed_s": 16.694,
+    "device": "sony",
+    "line": "# imu=4066 imu_errors=0 gaps=0 queue_drops=0 gps_drops=0 sd=1 sd_rows=4100 sd_errors=0"
+  },
+  {
+    "elapsed_s": 16.694,
+    "device": "sony",
+    "line": "# gps_seq=32 fix=1 satellites=0 visible=2 max_signal=29.9 flags=12 tx_bytes=2048 tx_errors=0"
+  },
+  {
+    "elapsed_s": 16.842,
+    "device": "pico",
+    "line": "# sync=0 packets=0 pps=0 sd_rows=0 sd_errors=1 imu=0 heap=422856"
+  },
+  {
+    "elapsed_s": 17.694,
+    "device": "sony",
+    "line": "# imu=4187 imu_errors=0 gaps=0 queue_drops=0 gps_drops=0 sd=1 sd_rows=4222 sd_errors=0"
+  },
+  {
+    "elapsed_s": 17.694,
+    "device": "sony",
+    "line": "# gps_seq=33 fix=1 satellites=0 visible=2 max_signal=30.4 flags=12 tx_bytes=2112 tx_errors=0"
+  },
+  {
+    "elapsed_s": 17.857,
+    "device": "pico",
+    "line": "# sync=0 packets=0 pps=0 sd_rows=0 sd_errors=1 imu=0 heap=422856"
+  },
+  {
+    "elapsed_s": 18.655,
+    "device": "sony",
+    "line": "# imu=4308 imu_errors=0 gaps=0 queue_drops=0 gps_drops=0 sd=1 sd_rows=4344 sd_errors=0"
+  },
+  {
+    "elapsed_s": 18.655,
+    "device": "sony",
+    "line": "# gps_seq=34 fix=1 satellites=0 visible=2 max_signal=30.4 flags=12 tx_bytes=2176 tx_errors=0"
+  },
+  {
+    "elapsed_s": 18.84,
+    "device": "pico",
+    "line": "# sync=0 packets=0 pps=0 sd_rows=0 sd_errors=1 imu=0 heap=422856"
+  },
+  {
+    "elapsed_s": 19.654,
+    "device": "sony",
+    "line": "# imu=4429 imu_errors=0 gaps=0 queue_drops=0 gps_drops=0 sd=1 sd_rows=4466 sd_errors=0"
+  },
+  {
+    "elapsed_s": 19.654,
+    "device": "sony",
+    "line": "# gps_seq=35 fix=1 satellites=0 visible=1 max_signal=30.3 flags=12 tx_bytes=2240 tx_errors=0"
+  },
+  {
+    "elapsed_s": 19.841,
+    "device": "pico",
+    "line": "# sync=0 packets=0 pps=0 sd_rows=0 sd_errors=1 imu=0 heap=422856"
+  },
+  {
+    "elapsed_s": 20.188,
+    "device": "pico",
+    "line": "# LINK bytes=14 crc_errors=0 overflows=0 rejected=0 rx_level=1 pps_level=1 last_pps_age_us=0 nav_seq=0 fix=0 satellites=0 flags=0"
+  },
+  {
+    "elapsed_s": 20.188,
+    "device": "pico",
+    "line": "# DIAG power_started=1 buttons_adc=4095 sd_cd=0 sd_code=0x17 sd_data=0x01 ina_ok=1 bus_v=12.15125 current_a=0.075875 alert=1"
+  },
+  {
+    "elapsed_s": 20.188,
+    "device": "pico",
+    "line": "# sync=0 packets=0 PPS=0 period_us=0 uart_age_us=0 heap=422856 sd=MOUNT_FAILED file= rows=0"
+  },
+  {
+    "elapsed_s": 20.639,
+    "device": "sony",
+    "line": "# imu=4549 imu_errors=0 gaps=0 queue_drops=0 gps_drops=0 sd=1 sd_rows=4587 sd_errors=0"
+  },
+  {
+    "elapsed_s": 20.704,
+    "device": "sony",
+    "line": "# gps_seq=36 fix=1 satellites=0 visible=1 max_signal=30.7 flags=12 tx_bytes=2304 tx_errors=0"
+  },
+  {
+    "elapsed_s": 20.859,
+    "device": "pico",
+    "line": "# sync=0 packets=0 pps=0 sd_rows=0 sd_errors=1 imu=0 heap=422856"
+  },
+  {
+    "elapsed_s": 21.688,
+    "device": "sony",
+    "line": "# imu=4670 imu_errors=0 gaps=0 queue_drops=0 gps_drops=0 sd=1 sd_rows=4709 sd_errors=0"
+  },
+  {
+    "elapsed_s": 21.688,
+    "device": "sony",
+    "line": "# gps_seq=37 fix=1 satellites=0 visible=1 max_signal=30.9 flags=12 tx_bytes=2368 tx_errors=0"
+  },
+  {
+    "elapsed_s": 21.856,
+    "device": "pico",
+    "line": "# sync=0 packets=0 pps=0 sd_rows=0 sd_errors=1 imu=0 heap=422856"
+  },
+  {
+    "elapsed_s": 22.658,
+    "device": "sony",
+    "line": "# imu=4791 imu_errors=0 gaps=0 queue_drops=0 gps_drops=0 sd=1 sd_rows=4831 sd_errors=0"
+  },
+  {
+    "elapsed_s": 22.658,
+    "device": "sony",
+    "line": "# gps_seq=38 fix=1 satellites=0 visible=1 max_signal=30.6 flags=12 tx_bytes=2432 tx_errors=0"
+  },
+  {
+    "elapsed_s": 22.84,
+    "device": "pico",
+    "line": "# sync=0 packets=0 pps=0 sd_rows=0 sd_errors=1 imu=0 heap=422856"
+  },
+  {
+    "elapsed_s": 23.682,
+    "device": "sony",
+    "line": "# imu=4912 imu_errors=0 gaps=0 queue_drops=0 gps_drops=0 sd=1 sd_rows=4953 sd_errors=0"
+  },
+  {
+    "elapsed_s": 23.682,
+    "device": "sony",
+    "line": "# gps_seq=39 fix=1 satellites=0 visible=1 max_signal=31.0 flags=12 tx_bytes=2496 tx_errors=0"
+  },
+  {
+    "elapsed_s": 23.853,
+    "device": "pico",
+    "line": "# sync=0 packets=0 pps=0 sd_rows=0 sd_errors=1 imu=0 heap=422856"
+  },
+  {
+    "elapsed_s": 24.66,
+    "device": "sony",
+    "line": "# imu=5032 imu_errors=0 gaps=0 queue_drops=0 gps_drops=0 sd=1 sd_rows=5074 sd_errors=0"
+  },
+  {
+    "elapsed_s": 24.66,
+    "device": "sony",
+    "line": "# gps_seq=40 fix=1 satellites=0 visible=1 max_signal=30.9 flags=12 tx_bytes=2560 tx_errors=0"
+  },
+  {
+    "elapsed_s": 24.839,
+    "device": "pico",
+    "line": "# sync=0 packets=0 pps=0 sd_rows=0 sd_errors=1 imu=0 heap=422856"
+  },
+  {
+    "elapsed_s": 25.669,
+    "device": "sony",
+    "line": "# imu=5153 imu_errors=0 gaps=0 queue_drops=0 gps_drops=0 sd=1 sd_rows=5196 sd_errors=0"
+  },
+  {
+    "elapsed_s": 25.669,
+    "device": "sony",
+    "line": "# gps_seq=41 fix=1 satellites=0 visible=1 max_signal=30.4 flags=12 tx_bytes=2624 tx_errors=0"
+  },
+  {
+    "elapsed_s": 25.858,
+    "device": "pico",
+    "line": "# sync=0 packets=0 pps=0 sd_rows=0 sd_errors=1 imu=0 heap=422856"
+  },
+  {
+    "elapsed_s": 26.668,
+    "device": "sony",
+    "line": "# imu=5274 imu_errors=0 gaps=0 queue_drops=0 gps_drops=0 sd=1 sd_rows=5318 sd_errors=0"
+  },
+  {
+    "elapsed_s": 26.668,
+    "device": "sony",
+    "line": "# gps_seq=42 fix=1 satellites=0 visible=1 max_signal=30.8 flags=12 tx_bytes=2688 tx_errors=0"
+  },
+  {
+    "elapsed_s": 26.856,
+    "device": "pico",
+    "line": "# sync=0 packets=0 pps=0 sd_rows=0 sd_errors=1 imu=0 heap=422856"
+  },
+  {
+    "elapsed_s": 27.694,
+    "device": "sony",
+    "line": "# imu=5395 imu_errors=0 gaps=0 queue_drops=0 gps_drops=0 sd=1 sd_rows=5440 sd_errors=0"
+  },
+  {
+    "elapsed_s": 27.694,
+    "device": "sony",
+    "line": "# gps_seq=43 fix=1 satellites=0 visible=1 max_signal=30.6 flags=12 tx_bytes=2752 tx_errors=0"
+  },
+  {
+    "elapsed_s": 27.856,
+    "device": "pico",
+    "line": "# sync=0 packets=0 pps=0 sd_rows=0 sd_errors=1 imu=0 heap=422856"
+  },
+  {
+    "elapsed_s": 28.655,
+    "device": "sony",
+    "line": "# imu=5515 imu_errors=0 gaps=0 queue_drops=0 gps_drops=0 sd=1 sd_rows=5561 sd_errors=0"
+  },
+  {
+    "elapsed_s": 28.655,
+    "device": "sony",
+    "line": "# gps_seq=44 fix=1 satellites=0 visible=1 max_signal=31.0 flags=12 tx_bytes=2816 tx_errors=0"
+  },
+  {
+    "elapsed_s": 28.842,
+    "device": "pico",
+    "line": "# sync=0 packets=0 pps=0 sd_rows=0 sd_errors=1 imu=0 heap=422856"
+  },
+  {
+    "elapsed_s": 29.669,
+    "device": "sony",
+    "line": "# imu=5636 imu_errors=0 gaps=0 queue_drops=0 gps_drops=0 sd=1 sd_rows=5683 sd_errors=0"
+  },
+  {
+    "elapsed_s": 29.669,
+    "device": "sony",
+    "line": "# gps_seq=45 fix=1 satellites=0 visible=1 max_signal=31.4 flags=12 tx_bytes=2880 tx_errors=0"
+  },
+  {
+    "elapsed_s": 29.855,
+    "device": "pico",
+    "line": "# sync=0 packets=0 pps=0 sd_rows=0 sd_errors=1 imu=0 heap=422856"
+  },
+  {
+    "elapsed_s": 30.22,
+    "device": "pico",
+    "line": "# LINK bytes=14 crc_errors=0 overflows=0 rejected=0 rx_level=1 pps_level=1 last_pps_age_us=0 nav_seq=0 fix=0 satellites=0 flags=0"
+  },
+  {
+    "elapsed_s": 30.22,
+    "device": "pico",
+    "line": "# DIAG power_started=1 buttons_adc=4095 sd_cd=0 sd_code=0x17 sd_data=0x01 ina_ok=1 bus_v=12.15000 current_a=0.080750 alert=1"
+  },
+  {
+    "elapsed_s": 30.22,
+    "device": "pico",
+    "line": "# sync=0 packets=0 PPS=0 period_us=0 uart_age_us=0 heap=422856 sd=MOUNT_FAILED file= rows=0"
+  },
+  {
+    "elapsed_s": 30.671,
+    "device": "sony",
+    "line": "# imu=5757 imu_errors=0 gaps=0 queue_drops=0 gps_drops=0 sd=1 sd_rows=5805 sd_errors=0"
+  },
+  {
+    "elapsed_s": 30.671,
+    "device": "sony",
+    "line": "# gps_seq=46 fix=1 satellites=0 visible=1 max_signal=31.8 flags=12 tx_bytes=2944 tx_errors=0"
+  },
+  {
+    "elapsed_s": 30.842,
+    "device": "pico",
+    "line": "# sync=0 packets=0 pps=0 sd_rows=0 sd_errors=1 imu=0 heap=422856"
+  },
+  {
+    "elapsed_s": 31.665,
+    "device": "sony",
+    "line": "# imu=5878 imu_errors=0 gaps=0 queue_drops=0 gps_drops=0 sd=1 sd_rows=5927 sd_errors=0"
+  },
+  {
+    "elapsed_s": 31.665,
+    "device": "sony",
+    "line": "# gps_seq=47 fix=1 satellites=0 visible=1 max_signal=31.8 flags=12 tx_bytes=3008 tx_errors=0"
+  },
+  {
+    "elapsed_s": 31.84,
+    "device": "pico",
+    "line": "# sync=0 packets=0 pps=0 sd_rows=0 sd_errors=1 imu=0 heap=422856"
+  },
+  {
+    "elapsed_s": 32.666,
+    "device": "sony",
+    "line": "# imu=5999 imu_errors=0 gaps=0 queue_drops=0 gps_drops=0 sd=1 sd_rows=6049 sd_errors=0"
+  },
+  {
+    "elapsed_s": 32.666,
+    "device": "sony",
+    "line": "# gps_seq=48 fix=1 satellites=0 visible=1 max_signal=31.7 flags=12 tx_bytes=3072 tx_errors=0"
+  },
+  {
+    "elapsed_s": 32.852,
+    "device": "pico",
+    "line": "# sync=0 packets=0 pps=0 sd_rows=0 sd_errors=1 imu=0 heap=422856"
+  },
+  {
+    "elapsed_s": 33.653,
+    "device": "sony",
+    "line": "# imu=6119 imu_errors=0 gaps=0 queue_drops=0 gps_drops=0 sd=1 sd_rows=6170 sd_errors=0"
+  },
+  {
+    "elapsed_s": 33.653,
+    "device": "sony",
+    "line": "# gps_seq=49 fix=1 satellites=0 visible=2 max_signal=31.7 flags=12 tx_bytes=3136 tx_errors=0"
+  },
+  {
+    "elapsed_s": 33.823,
+    "device": "pico",
+    "line": "# sync=0 packets=0 pps=0 sd_rows=0 sd_errors=1 imu=0 heap=422856"
+  },
+  {
+    "elapsed_s": 34.643,
+    "device": "sony",
+    "line": "# imu=6240 imu_errors=0 gaps=0 queue_drops=0 gps_drops=0 sd=1 sd_rows=6292 sd_errors=0"
+  },
+  {
+    "elapsed_s": 34.643,
+    "device": "sony",
+    "line": "# gps_seq=50 fix=1 satellites=0 visible=2 max_signal=32.2 flags=12 tx_bytes=3200 tx_errors=0"
+  },
+  {
+    "elapsed_s": 34.825,
+    "device": "pico",
+    "line": "# sync=0 packets=0 pps=0 sd_rows=0 sd_errors=1 imu=0 heap=422856"
+  },
+  {
+    "elapsed_s": 35.637,
+    "device": "sony",
+    "line": "# imu=6361 imu_errors=0 gaps=0 queue_drops=0 gps_drops=0 sd=1 sd_rows=6414 sd_errors=0"
+  },
+  {
+    "elapsed_s": 35.704,
+    "device": "sony",
+    "line": "# gps_seq=51 fix=1 satellites=0 visible=1 max_signal=32.1 flags=12 tx_bytes=3264 tx_errors=0"
+  },
+  {
+    "elapsed_s": 35.855,
+    "device": "pico",
+    "line": "# sync=0 packets=0 pps=0 sd_rows=0 sd_errors=1 imu=0 heap=422856"
+  },
+  {
+    "elapsed_s": 36.67,
+    "device": "sony",
+    "line": "# imu=6482 imu_errors=0 gaps=0 queue_drops=0 gps_drops=0 sd=1 sd_rows=6536 sd_errors=0"
+  },
+  {
+    "elapsed_s": 36.67,
+    "device": "sony",
+    "line": "# gps_seq=52 fix=1 satellites=0 visible=1 max_signal=32.0 flags=12 tx_bytes=3328 tx_errors=0"
+  },
+  {
+    "elapsed_s": 36.855,
+    "device": "pico",
+    "line": "# sync=0 packets=0 pps=0 sd_rows=0 sd_errors=1 imu=0 heap=422856"
+  },
+  {
+    "elapsed_s": 37.671,
+    "device": "sony",
+    "line": "# imu=6602 imu_errors=0 gaps=0 queue_drops=0 gps_drops=0 sd=1 sd_rows=6657 sd_errors=0"
+  },
+  {
+    "elapsed_s": 37.671,
+    "device": "sony",
+    "line": "# gps_seq=53 fix=1 satellites=0 visible=1 max_signal=32.4 flags=12 tx_bytes=3392 tx_errors=0"
+  },
+  {
+    "elapsed_s": 37.855,
+    "device": "pico",
+    "line": "# sync=0 packets=0 pps=0 sd_rows=0 sd_errors=1 imu=0 heap=422856"
+  },
+  {
+    "elapsed_s": 38.656,
+    "device": "sony",
+    "line": "# imu=6723 imu_errors=0 gaps=0 queue_drops=0 gps_drops=0 sd=1 sd_rows=6779 sd_errors=0"
+  },
+  {
+    "elapsed_s": 38.656,
+    "device": "sony",
+    "line": "# gps_seq=54 fix=1 satellites=0 visible=1 max_signal=32.4 flags=12 tx_bytes=3456 tx_errors=0"
+  },
+  {
+    "elapsed_s": 38.84,
+    "device": "pico",
+    "line": "# sync=0 packets=0 pps=0 sd_rows=0 sd_errors=1 imu=0 heap=422856"
+  },
+  {
+    "elapsed_s": 39.673,
+    "device": "sony",
+    "line": "# imu=6844 imu_errors=0 gaps=0 queue_drops=0 gps_drops=0 sd=1 sd_rows=6901 sd_errors=0"
+  },
+  {
+    "elapsed_s": 39.673,
+    "device": "sony",
+    "line": "# gps_seq=55 fix=1 satellites=0 visible=2 max_signal=32.3 flags=12 tx_bytes=3520 tx_errors=0"
+  },
+  {
+    "elapsed_s": 39.856,
+    "device": "pico",
+    "line": "# sync=0 packets=0 pps=0 sd_rows=0 sd_errors=1 imu=0 heap=422856"
+  },
+  {
+    "elapsed_s": 40.239,
+    "device": "pico",
+    "line": "# LINK bytes=14 crc_errors=0 overflows=0 rejected=0 rx_level=1 pps_level=1 last_pps_age_us=0 nav_seq=0 fix=0 satellites=0 flags=0"
+  },
+  {
+    "elapsed_s": 40.239,
+    "device": "pico",
+    "line": "# DIAG power_started=1 buttons_adc=4095 sd_cd=0 sd_code=0x17 sd_data=0x01 ina_ok=1 bus_v=12.15000 current_a=0.076125 alert=1"
+  },
+  {
+    "elapsed_s": 40.239,
+    "device": "pico",
+    "line": "# sync=0 packets=0 PPS=0 period_us=0 uart_age_us=0 heap=422856 sd=MOUNT_FAILED file= rows=0"
+  },
+  {
+    "elapsed_s": 40.691,
+    "device": "sony",
+    "line": "# imu=6965 imu_errors=0 gaps=0 queue_drops=0 gps_drops=0 sd=1 sd_rows=7023 sd_errors=0"
+  },
+  {
+    "elapsed_s": 40.691,
+    "device": "sony",
+    "line": "# gps_seq=56 fix=1 satellites=0 visible=2 max_signal=32.5 flags=12 tx_bytes=3584 tx_errors=0"
+  },
+  {
+    "elapsed_s": 40.859,
+    "device": "pico",
+    "line": "# sync=0 packets=0 pps=0 sd_rows=0 sd_errors=1 imu=0 heap=422856"
+  },
+  {
+    "elapsed_s": 41.682,
+    "device": "sony",
+    "line": "# imu=7085 imu_errors=0 gaps=0 queue_drops=0 gps_drops=0 sd=1 sd_rows=7144 sd_errors=0"
+  },
+  {
+    "elapsed_s": 41.682,
+    "device": "sony",
+    "line": "# gps_seq=57 fix=1 satellites=0 visible=2 max_signal=32.6 flags=12 tx_bytes=3648 tx_errors=0"
+  },
+  {
+    "elapsed_s": 41.854,
+    "device": "pico",
+    "line": "# sync=0 packets=0 pps=0 sd_rows=0 sd_errors=1 imu=0 heap=422856"
+  },
+  {
+    "elapsed_s": 42.683,
+    "device": "sony",
+    "line": "# imu=7206 imu_errors=0 gaps=0 queue_drops=0 gps_drops=0 sd=1 sd_rows=7266 sd_errors=0"
+  },
+  {
+    "elapsed_s": 42.683,
+    "device": "sony",
+    "line": "# gps_seq=58 fix=1 satellites=0 visible=2 max_signal=32.6 flags=12 tx_bytes=3712 tx_errors=0"
+  },
+  {
+    "elapsed_s": 42.854,
+    "device": "pico",
+    "line": "# sync=0 packets=0 pps=0 sd_rows=0 sd_errors=1 imu=0 heap=422856"
+  },
+  {
+    "elapsed_s": 43.682,
+    "device": "sony",
+    "line": "# imu=7327 imu_errors=0 gaps=0 queue_drops=0 gps_drops=0 sd=1 sd_rows=7388 sd_errors=0"
+  },
+  {
+    "elapsed_s": 43.682,
+    "device": "sony",
+    "line": "# gps_seq=59 fix=1 satellites=0 visible=1 max_signal=32.5 flags=12 tx_bytes=3776 tx_errors=0"
+  },
+  {
+    "elapsed_s": 43.855,
+    "device": "pico",
+    "line": "# sync=0 packets=0 pps=0 sd_rows=0 sd_errors=1 imu=0 heap=422856"
+  },
+  {
+    "elapsed_s": 44.684,
+    "device": "sony",
+    "line": "# imu=7448 imu_errors=0 gaps=0 queue_drops=0 gps_drops=0 sd=1 sd_rows=7510 sd_errors=0"
+  },
+  {
+    "elapsed_s": 44.684,
+    "device": "sony",
+    "line": "# gps_seq=60 fix=1 satellites=0 visible=1 max_signal=33.1 flags=12 tx_bytes=3840 tx_errors=0"
+  },
+  {
+    "elapsed_s": 44.856,
+    "device": "pico",
+    "line": "# sync=0 packets=0 pps=0 sd_rows=0 sd_errors=1 imu=0 heap=422856"
+  },
+  {
+    "elapsed_s": 45.655,
+    "device": "sony",
+    "line": "# imu=7568 imu_errors=0 gaps=0 queue_drops=0 gps_drops=0 sd=1 sd_rows=7631 sd_errors=0"
+  },
+  {
+    "elapsed_s": 45.655,
+    "device": "sony",
+    "line": "# gps_seq=61 fix=1 satellites=0 visible=1 max_signal=32.8 flags=12 tx_bytes=3904 tx_errors=0"
+  },
+  {
+    "elapsed_s": 45.84,
+    "device": "pico",
+    "line": "# sync=0 packets=0 pps=0 sd_rows=0 sd_errors=1 imu=0 heap=422856"
+  },
+  {
+    "elapsed_s": 46.638,
+    "device": "sony",
+    "line": "# imu=7689 imu_errors=0 gaps=0 queue_drops=0 gps_drops=0 sd=1 sd_rows=7753 sd_errors=0"
+  },
+  {
+    "elapsed_s": 46.703,
+    "device": "sony",
+    "line": "# gps_seq=62 fix=1 satellites=0 visible=2 max_signal=32.7 flags=12 tx_bytes=3968 tx_errors=0"
+  },
+  {
+    "elapsed_s": 46.858,
+    "device": "pico",
+    "line": "# sync=0 packets=0 pps=0 sd_rows=0 sd_errors=1 imu=0 heap=422856"
+  },
+  {
+    "elapsed_s": 47.695,
+    "device": "sony",
+    "line": "# imu=7810 imu_errors=0 gaps=0 queue_drops=0 gps_drops=0 sd=1 sd_rows=7875 sd_errors=0"
+  },
+  {
+    "elapsed_s": 47.695,
+    "device": "sony",
+    "line": "# gps_seq=63 fix=1 satellites=0 visible=2 max_signal=32.2 flags=12 tx_bytes=4032 tx_errors=0"
+  },
+  {
+    "elapsed_s": 47.855,
+    "device": "pico",
+    "line": "# sync=0 packets=0 pps=0 sd_rows=0 sd_errors=1 imu=0 heap=422856"
+  },
+  {
+    "elapsed_s": 48.687,
+    "device": "sony",
+    "line": "# imu=7931 imu_errors=0 gaps=0 queue_drops=0 gps_drops=0 sd=1 sd_rows=7997 sd_errors=0"
+  },
+  {
+    "elapsed_s": 48.687,
+    "device": "sony",
+    "line": "# gps_seq=64 fix=1 satellites=0 visible=1 max_signal=32.6 flags=12 tx_bytes=4096 tx_errors=0"
+  },
+  {
+    "elapsed_s": 48.859,
+    "device": "pico",
+    "line": "# sync=0 packets=0 pps=0 sd_rows=0 sd_errors=1 imu=0 heap=422856"
+  },
+  {
+    "elapsed_s": 49.675,
+    "device": "sony",
+    "line": "# imu=8051 imu_errors=0 gaps=0 queue_drops=0 gps_drops=0 sd=1 sd_rows=8118 sd_errors=0"
+  },
+  {
+    "elapsed_s": 49.675,
+    "device": "sony",
+    "line": "# gps_seq=65 fix=1 satellites=0 visible=1 max_signal=32.5 flags=12 tx_bytes=4160 tx_errors=0"
+  },
+  {
+    "elapsed_s": 49.855,
+    "device": "pico",
+    "line": "# sync=0 packets=0 pps=0 sd_rows=0 sd_errors=1 imu=0 heap=422856"
+  },
+  {
+    "elapsed_s": 50.37,
+    "device": "pico",
+    "line": "# LINK bytes=14 crc_errors=0 overflows=0 rejected=0 rx_level=1 pps_level=1 last_pps_age_us=0 nav_seq=0 fix=0 satellites=0 flags=0"
+  },
+  {
+    "elapsed_s": 50.37,
+    "device": "pico",
+    "line": "# DIAG power_started=1 buttons_adc=4095 sd_cd=0 sd_code=0x17 sd_data=0x01 ina_ok=1 bus_v=12.15000 current_a=0.076000 alert=1"
+  },
+  {
+    "elapsed_s": 50.37,
+    "device": "pico",
+    "line": "# sync=0 packets=0 PPS=0 period_us=0 uart_age_us=0 heap=422856 sd=MOUNT_FAILED file= rows=0"
+  },
+  {
+    "elapsed_s": 50.683,
+    "device": "sony",
+    "line": "# imu=8172 imu_errors=0 gaps=0 queue_drops=0 gps_drops=0 sd=1 sd_rows=8240 sd_errors=0"
+  },
+  {
+    "elapsed_s": 50.683,
+    "device": "sony",
+    "line": "# gps_seq=66 fix=1 satellites=0 visible=1 max_signal=32.3 flags=12 tx_bytes=4224 tx_errors=0"
+  },
+  {
+    "elapsed_s": 50.855,
+    "device": "pico",
+    "line": "# sync=0 packets=0 pps=0 sd_rows=0 sd_errors=1 imu=0 heap=422856"
+  },
+  {
+    "elapsed_s": 51.67,
+    "device": "sony",
+    "line": "# imu=8293 imu_errors=0 gaps=0 queue_drops=0 gps_drops=0 sd=1 sd_rows=8362 sd_errors=0"
+  },
+  {
+    "elapsed_s": 51.67,
+    "device": "sony",
+    "line": "# gps_seq=67 fix=1 satellites=0 visible=1 max_signal=32.6 flags=12 tx_bytes=4288 tx_errors=0"
+  },
+  {
+    "elapsed_s": 51.84,
+    "device": "pico",
+    "line": "# sync=0 packets=0 pps=0 sd_rows=0 sd_errors=1 imu=0 heap=422856"
+  },
+  {
+    "elapsed_s": 52.651,
+    "device": "sony",
+    "line": "# imu=8414 imu_errors=0 gaps=0 queue_drops=0 gps_drops=0 sd=1 sd_rows=8484 sd_errors=0"
+  },
+  {
+    "elapsed_s": 52.651,
+    "device": "sony",
+    "line": "# gps_seq=68 fix=1 satellites=0 visible=1 max_signal=32.4 flags=12 tx_bytes=4352 tx_errors=0"
+  },
+  {
+    "elapsed_s": 52.841,
+    "device": "pico",
+    "line": "# sync=0 packets=0 pps=0 sd_rows=0 sd_errors=1 imu=0 heap=422856"
+  },
+  {
+    "elapsed_s": 53.687,
+    "device": "sony",
+    "line": "# imu=8535 imu_errors=0 gaps=0 queue_drops=0 gps_drops=0 sd=1 sd_rows=8606 sd_errors=0"
+  },
+  {
+    "elapsed_s": 53.687,
+    "device": "sony",
+    "line": "# gps_seq=69 fix=1 satellites=0 visible=1 max_signal=32.3 flags=12 tx_bytes=4416 tx_errors=0"
+  },
+  {
+    "elapsed_s": 53.854,
+    "device": "pico",
+    "line": "# sync=0 packets=0 pps=0 sd_rows=0 sd_errors=1 imu=0 heap=422856"
+  },
+  {
+    "elapsed_s": 54.698,
+    "device": "sony",
+    "line": "# imu=8656 imu_errors=0 gaps=0 queue_drops=0 gps_drops=0 sd=1 sd_rows=8728 sd_errors=0"
+  },
+  {
+    "elapsed_s": 54.698,
+    "device": "sony",
+    "line": "# gps_seq=70 fix=1 satellites=0 visible=1 max_signal=32.6 flags=12 tx_bytes=4480 tx_errors=0"
+  },
+  {
+    "elapsed_s": 54.856,
+    "device": "pico",
+    "line": "# sync=0 packets=0 pps=0 sd_rows=0 sd_errors=1 imu=0 heap=422856"
+  },
+  {
+    "elapsed_s": 55.67,
+    "device": "sony",
+    "line": "# imu=8776 imu_errors=0 gaps=0 queue_drops=0 gps_drops=0 sd=1 sd_rows=8849 sd_errors=0"
+  },
+  {
+    "elapsed_s": 55.67,
+    "device": "sony",
+    "line": "# gps_seq=71 fix=1 satellites=0 visible=1 max_signal=32.6 flags=12 tx_bytes=4544 tx_errors=0"
+  },
+  {
+    "elapsed_s": 55.856,
+    "device": "pico",
+    "line": "# sync=0 packets=0 pps=0 sd_rows=0 sd_errors=1 imu=0 heap=422856"
+  },
+  {
+    "elapsed_s": 56.672,
+    "device": "sony",
+    "line": "# imu=8897 imu_errors=0 gaps=0 queue_drops=0 gps_drops=0 sd=1 sd_rows=8971 sd_errors=0"
+  },
+  {
+    "elapsed_s": 56.672,
+    "device": "sony",
+    "line": "# gps_seq=72 fix=1 satellites=0 visible=1 max_signal=32.5 flags=12 tx_bytes=4608 tx_errors=0"
+  },
+  {
+    "elapsed_s": 56.856,
+    "device": "pico",
+    "line": "# sync=0 packets=0 pps=0 sd_rows=0 sd_errors=1 imu=0 heap=422856"
+  },
+  {
+    "elapsed_s": 57.695,
+    "device": "sony",
+    "line": "# imu=9018 imu_errors=0 gaps=0 queue_drops=0 gps_drops=0 sd=1 sd_rows=9093 sd_errors=0"
+  },
+  {
+    "elapsed_s": 57.695,
+    "device": "sony",
+    "line": "# gps_seq=73 fix=1 satellites=0 visible=1 max_signal=33.0 flags=12 tx_bytes=4672 tx_errors=0"
+  },
+  {
+    "elapsed_s": 57.855,
+    "device": "pico",
+    "line": "# sync=0 packets=0 pps=0 sd_rows=0 sd_errors=1 imu=0 heap=422856"
+  },
+  {
+    "elapsed_s": 58.697,
+    "device": "sony",
+    "line": "# imu=9139 imu_errors=0 gaps=0 queue_drops=0 gps_drops=0 sd=1 sd_rows=9215 sd_errors=0"
+  },
+  {
+    "elapsed_s": 58.697,
+    "device": "sony",
+    "line": "# gps_seq=74 fix=1 satellites=0 visible=2 max_signal=32.6 flags=12 tx_bytes=4736 tx_errors=0"
+  },
+  {
+    "elapsed_s": 58.856,
+    "device": "pico",
+    "line": "# sync=0 packets=0 pps=0 sd_rows=0 sd_errors=1 imu=0 heap=422856"
+  },
+  {
+    "elapsed_s": 59.698,
+    "device": "sony",
+    "line": "# imu=9259 imu_errors=0 gaps=0 queue_drops=0 gps_drops=0 sd=1 sd_rows=9336 sd_errors=0"
+  },
+  {
+    "elapsed_s": 59.698,
+    "device": "sony",
+    "line": "# gps_seq=75 fix=1 satellites=0 visible=2 max_signal=32.5 flags=12 tx_bytes=4800 tx_errors=0"
+  },
+  {
+    "elapsed_s": 59.857,
+    "device": "pico",
+    "line": "# sync=0 packets=0 pps=0 sd_rows=0 sd_errors=1 imu=0 heap=422856"
+  },
+  {
+    "elapsed_s": 60.498,
+    "device": "pico",
+    "line": "# LINK bytes=14 crc_errors=0 overflows=0 rejected=0 rx_level=1 pps_level=1 last_pps_age_us=0 nav_seq=0 fix=0 satellites=0 flags=0"
+  },
+  {
+    "elapsed_s": 60.498,
+    "device": "pico",
+    "line": "# DIAG power_started=1 buttons_adc=4095 sd_cd=0 sd_code=0x17 sd_data=0x01 ina_ok=1 bus_v=12.15000 current_a=0.076250 alert=1"
+  },
+  {
+    "elapsed_s": 60.498,
+    "device": "pico",
+    "line": "# sync=0 packets=0 PPS=0 period_us=0 uart_age_us=0 heap=422856 sd=MOUNT_FAILED file= rows=0"
+  },
+  {
+    "elapsed_s": 60.68,
+    "device": "sony",
+    "line": "# imu=9380 imu_errors=0 gaps=0 queue_drops=0 gps_drops=0 sd=1 sd_rows=9458 sd_errors=0"
+  },
+  {
+    "elapsed_s": 60.68,
+    "device": "sony",
+    "line": "# gps_seq=76 fix=1 satellites=0 visible=1 max_signal=32.5 flags=12 tx_bytes=4864 tx_errors=0"
+  },
+  {
+    "elapsed_s": 60.858,
+    "device": "pico",
+    "line": "# sync=0 packets=0 pps=0 sd_rows=0 sd_errors=1 imu=0 heap=422856"
+  },
+  {
+    "elapsed_s": 61.699,
+    "device": "sony",
+    "line": "# imu=9501 imu_errors=0 gaps=0 queue_drops=0 gps_drops=0 sd=1 sd_rows=9580 sd_errors=0"
+  },
+  {
+    "elapsed_s": 61.699,
+    "device": "sony",
+    "line": "# gps_seq=77 fix=1 satellites=0 visible=1 max_signal=32.4 flags=12 tx_bytes=4928 tx_errors=0"
+  },
+  {
+    "elapsed_s": 61.856,
+    "device": "pico",
+    "line": "# sync=0 packets=0 pps=0 sd_rows=0 sd_errors=1 imu=0 heap=422856"
+  },
+  {
+    "elapsed_s": 62.697,
+    "device": "sony",
+    "line": "# imu=9622 imu_errors=0 gaps=0 queue_drops=0 gps_drops=0 sd=1 sd_rows=9702 sd_errors=0"
+  },
+  {
+    "elapsed_s": 62.697,
+    "device": "sony",
+    "line": "# gps_seq=78 fix=1 satellites=0 visible=1 max_signal=32.3 flags=12 tx_bytes=4992 tx_errors=0"
+  },
+  {
+    "elapsed_s": 62.854,
+    "device": "pico",
+    "line": "# sync=0 packets=0 pps=0 sd_rows=0 sd_errors=1 imu=0 heap=422856"
+  },
+  {
+    "elapsed_s": 63.699,
+    "device": "sony",
+    "line": "# imu=9742 imu_errors=0 gaps=0 queue_drops=0 gps_drops=0 sd=1 sd_rows=9823 sd_errors=0"
+  },
+  {
+    "elapsed_s": 63.699,
+    "device": "sony",
+    "line": "# gps_seq=79 fix=1 satellites=0 visible=1 max_signal=32.7 flags=12 tx_bytes=5056 tx_errors=0"
+  },
+  {
+    "elapsed_s": 63.857,
+    "device": "pico",
+    "line": "# sync=0 packets=0 pps=0 sd_rows=0 sd_errors=1 imu=0 heap=422856"
+  },
+  {
+    "elapsed_s": 64.682,
+    "device": "sony",
+    "line": "# imu=9863 imu_errors=0 gaps=0 queue_drops=0 gps_drops=0 sd=1 sd_rows=9945 sd_errors=0"
+  },
+  {
+    "elapsed_s": 64.682,
+    "device": "sony",
+    "line": "# gps_seq=80 fix=1 satellites=0 visible=1 max_signal=32.4 flags=12 tx_bytes=5120 tx_errors=0"
+  },
+  {
+    "elapsed_s": 64.852,
+    "device": "pico",
+    "line": "# sync=0 packets=0 pps=0 sd_rows=0 sd_errors=1 imu=0 heap=422856"
+  },
+  {
+    "elapsed_s": 65.672,
+    "device": "sony",
+    "line": "# imu=9984 imu_errors=0 gaps=0 queue_drops=0 gps_drops=0 sd=1 sd_rows=10067 sd_errors=0"
+  },
+  {
+    "elapsed_s": 65.672,
+    "device": "sony",
+    "line": "# gps_seq=81 fix=1 satellites=0 visible=3 max_signal=32.3 flags=12 tx_bytes=5184 tx_errors=0"
+  },
+  {
+    "elapsed_s": 65.855,
+    "device": "pico",
+    "line": "# sync=0 packets=0 pps=0 sd_rows=0 sd_errors=1 imu=0 heap=422856"
+  },
+  {
+    "elapsed_s": 66.698,
+    "device": "sony",
+    "line": "# imu=10105 imu_errors=0 gaps=0 queue_drops=0 gps_drops=0 sd=1 sd_rows=10189 sd_errors=0"
+  },
+  {
+    "elapsed_s": 66.698,
+    "device": "sony",
+    "line": "# gps_seq=82 fix=1 satellites=0 visible=3 max_signal=32.3 flags=12 tx_bytes=5248 tx_errors=0"
+  },
+  {
+    "elapsed_s": 66.855,
+    "device": "pico",
+    "line": "# sync=0 packets=0 pps=0 sd_rows=0 sd_errors=1 imu=0 heap=422856"
+  },
+  {
+    "elapsed_s": 67.68,
+    "device": "sony",
+    "line": "# imu=10226 imu_errors=0 gaps=0 queue_drops=0 gps_drops=0 sd=1 sd_rows=10311 sd_errors=0"
+  },
+  {
+    "elapsed_s": 67.68,
+    "device": "sony",
+    "line": "# gps_seq=83 fix=1 satellites=0 visible=2 max_signal=32.3 flags=12 tx_bytes=5312 tx_errors=0"
+  },
+  {
+    "elapsed_s": 67.854,
+    "device": "pico",
+    "line": "# sync=0 packets=0 pps=0 sd_rows=0 sd_errors=1 imu=0 heap=422856"
+  },
+  {
+    "elapsed_s": 68.684,
+    "device": "sony",
+    "line": "# imu=10346 imu_errors=0 gaps=0 queue_drops=0 gps_drops=0 sd=1 sd_rows=10432 sd_errors=0"
+  },
+  {
+    "elapsed_s": 68.684,
+    "device": "sony",
+    "line": "# gps_seq=84 fix=1 satellites=0 visible=2 max_signal=32.1 flags=12 tx_bytes=5376 tx_errors=0"
+  },
+  {
+    "elapsed_s": 68.855,
+    "device": "pico",
+    "line": "# sync=0 packets=0 pps=0 sd_rows=0 sd_errors=1 imu=0 heap=422856"
+  },
+  {
+    "elapsed_s": 69.68,
+    "device": "sony",
+    "line": "# imu=10467 imu_errors=0 gaps=0 queue_drops=0 gps_drops=0 sd=1 sd_rows=10554 sd_errors=0"
+  },
+  {
+    "elapsed_s": 69.68,
+    "device": "sony",
+    "line": "# gps_seq=85 fix=1 satellites=0 visible=2 max_signal=32.0 flags=12 tx_bytes=5440 tx_errors=0"
+  },
+  {
+    "elapsed_s": 69.856,
+    "device": "pico",
+    "line": "# sync=0 packets=0 pps=0 sd_rows=0 sd_errors=1 imu=0 heap=422856"
+  },
+  {
+    "elapsed_s": 70.615,
+    "device": "pico",
+    "line": "# LINK bytes=14 crc_errors=0 overflows=0 rejected=0 rx_level=1 pps_level=1 last_pps_age_us=0 nav_seq=0 fix=0 satellites=0 flags=0"
+  },
+  {
+    "elapsed_s": 70.615,
+    "device": "pico",
+    "line": "# DIAG power_started=1 buttons_adc=4095 sd_cd=0 sd_code=0x17 sd_data=0x01 ina_ok=1 bus_v=12.15000 current_a=0.076000 alert=1"
+  },
+  {
+    "elapsed_s": 70.615,
+    "device": "pico",
+    "line": "# sync=0 packets=0 PPS=0 period_us=0 uart_age_us=0 heap=422856 sd=MOUNT_FAILED file= rows=0"
+  },
+  {
+    "elapsed_s": 70.681,
+    "device": "sony",
+    "line": "# imu=10588 imu_errors=0 gaps=0 queue_drops=0 gps_drops=0 sd=1 sd_rows=10676 sd_errors=0"
+  },
+  {
+    "elapsed_s": 70.681,
+    "device": "sony",
+    "line": "# gps_seq=86 fix=1 satellites=0 visible=2 max_signal=31.6 flags=12 tx_bytes=5504 tx_errors=0"
+  },
+  {
+    "elapsed_s": 70.856,
+    "device": "pico",
+    "line": "# sync=0 packets=0 pps=0 sd_rows=0 sd_errors=1 imu=0 heap=422856"
+  },
+  {
+    "elapsed_s": 71.672,
+    "device": "sony",
+    "line": "# imu=10709 imu_errors=0 gaps=0 queue_drops=0 gps_drops=0 sd=1 sd_rows=10798 sd_errors=0"
+  },
+  {
+    "elapsed_s": 71.672,
+    "device": "sony",
+    "line": "# gps_seq=87 fix=1 satellites=0 visible=2 max_signal=31.9 flags=12 tx_bytes=5568 tx_errors=0"
+  },
+  {
+    "elapsed_s": 71.855,
+    "device": "pico",
+    "line": "# sync=0 packets=0 pps=0 sd_rows=0 sd_errors=1 imu=0 heap=422856"
+  },
+  {
+    "elapsed_s": 72.681,
+    "device": "sony",
+    "line": "# imu=10830 imu_errors=0 gaps=0 queue_drops=0 gps_drops=0 sd=1 sd_rows=10920 sd_errors=0"
+  },
+  {
+    "elapsed_s": 72.681,
+    "device": "sony",
+    "line": "# gps_seq=88 fix=1 satellites=0 visible=2 max_signal=32.1 flags=12 tx_bytes=5632 tx_errors=0"
+  },
+  {
+    "elapsed_s": 72.854,
+    "device": "pico",
+    "line": "# sync=0 packets=0 pps=0 sd_rows=0 sd_errors=1 imu=0 heap=422856"
+  },
+  {
+    "elapsed_s": 73.674,
+    "device": "sony",
+    "line": "# imu=10951 imu_errors=0 gaps=0 queue_drops=0 gps_drops=0 sd=1 sd_rows=11042 sd_errors=0"
+  },
+  {
+    "elapsed_s": 73.674,
+    "device": "sony",
+    "line": "# gps_seq=89 fix=1 satellites=0 visible=2 max_signal=31.6 flags=12 tx_bytes=5696 tx_errors=0"
+  },
+  {
+    "elapsed_s": 73.852,
+    "device": "pico",
+    "line": "# sync=0 packets=0 pps=0 sd_rows=0 sd_errors=1 imu=0 heap=422856"
+  },
+  {
+    "elapsed_s": 74.682,
+    "device": "sony",
+    "line": "# imu=11072 imu_errors=0 gaps=0 queue_drops=0 gps_drops=0 sd=1 sd_rows=11164 sd_errors=0"
+  },
+  {
+    "elapsed_s": 74.682,
+    "device": "sony",
+    "line": "# gps_seq=90 fix=1 satellites=0 visible=2 max_signal=31.8 flags=12 tx_bytes=5760 tx_errors=0"
+  },
+  {
+    "elapsed_s": 74.855,
+    "device": "pico",
+    "line": "# sync=0 packets=0 pps=0 sd_rows=0 sd_errors=1 imu=0 heap=422856"
+  },
+  {
+    "elapsed_s": 75.681,
+    "device": "sony",
+    "line": "# imu=11192 imu_errors=0 gaps=0 queue_drops=0 gps_drops=0 sd=1 sd_rows=11285 sd_errors=0"
+  },
+  {
+    "elapsed_s": 75.681,
+    "device": "sony",
+    "line": "# gps_seq=91 fix=1 satellites=0 visible=2 max_signal=31.9 flags=12 tx_bytes=5824 tx_errors=0"
+  },
+  {
+    "elapsed_s": 75.856,
+    "device": "pico",
+    "line": "# sync=0 packets=0 pps=0 sd_rows=0 sd_errors=1 imu=0 heap=422856"
+  },
+  {
+    "elapsed_s": 76.654,
+    "device": "sony",
+    "line": "# imu=11313 imu_errors=0 gaps=0 queue_drops=0 gps_drops=0 sd=1 sd_rows=11407 sd_errors=0"
+  },
+  {
+    "elapsed_s": 76.654,
+    "device": "sony",
+    "line": "# gps_seq=92 fix=1 satellites=0 visible=2 max_signal=31.9 flags=12 tx_bytes=5888 tx_errors=0"
+  },
+  {
+    "elapsed_s": 76.85,
+    "device": "pico",
+    "line": "# sync=0 packets=0 pps=0 sd_rows=0 sd_errors=1 imu=0 heap=422856"
+  },
+  {
+    "elapsed_s": 77.684,
+    "device": "sony",
+    "line": "# imu=11434 imu_errors=0 gaps=0 queue_drops=0 gps_drops=0 sd=1 sd_rows=11529 sd_errors=0"
+  },
+  {
+    "elapsed_s": 77.684,
+    "device": "sony",
+    "line": "# gps_seq=93 fix=1 satellites=0 visible=2 max_signal=31.3 flags=12 tx_bytes=5952 tx_errors=0"
+  },
+  {
+    "elapsed_s": 77.855,
+    "device": "pico",
+    "line": "# sync=0 packets=0 pps=0 sd_rows=0 sd_errors=1 imu=0 heap=422856"
+  },
+  {
+    "elapsed_s": 78.684,
+    "device": "sony",
+    "line": "# imu=11555 imu_errors=0 gaps=0 queue_drops=0 gps_drops=0 sd=1 sd_rows=11651 sd_errors=0"
+  },
+  {
+    "elapsed_s": 78.684,
+    "device": "sony",
+    "line": "# gps_seq=94 fix=1 satellites=0 visible=2 max_signal=31.2 flags=12 tx_bytes=6016 tx_errors=0"
+  },
+  {
+    "elapsed_s": 78.856,
+    "device": "pico",
+    "line": "# sync=0 packets=0 pps=0 sd_rows=0 sd_errors=1 imu=0 heap=422856"
+  },
+  {
+    "elapsed_s": 79.681,
+    "device": "sony",
+    "line": "# imu=11676 imu_errors=0 gaps=0 queue_drops=0 gps_drops=0 sd=1 sd_rows=11773 sd_errors=0"
+  },
+  {
+    "elapsed_s": 79.681,
+    "device": "sony",
+    "line": "# gps_seq=95 fix=1 satellites=0 visible=2 max_signal=31.3 flags=12 tx_bytes=6080 tx_errors=0"
+  },
+  {
+    "elapsed_s": 79.855,
+    "device": "pico",
+    "line": "# sync=0 packets=0 pps=0 sd_rows=0 sd_errors=1 imu=0 heap=422856"
+  },
+  {
+    "elapsed_s": 80.706,
+    "device": "pico",
+    "line": "# LINK bytes=14 crc_errors=0 overflows=0 rejected=0 rx_level=1 pps_level=1 last_pps_age_us=0 nav_seq=0 fix=0 satellites=0 flags=0"
+  },
+  {
+    "elapsed_s": 80.706,
+    "device": "pico",
+    "line": "# DIAG power_started=1 buttons_adc=4095 sd_cd=0 sd_code=0x17 sd_data=0x01 ina_ok=1 bus_v=12.14875 current_a=0.080500 alert=1"
+  },
+  {
+    "elapsed_s": 80.706,
+    "device": "pico",
+    "line": "# sync=0 packets=0 PPS=0 period_us=0 uart_age_us=0 heap=422856 sd=MOUNT_FAILED file= rows=0"
+  },
+  {
+    "elapsed_s": 80.707,
+    "device": "sony",
+    "line": "# imu=11796 imu_errors=0 gaps=0 queue_drops=0 gps_drops=0 sd=1 sd_rows=11894 sd_errors=0"
+  },
+  {
+    "elapsed_s": 80.707,
+    "device": "sony",
+    "line": "# gps_seq=96 fix=1 satellites=0 visible=2 max_signal=31.5 flags=12 tx_bytes=6144 tx_errors=0"
+  },
+  {
+    "elapsed_s": 80.854,
+    "device": "pico",
+    "line": "# sync=0 packets=0 pps=0 sd_rows=0 sd_errors=1 imu=0 heap=422856"
+  },
+  {
+    "elapsed_s": 81.706,
+    "device": "sony",
+    "line": "# imu=11917 imu_errors=0 gaps=0 queue_drops=0 gps_drops=0 sd=1 sd_rows=12016 sd_errors=0"
+  },
+  {
+    "elapsed_s": 81.706,
+    "device": "sony",
+    "line": "# gps_seq=97 fix=1 satellites=0 visible=2 max_signal=30.7 flags=12 tx_bytes=6208 tx_errors=0"
+  },
+  {
+    "elapsed_s": 81.855,
+    "device": "pico",
+    "line": "# sync=0 packets=0 pps=0 sd_rows=0 sd_errors=1 imu=0 heap=422856"
+  },
+  {
+    "elapsed_s": 82.69,
+    "device": "sony",
+    "line": "# imu=12038 imu_errors=0 gaps=0 queue_drops=0 gps_drops=0 sd=1 sd_rows=12138 sd_errors=0"
+  },
+  {
+    "elapsed_s": 82.69,
+    "device": "sony",
+    "line": "# gps_seq=98 fix=1 satellites=0 visible=2 max_signal=30.5 flags=12 tx_bytes=6272 tx_errors=0"
+  },
+  {
+    "elapsed_s": 82.855,
+    "device": "pico",
+    "line": "# sync=0 packets=0 pps=0 sd_rows=0 sd_errors=1 imu=0 heap=422856"
+  },
+  {
+    "elapsed_s": 83.706,
+    "device": "sony",
+    "line": "# imu=12159 imu_errors=0 gaps=0 queue_drops=0 gps_drops=0 sd=1 sd_rows=12260 sd_errors=0"
+  },
+  {
+    "elapsed_s": 83.706,
+    "device": "sony",
+    "line": "# gps_seq=99 fix=1 satellites=0 visible=2 max_signal=30.8 flags=12 tx_bytes=6336 tx_errors=0"
+  },
+  {
+    "elapsed_s": 83.852,
+    "device": "pico",
+    "line": "# sync=0 packets=0 pps=0 sd_rows=0 sd_errors=1 imu=0 heap=422856"
+  },
+  {
+    "elapsed_s": 84.666,
+    "device": "sony",
+    "line": "# imu=12279 imu_errors=0 gaps=0 queue_drops=0 gps_drops=0 sd=1 sd_rows=12381 sd_errors=0"
+  },
+  {
+    "elapsed_s": 84.666,
+    "device": "sony",
+    "line": "# gps_seq=100 fix=1 satellites=0 visible=2 max_signal=30.6 flags=12 tx_bytes=6400 tx_errors=0"
+  },
+  {
+    "elapsed_s": 84.855,
+    "device": "pico",
+    "line": "# sync=0 packets=0 pps=0 sd_rows=0 sd_errors=1 imu=0 heap=422856"
+  },
+  {
+    "elapsed_s": 85.675,
+    "device": "sony",
+    "line": "# imu=12400 imu_errors=0 gaps=0 queue_drops=0 gps_drops=0 sd=1 sd_rows=12503 sd_errors=0"
+  },
+  {
+    "elapsed_s": 85.675,
+    "device": "sony",
+    "line": "# gps_seq=101 fix=1 satellites=0 visible=3 max_signal=30.6 flags=12 tx_bytes=6464 tx_errors=0"
+  },
+  {
+    "elapsed_s": 85.855,
+    "device": "pico",
+    "line": "# sync=0 packets=0 pps=0 sd_rows=0 sd_errors=1 imu=0 heap=422856"
+  },
+  {
+    "elapsed_s": 86.684,
+    "device": "sony",
+    "line": "# imu=12521 imu_errors=0 gaps=0 queue_drops=0 gps_drops=0 sd=1 sd_rows=12625 sd_errors=0"
+  },
+  {
+    "elapsed_s": 86.684,
+    "device": "sony",
+    "line": "# gps_seq=102 fix=1 satellites=0 visible=3 max_signal=30.0 flags=12 tx_bytes=6528 tx_errors=0"
+  },
+  {
+    "elapsed_s": 86.855,
+    "device": "pico",
+    "line": "# sync=0 packets=0 pps=0 sd_rows=0 sd_errors=1 imu=0 heap=422856"
+  },
+  {
+    "elapsed_s": 87.683,
+    "device": "sony",
+    "line": "# imu=12642 imu_errors=0 gaps=0 queue_drops=0 gps_drops=0 sd=1 sd_rows=12747 sd_errors=0"
+  },
+  {
+    "elapsed_s": 87.683,
+    "device": "sony",
+    "line": "# gps_seq=103 fix=1 satellites=0 visible=2 max_signal=30.3 flags=12 tx_bytes=6592 tx_errors=0"
+  },
+  {
+    "elapsed_s": 87.854,
+    "device": "pico",
+    "line": "# sync=0 packets=0 pps=0 sd_rows=0 sd_errors=1 imu=0 heap=422856"
+  },
+  {
+    "elapsed_s": 88.697,
+    "device": "sony",
+    "line": "# imu=12763 imu_errors=0 gaps=0 queue_drops=0 gps_drops=0 sd=1 sd_rows=12869 sd_errors=0"
+  },
+  {
+    "elapsed_s": 88.697,
+    "device": "sony",
+    "line": "# gps_seq=104 fix=1 satellites=0 visible=2 max_signal=30.3 flags=12 tx_bytes=6656 tx_errors=0"
+  },
+  {
+    "elapsed_s": 88.856,
+    "device": "pico",
+    "line": "# sync=0 packets=0 pps=0 sd_rows=0 sd_errors=1 imu=0 heap=422856"
+  },
+  {
+    "elapsed_s": 89.694,
+    "device": "sony",
+    "line": "# imu=12883 imu_errors=0 gaps=0 queue_drops=0 gps_drops=0 sd=1 sd_rows=12990 sd_errors=0"
+  },
+  {
+    "elapsed_s": 89.694,
+    "device": "sony",
+    "line": "# gps_seq=105 fix=1 satellites=0 visible=2 max_signal=30.5 flags=12 tx_bytes=6720 tx_errors=0"
+  },
+  {
+    "elapsed_s": 89.855,
+    "device": "pico",
+    "line": "# sync=0 packets=0 pps=0 sd_rows=0 sd_errors=1 imu=0 heap=422856"
+  },
+  {
+    "elapsed_s": 90.708,
+    "device": "pico",
+    "line": "# LINK bytes=14 crc_errors=0 overflows=0 rejected=0 rx_level=1 pps_level=1 last_pps_age_us=0 nav_seq=0 fix=0 satellites=0 flags=0"
+  },
+  {
+    "elapsed_s": 90.708,
+    "device": "pico",
+    "line": "# DIAG power_started=1 buttons_adc=4095 sd_cd=0 sd_code=0x17 sd_data=0x01 ina_ok=1 bus_v=12.14875 current_a=0.079875 alert=1"
+  },
+  {
+    "elapsed_s": 90.708,
+    "device": "pico",
+    "line": "# sync=0 packets=0 PPS=0 period_us=0 uart_age_us=0 heap=422856 sd=MOUNT_FAILED file= rows=0"
+  },
+  {
+    "elapsed_s": 90.708,
+    "device": "sony",
+    "line": "# imu=13004 imu_errors=0 gaps=0 queue_drops=0 gps_drops=0 sd=1 sd_rows=13112 sd_errors=0"
+  },
+  {
+    "elapsed_s": 90.708,
+    "device": "sony",
+    "line": "# gps_seq=106 fix=1 satellites=0 visible=2 max_signal=30.0 flags=12 tx_bytes=6784 tx_errors=0"
+  },
+  {
+    "elapsed_s": 90.854,
+    "device": "pico",
+    "line": "# sync=0 packets=0 pps=0 sd_rows=0 sd_errors=1 imu=0 heap=422856"
+  },
+  {
+    "elapsed_s": 91.708,
+    "device": "sony",
+    "line": "# imu=13125 imu_errors=0 gaps=0 queue_drops=0 gps_drops=0 sd=1 sd_rows=13234 sd_errors=0"
+  },
+  {
+    "elapsed_s": 91.708,
+    "device": "sony",
+    "line": "# gps_seq=107 fix=1 satellites=0 visible=2 max_signal=29.7 flags=12 tx_bytes=6848 tx_errors=0"
+  },
+  {
+    "elapsed_s": 91.855,
+    "device": "pico",
+    "line": "# sync=0 packets=0 pps=0 sd_rows=0 sd_errors=1 imu=0 heap=422856"
+  },
+  {
+    "elapsed_s": 92.681,
+    "device": "sony",
+    "line": "# imu=13246 imu_errors=0 gaps=0 queue_drops=0 gps_drops=0 sd=1 sd_rows=13356 sd_errors=0"
+  },
+  {
+    "elapsed_s": 92.681,
+    "device": "sony",
+    "line": "# gps_seq=108 fix=1 satellites=0 visible=3 max_signal=30.4 flags=12 tx_bytes=6912 tx_errors=0"
+  },
+  {
+    "elapsed_s": 92.841,
+    "device": "pico",
+    "line": "# sync=0 packets=0 pps=0 sd_rows=0 sd_errors=1 imu=0 heap=422856"
+  },
+  {
+    "elapsed_s": 93.694,
+    "device": "sony",
+    "line": "# imu=13367 imu_errors=0 gaps=0 queue_drops=0 gps_drops=0 sd=1 sd_rows=13478 sd_errors=0"
+  },
+  {
+    "elapsed_s": 93.694,
+    "device": "sony",
+    "line": "# gps_seq=109 fix=1 satellites=0 visible=3 max_signal=30.2 flags=12 tx_bytes=6976 tx_errors=0"
+  },
+  {
+    "elapsed_s": 93.855,
+    "device": "pico",
+    "line": "# sync=0 packets=0 pps=0 sd_rows=0 sd_errors=1 imu=0 heap=422856"
+  },
+  {
+    "elapsed_s": 94.698,
+    "device": "sony",
+    "line": "# imu=13488 imu_errors=0 gaps=0 queue_drops=0 gps_drops=0 sd=1 sd_rows=13600 sd_errors=0"
+  },
+  {
+    "elapsed_s": 94.698,
+    "device": "sony",
+    "line": "# gps_seq=110 fix=1 satellites=0 visible=2 max_signal=30.4 flags=12 tx_bytes=7040 tx_errors=0"
+  },
+  {
+    "elapsed_s": 94.858,
+    "device": "pico",
+    "line": "# sync=0 packets=0 pps=0 sd_rows=0 sd_errors=1 imu=0 heap=422856"
+  },
+  {
+    "elapsed_s": 95.71,
+    "device": "sony",
+    "line": "# imu=13608 imu_errors=0 gaps=0 queue_drops=0 gps_drops=0 sd=1 sd_rows=13721 sd_errors=0"
+  },
+  {
+    "elapsed_s": 95.71,
+    "device": "sony",
+    "line": "# gps_seq=111 fix=1 satellites=0 visible=2 max_signal=30.3 flags=12 tx_bytes=7104 tx_errors=0"
+  },
+  {
+    "elapsed_s": 95.857,
+    "device": "pico",
+    "line": "# sync=0 packets=0 pps=0 sd_rows=0 sd_errors=1 imu=0 heap=422856"
+  },
+  {
+    "elapsed_s": 96.694,
+    "device": "sony",
+    "line": "# imu=13729 imu_errors=0 gaps=0 queue_drops=0 gps_drops=0 sd=1 sd_rows=13843 sd_errors=0"
+  },
+  {
+    "elapsed_s": 96.694,
+    "device": "sony",
+    "line": "# gps_seq=112 fix=1 satellites=0 visible=2 max_signal=30.3 flags=12 tx_bytes=7168 tx_errors=0"
+  },
+  {
+    "elapsed_s": 96.856,
+    "device": "pico",
+    "line": "# sync=0 packets=0 pps=0 sd_rows=0 sd_errors=1 imu=0 heap=422856"
+  },
+  {
+    "elapsed_s": 97.712,
+    "device": "sony",
+    "line": "# imu=13850 imu_errors=0 gaps=0 queue_drops=0 gps_drops=0 sd=1 sd_rows=13965 sd_errors=0"
+  },
+  {
+    "elapsed_s": 97.712,
+    "device": "sony",
+    "line": "# gps_seq=113 fix=1 satellites=0 visible=4 max_signal=30.1 flags=12 tx_bytes=7232 tx_errors=0"
+  },
+  {
+    "elapsed_s": 97.854,
+    "device": "pico",
+    "line": "# sync=0 packets=0 pps=0 sd_rows=0 sd_errors=1 imu=0 heap=422856"
+  },
+  {
+    "elapsed_s": 98.695,
+    "device": "sony",
+    "line": "# imu=13971 imu_errors=0 gaps=0 queue_drops=0 gps_drops=0 sd=1 sd_rows=14087 sd_errors=0"
+  },
+  {
+    "elapsed_s": 98.695,
+    "device": "sony",
+    "line": "# gps_seq=114 fix=1 satellites=0 visible=4 max_signal=30.5 flags=12 tx_bytes=7296 tx_errors=0"
+  },
+  {
+    "elapsed_s": 98.856,
+    "device": "pico",
+    "line": "# sync=0 packets=0 pps=0 sd_rows=0 sd_errors=1 imu=0 heap=422856"
+  },
+  {
+    "elapsed_s": 99.69,
+    "device": "sony",
+    "line": "# imu=14091 imu_errors=0 gaps=0 queue_drops=0 gps_drops=0 sd=1 sd_rows=14208 sd_errors=0"
+  },
+  {
+    "elapsed_s": 99.69,
+    "device": "sony",
+    "line": "# gps_seq=115 fix=1 satellites=0 visible=3 max_signal=30.5 flags=12 tx_bytes=7360 tx_errors=0"
+  },
+  {
+    "elapsed_s": 99.856,
+    "device": "pico",
+    "line": "# sync=0 packets=0 pps=0 sd_rows=0 sd_errors=1 imu=0 heap=422856"
+  },
+  {
+    "elapsed_s": 100.712,
+    "device": "pico",
+    "line": "# LINK bytes=14 crc_errors=0 overflows=0 rejected=0 rx_level=1 pps_level=1 last_pps_age_us=0 nav_seq=0 fix=0 satellites=0 flags=0"
+  },
+  {
+    "elapsed_s": 100.712,
+    "device": "pico",
+    "line": "# DIAG power_started=1 buttons_adc=4095 sd_cd=0 sd_code=0x17 sd_data=0x01 ina_ok=1 bus_v=12.14875 current_a=0.076125 alert=1"
+  },
+  {
+    "elapsed_s": 100.712,
+    "device": "pico",
+    "line": "# sync=0 packets=0 PPS=0 period_us=0 uart_age_us=0 heap=422856 sd=MOUNT_FAILED file= rows=0"
+  },
+  {
+    "elapsed_s": 100.713,
+    "device": "sony",
+    "line": "# imu=14212 imu_errors=0 gaps=0 queue_drops=0 gps_drops=0 sd=1 sd_rows=14330 sd_errors=0"
+  },
+  {
+    "elapsed_s": 100.713,
+    "device": "sony",
+    "line": "# gps_seq=116 fix=1 satellites=0 visible=3 max_signal=30.3 flags=12 tx_bytes=7424 tx_errors=0"
+  },
+  {
+    "elapsed_s": 100.855,
+    "device": "pico",
+    "line": "# sync=0 packets=0 pps=0 sd_rows=0 sd_errors=1 imu=0 heap=422856"
+  },
+  {
+    "elapsed_s": 101.692,
+    "device": "sony",
+    "line": "# imu=14333 imu_errors=0 gaps=0 queue_drops=0 gps_drops=0 sd=1 sd_rows=14452 sd_errors=0"
+  },
+  {
+    "elapsed_s": 101.692,
+    "device": "sony",
+    "line": "# gps_seq=117 fix=1 satellites=0 visible=2 max_signal=30.4 flags=12 tx_bytes=7488 tx_errors=0"
+  },
+  {
+    "elapsed_s": 101.855,
+    "device": "pico",
+    "line": "# sync=0 packets=0 pps=0 sd_rows=0 sd_errors=1 imu=0 heap=422856"
+  },
+  {
+    "elapsed_s": 102.697,
+    "device": "sony",
+    "line": "# imu=14454 imu_errors=0 gaps=0 queue_drops=0 gps_drops=0 sd=1 sd_rows=14574 sd_errors=0"
+  },
+  {
+    "elapsed_s": 102.697,
+    "device": "sony",
+    "line": "# gps_seq=118 fix=1 satellites=0 visible=2 max_signal=30.5 flags=12 tx_bytes=7552 tx_errors=0"
+  },
+  {
+    "elapsed_s": 102.855,
+    "device": "pico",
+    "line": "# sync=0 packets=0 pps=0 sd_rows=0 sd_errors=1 imu=0 heap=422856"
+  },
+  {
+    "elapsed_s": 103.696,
+    "device": "sony",
+    "line": "# imu=14575 imu_errors=0 gaps=0 queue_drops=0 gps_drops=0 sd=1 sd_rows=14696 sd_errors=0"
+  },
+  {
+    "elapsed_s": 103.696,
+    "device": "sony",
+    "line": "# gps_seq=119 fix=1 satellites=0 visible=2 max_signal=30.6 flags=12 tx_bytes=7616 tx_errors=0"
+  },
+  {
+    "elapsed_s": 103.855,
+    "device": "pico",
+    "line": "# sync=0 packets=0 pps=0 sd_rows=0 sd_errors=1 imu=0 heap=422856"
+  },
+  {
+    "elapsed_s": 104.667,
+    "device": "sony",
+    "line": "# imu=14695 imu_errors=0 gaps=0 queue_drops=0 gps_drops=0 sd=1 sd_rows=14817 sd_errors=0"
+  },
+  {
+    "elapsed_s": 104.667,
+    "device": "sony",
+    "line": "# gps_seq=120 fix=1 satellites=0 visible=3 max_signal=30.5 flags=12 tx_bytes=7680 tx_errors=0"
+  },
+  {
+    "elapsed_s": 104.855,
+    "device": "pico",
+    "line": "# sync=0 packets=0 pps=0 sd_rows=0 sd_errors=1 imu=0 heap=422856"
+  },
+  {
+    "elapsed_s": 105.695,
+    "device": "sony",
+    "line": "# imu=14816 imu_errors=0 gaps=0 queue_drops=0 gps_drops=0 sd=1 sd_rows=14939 sd_errors=0"
+  },
+  {
+    "elapsed_s": 105.695,
+    "device": "sony",
+    "line": "# gps_seq=121 fix=1 satellites=0 visible=3 max_signal=30.4 flags=12 tx_bytes=7744 tx_errors=0"
+  },
+  {
+    "elapsed_s": 105.856,
+    "device": "pico",
+    "line": "# sync=0 packets=0 pps=0 sd_rows=0 sd_errors=1 imu=0 heap=422856"
+  },
+  {
+    "elapsed_s": 106.683,
+    "device": "sony",
+    "line": "# imu=14937 imu_errors=0 gaps=0 queue_drops=0 gps_drops=0 sd=1 sd_rows=15061 sd_errors=0"
+  },
+  {
+    "elapsed_s": 106.683,
+    "device": "sony",
+    "line": "# gps_seq=122 fix=1 satellites=0 visible=2 max_signal=30.7 flags=12 tx_bytes=7808 tx_errors=0"
+  },
+  {
+    "elapsed_s": 106.855,
+    "device": "pico",
+    "line": "# sync=0 packets=0 pps=0 sd_rows=0 sd_errors=1 imu=0 heap=422856"
+  },
+  {
+    "elapsed_s": 107.711,
+    "device": "sony",
+    "line": "# imu=15058 imu_errors=0 gaps=0 queue_drops=0 gps_drops=0 sd=1 sd_rows=15183 sd_errors=0"
+  },
+  {
+    "elapsed_s": 107.711,
+    "device": "sony",
+    "line": "# gps_seq=123 fix=1 satellites=0 visible=3 max_signal=30.7 flags=12 tx_bytes=7872 tx_errors=0"
+  },
+  {
+    "elapsed_s": 107.856,
+    "device": "pico",
+    "line": "# sync=0 packets=0 pps=0 sd_rows=0 sd_errors=1 imu=0 heap=422856"
+  },
+  {
+    "elapsed_s": 108.696,
+    "device": "sony",
+    "line": "# imu=15178 imu_errors=0 gaps=0 queue_drops=0 gps_drops=0 sd=1 sd_rows=15304 sd_errors=0"
+  },
+  {
+    "elapsed_s": 108.696,
+    "device": "sony",
+    "line": "# gps_seq=124 fix=1 satellites=0 visible=3 max_signal=30.5 flags=12 tx_bytes=7936 tx_errors=0"
+  },
+  {
+    "elapsed_s": 108.855,
+    "device": "pico",
+    "line": "# sync=0 packets=0 pps=0 sd_rows=0 sd_errors=1 imu=0 heap=422856"
+  },
+  {
+    "elapsed_s": 109.688,
+    "device": "sony",
+    "line": "# imu=15299 imu_errors=0 gaps=0 queue_drops=0 gps_drops=0 sd=1 sd_rows=15426 sd_errors=0"
+  },
+  {
+    "elapsed_s": 109.688,
+    "device": "sony",
+    "line": "# gps_seq=125 fix=1 satellites=0 visible=2 max_signal=30.8 flags=12 tx_bytes=8000 tx_errors=0"
+  },
+  {
+    "elapsed_s": 109.858,
+    "device": "pico",
+    "line": "# sync=0 packets=0 pps=0 sd_rows=0 sd_errors=1 imu=0 heap=422856"
+  },
+  {
+    "elapsed_s": 110.681,
+    "device": "sony",
+    "line": "# imu=15420 imu_errors=0 gaps=0 queue_drops=0 gps_drops=0 sd=1 sd_rows=15548 sd_errors=0"
+  },
+  {
+    "elapsed_s": 110.681,
+    "device": "sony",
+    "line": "# gps_seq=126 fix=1 satellites=0 visible=2 max_signal=30.6 flags=12 tx_bytes=8064 tx_errors=0"
+  },
+  {
+    "elapsed_s": 110.805,
+    "device": "pico",
+    "line": "# LINK bytes=14 crc_errors=0 overflows=0 rejected=0 rx_level=1 pps_level=1 last_pps_age_us=0 nav_seq=0 fix=0 satellites=0 flags=0"
+  },
+  {
+    "elapsed_s": 110.805,
+    "device": "pico",
+    "line": "# DIAG power_started=1 buttons_adc=4095 sd_cd=0 sd_code=0x17 sd_data=0x01 ina_ok=1 bus_v=12.14875 current_a=0.075875 alert=1"
+  },
+  {
+    "elapsed_s": 110.805,
+    "device": "pico",
+    "line": "# sync=0 packets=0 PPS=0 period_us=0 uart_age_us=0 heap=422856 sd=MOUNT_FAILED file= rows=0"
+  },
+  {
+    "elapsed_s": 110.805,
+    "device": "pico",
+    "line": "# sync=0 packets=0 pps=0 sd_rows=0 sd_errors=1 imu=0 heap=422856"
+  },
+  {
+    "elapsed_s": 111.715,
+    "device": "sony",
+    "line": "# imu=15541 imu_errors=0 gaps=0 queue_drops=0 gps_drops=0 sd=1 sd_rows=15670 sd_errors=0"
+  },
+  {
+    "elapsed_s": 111.715,
+    "device": "sony",
+    "line": "# gps_seq=127 fix=1 satellites=0 visible=2 max_signal=31.1 flags=12 tx_bytes=8128 tx_errors=0"
+  },
+  {
+    "elapsed_s": 111.851,
+    "device": "pico",
+    "line": "# sync=0 packets=0 pps=0 sd_rows=0 sd_errors=1 imu=0 heap=422856"
+  },
+  {
+    "elapsed_s": 112.671,
+    "device": "sony",
+    "line": "# imu=15662 imu_errors=0 gaps=0 queue_drops=0 gps_drops=0 sd=1 sd_rows=15792 sd_errors=0"
+  },
+  {
+    "elapsed_s": 112.671,
+    "device": "sony",
+    "line": "# gps_seq=128 fix=1 satellites=0 visible=3 max_signal=31.2 flags=12 tx_bytes=8192 tx_errors=0"
+  },
+  {
+    "elapsed_s": 112.849,
+    "device": "pico",
+    "line": "# sync=0 packets=0 pps=0 sd_rows=0 sd_errors=1 imu=0 heap=422856"
+  },
+  {
+    "elapsed_s": 113.673,
+    "device": "sony",
+    "line": "# imu=15782 imu_errors=0 gaps=0 queue_drops=0 gps_drops=0 sd=1 sd_rows=15913 sd_errors=0"
+  },
+  {
+    "elapsed_s": 113.673,
+    "device": "sony",
+    "line": "# gps_seq=129 fix=1 satellites=0 visible=3 max_signal=30.8 flags=12 tx_bytes=8256 tx_errors=0"
+  },
+  {
+    "elapsed_s": 113.85,
+    "device": "pico",
+    "line": "# sync=0 packets=0 pps=0 sd_rows=0 sd_errors=1 imu=0 heap=422856"
+  },
+  {
+    "elapsed_s": 114.673,
+    "device": "sony",
+    "line": "# imu=15903 imu_errors=0 gaps=0 queue_drops=0 gps_drops=0 sd=1 sd_rows=16035 sd_errors=0"
+  },
+  {
+    "elapsed_s": 114.673,
+    "device": "sony",
+    "line": "# gps_seq=130 fix=1 satellites=0 visible=2 max_signal=30.8 flags=12 tx_bytes=8320 tx_errors=0"
+  },
+  {
+    "elapsed_s": 114.85,
+    "device": "pico",
+    "line": "# sync=0 packets=0 pps=0 sd_rows=0 sd_errors=1 imu=0 heap=422856"
+  },
+  {
+    "elapsed_s": 115.675,
+    "device": "sony",
+    "line": "# imu=16024 imu_errors=0 gaps=0 queue_drops=0 gps_drops=0 sd=1 sd_rows=16157 sd_errors=0"
+  },
+  {
+    "elapsed_s": 115.675,
+    "device": "sony",
+    "line": "# gps_seq=131 fix=1 satellites=0 visible=2 max_signal=30.8 flags=12 tx_bytes=8384 tx_errors=0"
+  },
+  {
+    "elapsed_s": 115.851,
+    "device": "pico",
+    "line": "# sync=0 packets=0 pps=0 sd_rows=0 sd_errors=1 imu=0 heap=422856"
+  },
+  {
+    "elapsed_s": 116.674,
+    "device": "sony",
+    "line": "# imu=16145 imu_errors=0 gaps=0 queue_drops=0 gps_drops=0 sd=1 sd_rows=16279 sd_errors=0"
+  },
+  {
+    "elapsed_s": 116.674,
+    "device": "sony",
+    "line": "# gps_seq=132 fix=1 satellites=0 visible=2 max_signal=31.0 flags=12 tx_bytes=8448 tx_errors=0"
+  },
+  {
+    "elapsed_s": 116.85,
+    "device": "pico",
+    "line": "# sync=0 packets=0 pps=0 sd_rows=0 sd_errors=1 imu=0 heap=422856"
+  },
+  {
+    "elapsed_s": 117.673,
+    "device": "sony",
+    "line": "# imu=16265 imu_errors=0 gaps=0 queue_drops=0 gps_drops=0 sd=1 sd_rows=16400 sd_errors=0"
+  },
+  {
+    "elapsed_s": 117.673,
+    "device": "sony",
+    "line": "# gps_seq=133 fix=1 satellites=0 visible=2 max_signal=31.4 flags=12 tx_bytes=8512 tx_errors=0"
+  },
+  {
+    "elapsed_s": 117.849,
+    "device": "pico",
+    "line": "# sync=0 packets=0 pps=0 sd_rows=0 sd_errors=1 imu=0 heap=422856"
+  },
+  {
+    "elapsed_s": 118.658,
+    "device": "sony",
+    "line": "# imu=16386 imu_errors=0 gaps=0 queue_drops=0 gps_drops=0 sd=1 sd_rows=16522 sd_errors=0"
+  },
+  {
+    "elapsed_s": 118.722,
+    "device": "sony",
+    "line": "# gps_seq=134 fix=1 satellites=0 visible=2 max_signal=31.5 flags=12 tx_bytes=8576 tx_errors=0"
+  },
+  {
+    "elapsed_s": 118.851,
+    "device": "pico",
+    "line": "# sync=0 packets=0 pps=0 sd_rows=0 sd_errors=1 imu=0 heap=422856"
+  },
+  {
+    "elapsed_s": 119.677,
+    "device": "sony",
+    "line": "# imu=16507 imu_errors=0 gaps=0 queue_drops=0 gps_drops=0 sd=1 sd_rows=16644 sd_errors=0"
+  },
+  {
+    "elapsed_s": 119.677,
+    "device": "sony",
+    "line": "# gps_seq=135 fix=1 satellites=0 visible=2 max_signal=31.6 flags=12 tx_bytes=8640 tx_errors=0"
+  },
+  {
+    "elapsed_s": 119.85,
+    "device": "pico",
+    "line": "# sync=0 packets=0 pps=0 sd_rows=0 sd_errors=1 imu=0 heap=422856"
+  },
+  {
+    "elapsed_s": 120.668,
+    "device": "sony",
+    "line": "# imu=16628 imu_errors=0 gaps=0 queue_drops=0 gps_drops=0 sd=1 sd_rows=16766 sd_errors=0"
+  },
+  {
+    "elapsed_s": 120.668,
+    "device": "sony",
+    "line": "# gps_seq=136 fix=1 satellites=0 visible=2 max_signal=32.0 flags=12 tx_bytes=8704 tx_errors=0"
+  },
+  {
+    "elapsed_s": 120.854,
+    "device": "pico",
+    "line": "# sync=0 packets=0 pps=0 sd_rows=0 sd_errors=1 imu=0 heap=422856"
+  },
+  {
+    "elapsed_s": 120.92,
+    "device": "pico",
+    "line": "# LINK bytes=14 crc_errors=0 overflows=0 rejected=0 rx_level=1 pps_level=1 last_pps_age_us=0 nav_seq=0 fix=0 satellites=0 flags=0"
+  },
+  {
+    "elapsed_s": 120.92,
+    "device": "pico",
+    "line": "# DIAG power_started=1 buttons_adc=4095 sd_cd=0 sd_code=0x17 sd_data=0x01 ina_ok=1 bus_v=12.14875 current_a=0.076125 alert=1"
+  },
+  {
+    "elapsed_s": 120.92,
+    "device": "pico",
+    "line": "# sync=0 packets=0 PPS=0 period_us=0 uart_age_us=0 heap=422856 sd=MOUNT_FAILED file= rows=0"
+  },
+  {
+    "elapsed_s": 121.717,
+    "device": "sony",
+    "line": "# imu=16748 imu_errors=0 gaps=0 queue_drops=0 gps_drops=0 sd=1 sd_rows=16887 sd_errors=0"
+  },
+  {
+    "elapsed_s": 121.717,
+    "device": "sony",
+    "line": "# gps_seq=137 fix=1 satellites=0 visible=3 max_signal=31.2 flags=12 tx_bytes=8768 tx_errors=0"
+  },
+  {
+    "elapsed_s": 121.857,
+    "device": "pico",
+    "line": "# sync=0 packets=0 pps=0 sd_rows=0 sd_errors=1 imu=0 heap=422856"
+  },
+  {
+    "elapsed_s": 122.665,
+    "device": "sony",
+    "line": "# imu=16869 imu_errors=0 gaps=0 queue_drops=0 gps_drops=0 sd=1 sd_rows=17009 sd_errors=0"
+  },
+  {
+    "elapsed_s": 122.665,
+    "device": "sony",
+    "line": "# gps_seq=138 fix=1 satellites=0 visible=3 max_signal=32.0 flags=12 tx_bytes=8832 tx_errors=0"
+  },
+  {
+    "elapsed_s": 122.854,
+    "device": "pico",
+    "line": "# sync=0 packets=0 pps=0 sd_rows=0 sd_errors=1 imu=0 heap=422856"
+  },
+  {
+    "elapsed_s": 123.71,
+    "device": "sony",
+    "line": "# imu=16990 imu_errors=0 gaps=0 queue_drops=0 gps_drops=0 sd=1 sd_rows=17131 sd_errors=0"
+  },
+  {
+    "elapsed_s": 123.71,
+    "device": "sony",
+    "line": "# gps_seq=139 fix=1 satellites=0 visible=2 max_signal=32.1 flags=12 tx_bytes=8896 tx_errors=0"
+  },
+  {
+    "elapsed_s": 123.854,
+    "device": "pico",
+    "line": "# sync=0 packets=0 pps=0 sd_rows=0 sd_errors=1 imu=0 heap=422856"
+  },
+  {
+    "elapsed_s": 124.693,
+    "device": "sony",
+    "line": "# imu=17111 imu_errors=0 gaps=0 queue_drops=0 gps_drops=0 sd=1 sd_rows=17253 sd_errors=0"
+  },
+  {
+    "elapsed_s": 124.693,
+    "device": "sony",
+    "line": "# gps_seq=140 fix=1 satellites=0 visible=2 max_signal=32.5 flags=12 tx_bytes=8960 tx_errors=0"
+  },
+  {
+    "elapsed_s": 124.854,
+    "device": "pico",
+    "line": "# sync=0 packets=0 pps=0 sd_rows=0 sd_errors=1 imu=0 heap=422856"
+  },
+  {
+    "elapsed_s": 125.695,
+    "device": "sony",
+    "line": "# imu=17231 imu_errors=0 gaps=0 queue_drops=0 gps_drops=0 sd=1 sd_rows=17374 sd_errors=0"
+  },
+  {
+    "elapsed_s": 125.695,
+    "device": "sony",
+    "line": "# gps_seq=141 fix=1 satellites=0 visible=3 max_signal=32.0 flags=12 tx_bytes=9024 tx_errors=0"
+  },
+  {
+    "elapsed_s": 125.853,
+    "device": "pico",
+    "line": "# sync=0 packets=0 pps=0 sd_rows=0 sd_errors=1 imu=0 heap=422856"
+  },
+  {
+    "elapsed_s": 126.697,
+    "device": "sony",
+    "line": "# imu=17352 imu_errors=0 gaps=0 queue_drops=0 gps_drops=0 sd=1 sd_rows=17496 sd_errors=0"
+  },
+  {
+    "elapsed_s": 126.697,
+    "device": "sony",
+    "line": "# gps_seq=142 fix=1 satellites=0 visible=3 max_signal=32.4 flags=12 tx_bytes=9088 tx_errors=0"
+  },
+  {
+    "elapsed_s": 126.854,
+    "device": "pico",
+    "line": "# sync=0 packets=0 pps=0 sd_rows=0 sd_errors=1 imu=0 heap=422856"
+  },
+  {
+    "elapsed_s": 127.705,
+    "device": "sony",
+    "line": "# imu=17473 imu_errors=0 gaps=0 queue_drops=0 gps_drops=0 sd=1 sd_rows=17618 sd_errors=0"
+  },
+  {
+    "elapsed_s": 127.705,
+    "device": "sony",
+    "line": "# gps_seq=143 fix=1 satellites=0 visible=2 max_signal=32.3 flags=12 tx_bytes=9152 tx_errors=0"
+  },
+  {
+    "elapsed_s": 127.856,
+    "device": "pico",
+    "line": "# sync=0 packets=0 pps=0 sd_rows=0 sd_errors=1 imu=0 heap=422856"
+  },
+  {
+    "elapsed_s": 128.68,
+    "device": "sony",
+    "line": "# imu=17594 imu_errors=0 gaps=0 queue_drops=0 gps_drops=0 sd=1 sd_rows=17740 sd_errors=0"
+  },
+  {
+    "elapsed_s": 128.68,
+    "device": "sony",
+    "line": "# gps_seq=144 fix=1 satellites=0 visible=3 max_signal=32.3 flags=12 tx_bytes=9216 tx_errors=0"
+  },
+  {
+    "elapsed_s": 128.853,
+    "device": "pico",
+    "line": "# sync=0 packets=0 pps=0 sd_rows=0 sd_errors=1 imu=0 heap=422856"
+  },
+  {
+    "elapsed_s": 129.681,
+    "device": "sony",
+    "line": "# imu=17715 imu_errors=0 gaps=0 queue_drops=0 gps_drops=0 sd=1 sd_rows=17862 sd_errors=0"
+  },
+  {
+    "elapsed_s": 129.681,
+    "device": "sony",
+    "line": "# gps_seq=145 fix=1 satellites=0 visible=3 max_signal=32.3 flags=12 tx_bytes=9280 tx_errors=0"
+  },
+  {
+    "elapsed_s": 129.853,
+    "device": "pico",
+    "line": "# sync=0 packets=0 pps=0 sd_rows=0 sd_errors=1 imu=0 heap=422856"
+  },
+  {
+    "elapsed_s": 130.695,
+    "device": "sony",
+    "line": "# imu=17835 imu_errors=0 gaps=0 queue_drops=0 gps_drops=0 sd=1 sd_rows=17983 sd_errors=0"
+  },
+  {
+    "elapsed_s": 130.695,
+    "device": "sony",
+    "line": "# gps_seq=146 fix=1 satellites=0 visible=4 max_signal=31.9 flags=12 tx_bytes=9344 tx_errors=0"
+  },
+  {
+    "elapsed_s": 130.854,
+    "device": "pico",
+    "line": "# sync=0 packets=0 pps=0 sd_rows=0 sd_errors=1 imu=0 heap=422856"
+  },
+  {
+    "elapsed_s": 130.921,
+    "device": "pico",
+    "line": "# LINK bytes=14 crc_errors=0 overflows=0 rejected=0 rx_level=1 pps_level=1 last_pps_age_us=0 nav_seq=0 fix=0 satellites=0 flags=0"
+  },
+  {
+    "elapsed_s": 130.921,
+    "device": "pico",
+    "line": "# DIAG power_started=1 buttons_adc=4095 sd_cd=0 sd_code=0x17 sd_data=0x01 ina_ok=1 bus_v=12.14875 current_a=0.076250 alert=1"
+  },
+  {
+    "elapsed_s": 130.921,
+    "device": "pico",
+    "line": "# sync=0 packets=0 PPS=0 period_us=0 uart_age_us=0 heap=422856 sd=MOUNT_FAILED file= rows=0"
+  },
+  {
+    "elapsed_s": 131.716,
+    "device": "sony",
+    "line": "# imu=17956 imu_errors=0 gaps=0 queue_drops=0 gps_drops=0 sd=1 sd_rows=18105 sd_errors=0"
+  },
+  {
+    "elapsed_s": 131.716,
+    "device": "sony",
+    "line": "# gps_seq=147 fix=1 satellites=0 visible=4 max_signal=32.4 flags=12 tx_bytes=9408 tx_errors=0"
+  },
+  {
+    "elapsed_s": 131.856,
+    "device": "pico",
+    "line": "# sync=0 packets=0 pps=0 sd_rows=0 sd_errors=1 imu=0 heap=422856"
+  },
+  {
+    "elapsed_s": 132.697,
+    "device": "sony",
+    "line": "# imu=18077 imu_errors=0 gaps=0 queue_drops=0 gps_drops=0 sd=1 sd_rows=18227 sd_errors=0"
+  },
+  {
+    "elapsed_s": 132.697,
+    "device": "sony",
+    "line": "# gps_seq=148 fix=1 satellites=0 visible=2 max_signal=32.5 flags=12 tx_bytes=9472 tx_errors=0"
+  },
+  {
+    "elapsed_s": 132.853,
+    "device": "pico",
+    "line": "# sync=0 packets=0 pps=0 sd_rows=0 sd_errors=1 imu=0 heap=422856"
+  },
+  {
+    "elapsed_s": 133.709,
+    "device": "sony",
+    "line": "# imu=18198 imu_errors=0 gaps=0 queue_drops=0 gps_drops=0 sd=1 sd_rows=18349 sd_errors=0"
+  },
+  {
+    "elapsed_s": 133.709,
+    "device": "sony",
+    "line": "# gps_seq=149 fix=1 satellites=0 visible=2 max_signal=32.9 flags=12 tx_bytes=9536 tx_errors=0"
+  },
+  {
+    "elapsed_s": 133.855,
+    "device": "pico",
+    "line": "# sync=0 packets=0 pps=0 sd_rows=0 sd_errors=1 imu=0 heap=422856"
+  },
+  {
+    "elapsed_s": 134.696,
+    "device": "sony",
+    "line": "# imu=18318 imu_errors=0 gaps=0 queue_drops=0 gps_drops=0 sd=1 sd_rows=18470 sd_errors=0"
+  },
+  {
+    "elapsed_s": 134.696,
+    "device": "sony",
+    "line": "# gps_seq=150 fix=1 satellites=0 visible=2 max_signal=32.9 flags=12 tx_bytes=9600 tx_errors=0"
+  },
+  {
+    "elapsed_s": 134.854,
+    "device": "pico",
+    "line": "# sync=0 packets=0 pps=0 sd_rows=0 sd_errors=1 imu=0 heap=422856"
+  },
+  {
+    "elapsed_s": 135.69,
+    "device": "sony",
+    "line": "# imu=18439 imu_errors=0 gaps=0 queue_drops=0 gps_drops=0 sd=1 sd_rows=18592 sd_errors=0"
+  },
+  {
+    "elapsed_s": 135.69,
+    "device": "sony",
+    "line": "# gps_seq=151 fix=1 satellites=0 visible=2 max_signal=32.6 flags=12 tx_bytes=9664 tx_errors=0"
+  },
+  {
+    "elapsed_s": 135.854,
+    "device": "pico",
+    "line": "# sync=0 packets=0 pps=0 sd_rows=0 sd_errors=1 imu=0 heap=422856"
+  },
+  {
+    "elapsed_s": 136.694,
+    "device": "sony",
+    "line": "# imu=18560 imu_errors=0 gaps=0 queue_drops=0 gps_drops=0 sd=1 sd_rows=18714 sd_errors=0"
+  },
+  {
+    "elapsed_s": 136.694,
+    "device": "sony",
+    "line": "# gps_seq=152 fix=1 satellites=0 visible=2 max_signal=33.2 flags=12 tx_bytes=9728 tx_errors=0"
+  },
+  {
+    "elapsed_s": 136.851,
+    "device": "pico",
+    "line": "# sync=0 packets=0 pps=0 sd_rows=0 sd_errors=1 imu=0 heap=422856"
+  },
+  {
+    "elapsed_s": 137.699,
+    "device": "sony",
+    "line": "# imu=18681 imu_errors=0 gaps=0 queue_drops=0 gps_drops=0 sd=1 sd_rows=18836 sd_errors=0"
+  },
+  {
+    "elapsed_s": 137.699,
+    "device": "sony",
+    "line": "# gps_seq=153 fix=1 satellites=0 visible=2 max_signal=32.9 flags=12 tx_bytes=9792 tx_errors=0"
+  },
+  {
+    "elapsed_s": 137.854,
+    "device": "pico",
+    "line": "# sync=0 packets=0 pps=0 sd_rows=0 sd_errors=1 imu=0 heap=422856"
+  },
+  {
+    "elapsed_s": 138.695,
+    "device": "sony",
+    "line": "# imu=18802 imu_errors=0 gaps=0 queue_drops=0 gps_drops=0 sd=1 sd_rows=18958 sd_errors=0"
+  },
+  {
+    "elapsed_s": 138.695,
+    "device": "sony",
+    "line": "# gps_seq=154 fix=1 satellites=0 visible=2 max_signal=33.0 flags=12 tx_bytes=9856 tx_errors=0"
+  },
+  {
+    "elapsed_s": 138.857,
+    "device": "pico",
+    "line": "# sync=0 packets=0 pps=0 sd_rows=0 sd_errors=1 imu=0 heap=422856"
+  },
+  {
+    "elapsed_s": 139.71,
+    "device": "sony",
+    "line": "# imu=18922 imu_errors=0 gaps=0 queue_drops=0 gps_drops=0 sd=1 sd_rows=19079 sd_errors=0"
+  },
+  {
+    "elapsed_s": 139.71,
+    "device": "sony",
+    "line": "# gps_seq=155 fix=1 satellites=0 visible=2 max_signal=33.1 flags=12 tx_bytes=9920 tx_errors=0"
+  },
+  {
+    "elapsed_s": 139.854,
+    "device": "pico",
+    "line": "# sync=0 packets=0 pps=0 sd_rows=0 sd_errors=1 imu=0 heap=422856"
+  },
+  {
+    "elapsed_s": 140.68,
+    "device": "sony",
+    "line": "# imu=19043 imu_errors=0 gaps=0 queue_drops=0 gps_drops=0 sd=1 sd_rows=19201 sd_errors=0"
+  },
+  {
+    "elapsed_s": 140.68,
+    "device": "sony",
+    "line": "# gps_seq=156 fix=1 satellites=0 visible=2 max_signal=32.8 flags=12 tx_bytes=9984 tx_errors=0"
+  },
+  {
+    "elapsed_s": 140.854,
+    "device": "pico",
+    "line": "# sync=0 packets=0 pps=0 sd_rows=0 sd_errors=1 imu=0 heap=422856"
+  },
+  {
+    "elapsed_s": 140.986,
+    "device": "pico",
+    "line": "# LINK bytes=14 crc_errors=0 overflows=0 rejected=0 rx_level=1 pps_level=1 last_pps_age_us=0 nav_seq=0 fix=0 satellites=0 flags=0"
+  },
+  {
+    "elapsed_s": 140.986,
+    "device": "pico",
+    "line": "# DIAG power_started=1 buttons_adc=4095 sd_cd=0 sd_code=0x17 sd_data=0x01 ina_ok=1 bus_v=12.14750 current_a=0.079875 alert=1"
+  },
+  {
+    "elapsed_s": 140.986,
+    "device": "pico",
+    "line": "# sync=0 packets=0 PPS=0 period_us=0 uart_age_us=0 heap=422856 sd=MOUNT_FAILED file= rows=0"
+  },
+  {
+    "elapsed_s": 141.693,
+    "device": "sony",
+    "line": "# imu=19164 imu_errors=0 gaps=0 queue_drops=0 gps_drops=0 sd=1 sd_rows=19323 sd_errors=0"
+  },
+  {
+    "elapsed_s": 141.693,
+    "device": "sony",
+    "line": "# gps_seq=157 fix=1 satellites=0 visible=2 max_signal=33.1 flags=12 tx_bytes=10048 tx_errors=0"
+  },
+  {
+    "elapsed_s": 141.854,
+    "device": "pico",
+    "line": "# sync=0 packets=0 pps=0 sd_rows=0 sd_errors=1 imu=0 heap=422856"
+  },
+  {
+    "elapsed_s": 142.681,
+    "device": "sony",
+    "line": "# imu=19285 imu_errors=0 gaps=0 queue_drops=0 gps_drops=0 sd=1 sd_rows=19445 sd_errors=0"
+  },
+  {
+    "elapsed_s": 142.681,
+    "device": "sony",
+    "line": "# gps_seq=158 fix=1 satellites=0 visible=2 max_signal=33.3 flags=12 tx_bytes=10112 tx_errors=0"
+  },
+  {
+    "elapsed_s": 142.854,
+    "device": "pico",
+    "line": "# sync=0 packets=0 pps=0 sd_rows=0 sd_errors=1 imu=0 heap=422856"
+  },
+  {
+    "elapsed_s": 143.709,
+    "device": "sony",
+    "line": "# imu=19405 imu_errors=0 gaps=0 queue_drops=0 gps_drops=0 sd=1 sd_rows=19566 sd_errors=0"
+  },
+  {
+    "elapsed_s": 143.709,
+    "device": "sony",
+    "line": "# gps_seq=159 fix=1 satellites=0 visible=2 max_signal=33.6 flags=12 tx_bytes=10176 tx_errors=0"
+  },
+  {
+    "elapsed_s": 143.853,
+    "device": "pico",
+    "line": "# sync=0 packets=0 pps=0 sd_rows=0 sd_errors=1 imu=0 heap=422856"
+  },
+  {
+    "elapsed_s": 144.696,
+    "device": "sony",
+    "line": "# imu=19526 imu_errors=0 gaps=0 queue_drops=0 gps_drops=0 sd=1 sd_rows=19688 sd_errors=0"
+  },
+  {
+    "elapsed_s": 144.696,
+    "device": "sony",
+    "line": "# gps_seq=160 fix=1 satellites=0 visible=2 max_signal=33.6 flags=12 tx_bytes=10240 tx_errors=0"
+  },
+  {
+    "elapsed_s": 144.855,
+    "device": "pico",
+    "line": "# sync=0 packets=0 pps=0 sd_rows=0 sd_errors=1 imu=0 heap=422856"
+  },
+  {
+    "elapsed_s": 145.693,
+    "device": "sony",
+    "line": "# imu=19647 imu_errors=0 gaps=0 queue_drops=0 gps_drops=0 sd=1 sd_rows=19810 sd_errors=0"
+  },
+  {
+    "elapsed_s": 145.693,
+    "device": "sony",
+    "line": "# gps_seq=161 fix=1 satellites=0 visible=2 max_signal=33.5 flags=12 tx_bytes=10304 tx_errors=0"
+  },
+  {
+    "elapsed_s": 145.854,
+    "device": "pico",
+    "line": "# sync=0 packets=0 pps=0 sd_rows=0 sd_errors=1 imu=0 heap=422856"
+  },
+  {
+    "elapsed_s": 146.695,
+    "device": "sony",
+    "line": "# imu=19768 imu_errors=0 gaps=0 queue_drops=0 gps_drops=0 sd=1 sd_rows=19932 sd_errors=0"
+  },
+  {
+    "elapsed_s": 146.695,
+    "device": "sony",
+    "line": "# gps_seq=162 fix=1 satellites=0 visible=2 max_signal=33.7 flags=12 tx_bytes=10368 tx_errors=0"
+  },
+  {
+    "elapsed_s": 146.854,
+    "device": "pico",
+    "line": "# sync=0 packets=0 pps=0 sd_rows=0 sd_errors=1 imu=0 heap=422856"
+  },
+  {
+    "elapsed_s": 147.707,
+    "device": "sony",
+    "line": "# imu=19889 imu_errors=0 gaps=0 queue_drops=0 gps_drops=0 sd=1 sd_rows=20054 sd_errors=0"
+  },
+  {
+    "elapsed_s": 147.707,
+    "device": "sony",
+    "line": "# gps_seq=163 fix=1 satellites=0 visible=3 max_signal=33.9 flags=12 tx_bytes=10432 tx_errors=0"
+  },
+  {
+    "elapsed_s": 147.857,
+    "device": "pico",
+    "line": "# sync=0 packets=0 pps=0 sd_rows=0 sd_errors=1 imu=0 heap=422856"
+  },
+  {
+    "elapsed_s": 148.698,
+    "device": "sony",
+    "line": "# imu=20009 imu_errors=0 gaps=0 queue_drops=0 gps_drops=0 sd=1 sd_rows=20175 sd_errors=0"
+  },
+  {
+    "elapsed_s": 148.698,
+    "device": "sony",
+    "line": "# gps_seq=164 fix=1 satellites=0 visible=4 max_signal=33.6 flags=12 tx_bytes=10496 tx_errors=0"
+  },
+  {
+    "elapsed_s": 148.852,
+    "device": "pico",
+    "line": "# sync=0 packets=0 pps=0 sd_rows=0 sd_errors=1 imu=0 heap=422856"
+  },
+  {
+    "elapsed_s": 149.708,
+    "device": "sony",
+    "line": "# imu=20130 imu_errors=0 gaps=0 queue_drops=0 gps_drops=0 sd=1 sd_rows=20297 sd_errors=0"
+  },
+  {
+    "elapsed_s": 149.708,
+    "device": "sony",
+    "line": "# gps_seq=165 fix=1 satellites=0 visible=3 max_signal=33.6 flags=12 tx_bytes=10560 tx_errors=0"
+  },
+  {
+    "elapsed_s": 149.854,
+    "device": "pico",
+    "line": "# sync=0 packets=0 pps=0 sd_rows=0 sd_errors=1 imu=0 heap=422856"
+  },
+  {
+    "elapsed_s": 150.697,
+    "device": "sony",
+    "line": "# imu=20251 imu_errors=0 gaps=0 queue_drops=0 gps_drops=0 sd=1 sd_rows=20419 sd_errors=0"
+  },
+  {
+    "elapsed_s": 150.697,
+    "device": "sony",
+    "line": "# gps_seq=166 fix=1 satellites=0 visible=2 max_signal=33.3 flags=12 tx_bytes=10624 tx_errors=0"
+  },
+  {
+    "elapsed_s": 150.853,
+    "device": "pico",
+    "line": "# sync=0 packets=0 pps=0 sd_rows=0 sd_errors=1 imu=0 heap=422856"
+  },
+  {
+    "elapsed_s": 151.116,
+    "device": "pico",
+    "line": "# LINK bytes=14 crc_errors=0 overflows=0 rejected=0 rx_level=1 pps_level=1 last_pps_age_us=0 nav_seq=0 fix=0 satellites=0 flags=0"
+  },
+  {
+    "elapsed_s": 151.116,
+    "device": "pico",
+    "line": "# DIAG power_started=1 buttons_adc=4095 sd_cd=0 sd_code=0x17 sd_data=0x01 ina_ok=1 bus_v=12.14750 current_a=0.076250 alert=1"
+  },
+  {
+    "elapsed_s": 151.116,
+    "device": "pico",
+    "line": "# sync=0 packets=0 PPS=0 period_us=0 uart_age_us=0 heap=422856 sd=MOUNT_FAILED file= rows=0"
+  },
+  {
+    "elapsed_s": 151.709,
+    "device": "sony",
+    "line": "# imu=20372 imu_errors=0 gaps=0 queue_drops=0 gps_drops=0 sd=1 sd_rows=20541 sd_errors=0"
+  },
+  {
+    "elapsed_s": 151.709,
+    "device": "sony",
+    "line": "# gps_seq=167 fix=1 satellites=0 visible=2 max_signal=33.3 flags=12 tx_bytes=10688 tx_errors=0"
+  },
+  {
+    "elapsed_s": 151.856,
+    "device": "pico",
+    "line": "# sync=0 packets=0 pps=0 sd_rows=0 sd_errors=1 imu=0 heap=422856"
+  },
+  {
+    "elapsed_s": 152.719,
+    "device": "sony",
+    "line": "# imu=20492 imu_errors=0 gaps=0 queue_drops=0 gps_drops=0 sd=1 sd_rows=20662 sd_errors=0"
+  },
+  {
+    "elapsed_s": 152.719,
+    "device": "sony",
+    "line": "# gps_seq=168 fix=1 satellites=0 visible=2 max_signal=33.4 flags=12 tx_bytes=10752 tx_errors=0"
+  },
+  {
+    "elapsed_s": 152.854,
+    "device": "pico",
+    "line": "# sync=0 packets=0 pps=0 sd_rows=0 sd_errors=1 imu=0 heap=422856"
+  },
+  {
+    "elapsed_s": 153.709,
+    "device": "sony",
+    "line": "# imu=20613 imu_errors=0 gaps=0 queue_drops=0 gps_drops=0 sd=1 sd_rows=20784 sd_errors=0"
+  },
+  {
+    "elapsed_s": 153.709,
+    "device": "sony",
+    "line": "# gps_seq=169 fix=1 satellites=0 visible=3 max_signal=33.3 flags=12 tx_bytes=10816 tx_errors=0"
+  },
+  {
+    "elapsed_s": 153.855,
+    "device": "pico",
+    "line": "# sync=0 packets=0 pps=0 sd_rows=0 sd_errors=1 imu=0 heap=422856"
+  },
+  {
+    "elapsed_s": 154.679,
+    "device": "sony",
+    "line": "# imu=20734 imu_errors=0 gaps=0 queue_drops=0 gps_drops=0 sd=1 sd_rows=20906 sd_errors=0"
+  },
+  {
+    "elapsed_s": 154.679,
+    "device": "sony",
+    "line": "# gps_seq=170 fix=1 satellites=0 visible=3 max_signal=33.8 flags=12 tx_bytes=10880 tx_errors=0"
+  },
+  {
+    "elapsed_s": 154.853,
+    "device": "pico",
+    "line": "# sync=0 packets=0 pps=0 sd_rows=0 sd_errors=1 imu=0 heap=422856"
+  },
+  {
+    "elapsed_s": 155.708,
+    "device": "sony",
+    "line": "# imu=20855 imu_errors=0 gaps=0 queue_drops=0 gps_drops=0 sd=1 sd_rows=21028 sd_errors=0"
+  },
+  {
+    "elapsed_s": 155.708,
+    "device": "sony",
+    "line": "# gps_seq=171 fix=1 satellites=0 visible=2 max_signal=33.8 flags=12 tx_bytes=10944 tx_errors=0"
+  },
+  {
+    "elapsed_s": 155.855,
+    "device": "pico",
+    "line": "# sync=0 packets=0 pps=0 sd_rows=0 sd_errors=1 imu=0 heap=422856"
+  },
+  {
+    "elapsed_s": 156.695,
+    "device": "sony",
+    "line": "# imu=20976 imu_errors=0 gaps=0 queue_drops=0 gps_drops=0 sd=1 sd_rows=21150 sd_errors=0"
+  },
+  {
+    "elapsed_s": 156.695,
+    "device": "sony",
+    "line": "# gps_seq=172 fix=1 satellites=0 visible=2 max_signal=34.0 flags=12 tx_bytes=11008 tx_errors=0"
+  },
+  {
+    "elapsed_s": 156.854,
+    "device": "pico",
+    "line": "# sync=0 packets=0 pps=0 sd_rows=0 sd_errors=1 imu=0 heap=422856"
+  },
+  {
+    "elapsed_s": 157.691,
+    "device": "sony",
+    "line": "# imu=21097 imu_errors=0 gaps=0 queue_drops=0 gps_drops=0 sd=1 sd_rows=21272 sd_errors=0"
+  },
+  {
+    "elapsed_s": 157.691,
+    "device": "sony",
+    "line": "# gps_seq=173 fix=1 satellites=0 visible=2 max_signal=33.7 flags=12 tx_bytes=11072 tx_errors=0"
+  },
+  {
+    "elapsed_s": 157.853,
+    "device": "pico",
+    "line": "# sync=0 packets=0 pps=0 sd_rows=0 sd_errors=1 imu=0 heap=422856"
+  },
+  {
+    "elapsed_s": 158.679,
+    "device": "sony",
+    "line": "# imu=21217 imu_errors=0 gaps=0 queue_drops=0 gps_drops=0 sd=1 sd_rows=21393 sd_errors=0"
+  },
+  {
+    "elapsed_s": 158.679,
+    "device": "sony",
+    "line": "# gps_seq=174 fix=1 satellites=0 visible=2 max_signal=33.5 flags=12 tx_bytes=11136 tx_errors=0"
+  },
+  {
+    "elapsed_s": 158.854,
+    "device": "pico",
+    "line": "# sync=0 packets=0 pps=0 sd_rows=0 sd_errors=1 imu=0 heap=422856"
+  },
+  {
+    "elapsed_s": 159.707,
+    "device": "sony",
+    "line": "# imu=21338 imu_errors=0 gaps=0 queue_drops=0 gps_drops=0 sd=1 sd_rows=21515 sd_errors=0"
+  },
+  {
+    "elapsed_s": 159.707,
+    "device": "sony",
+    "line": "# gps_seq=175 fix=1 satellites=0 visible=3 max_signal=33.5 flags=12 tx_bytes=11200 tx_errors=0"
+  },
+  {
+    "elapsed_s": 159.853,
+    "device": "pico",
+    "line": "# sync=0 packets=0 pps=0 sd_rows=0 sd_errors=1 imu=0 heap=422856"
+  },
+  {
+    "elapsed_s": 160.694,
+    "device": "sony",
+    "line": "# imu=21459 imu_errors=0 gaps=0 queue_drops=0 gps_drops=0 sd=1 sd_rows=21637 sd_errors=0"
+  },
+  {
+    "elapsed_s": 160.694,
+    "device": "sony",
+    "line": "# gps_seq=176 fix=1 satellites=0 visible=3 max_signal=34.0 flags=12 tx_bytes=11264 tx_errors=0"
+  },
+  {
+    "elapsed_s": 160.854,
+    "device": "pico",
+    "line": "# sync=0 packets=0 pps=0 sd_rows=0 sd_errors=1 imu=0 heap=422856"
+  },
+  {
+    "elapsed_s": 161.246,
+    "device": "pico",
+    "line": "# LINK bytes=14 crc_errors=0 overflows=0 rejected=0 rx_level=1 pps_level=1 last_pps_age_us=0 nav_seq=0 fix=0 satellites=0 flags=0"
+  },
+  {
+    "elapsed_s": 161.246,
+    "device": "pico",
+    "line": "# DIAG power_started=1 buttons_adc=4095 sd_cd=0 sd_code=0x17 sd_data=0x01 ina_ok=1 bus_v=12.14750 current_a=0.076000 alert=1"
+  },
+  {
+    "elapsed_s": 161.246,
+    "device": "pico",
+    "line": "# sync=0 packets=0 PPS=0 period_us=0 uart_age_us=0 heap=422856 sd=MOUNT_FAILED file= rows=0"
+  },
+  {
+    "elapsed_s": 161.707,
+    "device": "sony",
+    "line": "# imu=21580 imu_errors=0 gaps=0 queue_drops=0 gps_drops=0 sd=1 sd_rows=21759 sd_errors=0"
+  },
+  {
+    "elapsed_s": 161.707,
+    "device": "sony",
+    "line": "# gps_seq=177 fix=1 satellites=0 visible=2 max_signal=33.4 flags=12 tx_bytes=11328 tx_errors=0"
+  },
+  {
+    "elapsed_s": 161.854,
+    "device": "pico",
+    "line": "# sync=0 packets=0 pps=0 sd_rows=0 sd_errors=1 imu=0 heap=422856"
+  },
+  {
+    "elapsed_s": 162.682,
+    "device": "sony",
+    "line": "# imu=21700 imu_errors=0 gaps=0 queue_drops=0 gps_drops=0 sd=1 sd_rows=21880 sd_errors=0"
+  },
+  {
+    "elapsed_s": 162.682,
+    "device": "sony",
+    "line": "# gps_seq=178 fix=1 satellites=0 visible=3 max_signal=33.1 flags=12 tx_bytes=11392 tx_errors=0"
+  },
+  {
+    "elapsed_s": 162.853,
+    "device": "pico",
+    "line": "# sync=0 packets=0 pps=0 sd_rows=0 sd_errors=1 imu=0 heap=422856"
+  },
+  {
+    "elapsed_s": 163.691,
+    "device": "sony",
+    "line": "# imu=21821 imu_errors=0 gaps=0 queue_drops=0 gps_drops=0 sd=1 sd_rows=22002 sd_errors=0"
+  },
+  {
+    "elapsed_s": 163.691,
+    "device": "sony",
+    "line": "# gps_seq=179 fix=1 satellites=0 visible=3 max_signal=33.3 flags=12 tx_bytes=11456 tx_errors=0"
+  },
+  {
+    "elapsed_s": 163.854,
+    "device": "pico",
+    "line": "# sync=0 packets=0 pps=0 sd_rows=0 sd_errors=1 imu=0 heap=422856"
+  },
+  {
+    "elapsed_s": 164.676,
+    "device": "sony",
+    "line": "# imu=21942 imu_errors=0 gaps=0 queue_drops=0 gps_drops=0 sd=1 sd_rows=22124 sd_errors=0"
+  },
+  {
+    "elapsed_s": 164.676,
+    "device": "sony",
+    "line": "# gps_seq=180 fix=1 satellites=0 visible=2 max_signal=33.3 flags=12 tx_bytes=11520 tx_errors=0"
+  },
+  {
+    "elapsed_s": 164.854,
+    "device": "pico",
+    "line": "# sync=0 packets=0 pps=0 sd_rows=0 sd_errors=1 imu=0 heap=422856"
+  },
+  {
+    "elapsed_s": 165.675,
+    "device": "sony",
+    "line": "# imu=22063 imu_errors=0 gaps=0 queue_drops=0 gps_drops=0 sd=1 sd_rows=22246 sd_errors=0"
+  },
+  {
+    "elapsed_s": 165.675,
+    "device": "sony",
+    "line": "# gps_seq=181 fix=1 satellites=0 visible=2 max_signal=33.2 flags=12 tx_bytes=11584 tx_errors=0"
+  },
+  {
+    "elapsed_s": 165.856,
+    "device": "pico",
+    "line": "# sync=0 packets=0 pps=0 sd_rows=0 sd_errors=1 imu=0 heap=422856"
+  },
+  {
+    "elapsed_s": 166.695,
+    "device": "sony",
+    "line": "# imu=22184 imu_errors=0 gaps=0 queue_drops=0 gps_drops=0 sd=1 sd_rows=22368 sd_errors=0"
+  },
+  {
+    "elapsed_s": 166.695,
+    "device": "sony",
+    "line": "# gps_seq=182 fix=1 satellites=0 visible=3 max_signal=33.5 flags=12 tx_bytes=11648 tx_errors=0"
+  },
+  {
+    "elapsed_s": 166.853,
+    "device": "pico",
+    "line": "# sync=0 packets=0 pps=0 sd_rows=0 sd_errors=1 imu=0 heap=422856"
+  },
+  {
+    "elapsed_s": 167.691,
+    "device": "sony",
+    "line": "# imu=22304 imu_errors=0 gaps=0 queue_drops=0 gps_drops=0 sd=1 sd_rows=22489 sd_errors=0"
+  },
+  {
+    "elapsed_s": 167.691,
+    "device": "sony",
+    "line": "# gps_seq=183 fix=1 satellites=0 visible=3 max_signal=33.2 flags=12 tx_bytes=11712 tx_errors=0"
+  },
+  {
+    "elapsed_s": 167.854,
+    "device": "pico",
+    "line": "# sync=0 packets=0 pps=0 sd_rows=0 sd_errors=1 imu=0 heap=422856"
+  },
+  {
+    "elapsed_s": 168.696,
+    "device": "sony",
+    "line": "# imu=22425 imu_errors=0 gaps=0 queue_drops=0 gps_drops=0 sd=1 sd_rows=22611 sd_errors=0"
+  },
+  {
+    "elapsed_s": 168.696,
+    "device": "sony",
+    "line": "# gps_seq=184 fix=1 satellites=0 visible=2 max_signal=33.3 flags=12 tx_bytes=11776 tx_errors=0"
+  },
+  {
+    "elapsed_s": 168.854,
+    "device": "pico",
+    "line": "# sync=0 packets=0 pps=0 sd_rows=0 sd_errors=1 imu=0 heap=422856"
+  },
+  {
+    "elapsed_s": 169.709,
+    "device": "sony",
+    "line": "# imu=22546 imu_errors=0 gaps=0 queue_drops=0 gps_drops=0 sd=1 sd_rows=22733 sd_errors=0"
+  },
+  {
+    "elapsed_s": 169.709,
+    "device": "sony",
+    "line": "# gps_seq=185 fix=1 satellites=0 visible=2 max_signal=33.2 flags=12 tx_bytes=11840 tx_errors=0"
+  },
+  {
+    "elapsed_s": 169.853,
+    "device": "pico",
+    "line": "# sync=0 packets=0 pps=0 sd_rows=0 sd_errors=1 imu=0 heap=422856"
+  },
+  {
+    "elapsed_s": 170.696,
+    "device": "sony",
+    "line": "# imu=22667 imu_errors=0 gaps=0 queue_drops=0 gps_drops=0 sd=1 sd_rows=22855 sd_errors=0"
+  },
+  {
+    "elapsed_s": 170.696,
+    "device": "sony",
+    "line": "# gps_seq=186 fix=1 satellites=0 visible=2 max_signal=33.1 flags=12 tx_bytes=11904 tx_errors=0"
+  },
+  {
+    "elapsed_s": 170.854,
+    "device": "pico",
+    "line": "# sync=0 packets=0 pps=0 sd_rows=0 sd_errors=1 imu=0 heap=422856"
+  },
+  {
+    "elapsed_s": 171.249,
+    "device": "pico",
+    "line": "# LINK bytes=14 crc_errors=0 overflows=0 rejected=0 rx_level=1 pps_level=1 last_pps_age_us=0 nav_seq=0 fix=0 satellites=0 flags=0"
+  },
+  {
+    "elapsed_s": 171.249,
+    "device": "pico",
+    "line": "# DIAG power_started=1 buttons_adc=4095 sd_cd=0 sd_code=0x17 sd_data=0x01 ina_ok=1 bus_v=12.14625 current_a=0.084750 alert=1"
+  },
+  {
+    "elapsed_s": 171.249,
+    "device": "pico",
+    "line": "# sync=0 packets=0 PPS=0 period_us=0 uart_age_us=0 heap=422856 sd=MOUNT_FAILED file= rows=0"
+  },
+  {
+    "elapsed_s": 171.71,
+    "device": "sony",
+    "line": "# imu=22787 imu_errors=0 gaps=0 queue_drops=0 gps_drops=0 sd=1 sd_rows=22976 sd_errors=0"
+  },
+  {
+    "elapsed_s": 171.71,
+    "device": "sony",
+    "line": "# gps_seq=187 fix=1 satellites=0 visible=4 max_signal=32.8 flags=12 tx_bytes=11968 tx_errors=0"
+  },
+  {
+    "elapsed_s": 171.854,
+    "device": "pico",
+    "line": "# sync=0 packets=0 pps=0 sd_rows=0 sd_errors=1 imu=0 heap=422856"
+  },
+  {
+    "elapsed_s": 172.681,
+    "device": "sony",
+    "line": "# imu=22908 imu_errors=0 gaps=0 queue_drops=0 gps_drops=0 sd=1 sd_rows=23098 sd_errors=0"
+  },
+  {
+    "elapsed_s": 172.681,
+    "device": "sony",
+    "line": "# gps_seq=188 fix=1 satellites=0 visible=4 max_signal=32.8 flags=12 tx_bytes=12032 tx_errors=0"
+  },
+  {
+    "elapsed_s": 172.854,
+    "device": "pico",
+    "line": "# sync=0 packets=0 pps=0 sd_rows=0 sd_errors=1 imu=0 heap=422856"
+  },
+  {
+    "elapsed_s": 173.706,
+    "device": "sony",
+    "line": "# imu=23029 imu_errors=0 gaps=0 queue_drops=0 gps_drops=0 sd=1 sd_rows=23220 sd_errors=0"
+  },
+  {
+    "elapsed_s": 173.706,
+    "device": "sony",
+    "line": "# gps_seq=189 fix=1 satellites=0 visible=2 max_signal=32.5 flags=12 tx_bytes=12096 tx_errors=0"
+  },
+  {
+    "elapsed_s": 173.853,
+    "device": "pico",
+    "line": "# sync=0 packets=0 pps=0 sd_rows=0 sd_errors=1 imu=0 heap=422856"
+  },
+  {
+    "elapsed_s": 174.694,
+    "device": "sony",
+    "line": "# imu=23150 imu_errors=0 gaps=0 queue_drops=0 gps_drops=0 sd=1 sd_rows=23342 sd_errors=0"
+  },
+  {
+    "elapsed_s": 174.694,
+    "device": "sony",
+    "line": "# gps_seq=190 fix=1 satellites=0 visible=2 max_signal=32.6 flags=12 tx_bytes=12160 tx_errors=0"
+  },
+  {
+    "elapsed_s": 174.854,
+    "device": "pico",
+    "line": "# sync=0 packets=0 pps=0 sd_rows=0 sd_errors=1 imu=0 heap=422856"
+  },
+  {
+    "elapsed_s": 175.688,
+    "device": "sony",
+    "line": "# imu=23271 imu_errors=0 gaps=0 queue_drops=0 gps_drops=0 sd=1 sd_rows=23464 sd_errors=0"
+  },
+  {
+    "elapsed_s": 175.688,
+    "device": "sony",
+    "line": "# gps_seq=191 fix=1 satellites=0 visible=2 max_signal=32.6 flags=12 tx_bytes=12224 tx_errors=0"
+  },
+  {
+    "elapsed_s": 175.853,
+    "device": "pico",
+    "line": "# sync=0 packets=0 pps=0 sd_rows=0 sd_errors=1 imu=0 heap=422856"
+  },
+  {
+    "elapsed_s": 176.696,
+    "device": "sony",
+    "line": "# imu=23391 imu_errors=0 gaps=0 queue_drops=0 gps_drops=0 sd=1 sd_rows=23585 sd_errors=0"
+  },
+  {
+    "elapsed_s": 176.696,
+    "device": "sony",
+    "line": "# gps_seq=192 fix=1 satellites=0 visible=2 max_signal=32.7 flags=12 tx_bytes=12288 tx_errors=0"
+  },
+  {
+    "elapsed_s": 176.856,
+    "device": "pico",
+    "line": "# sync=0 packets=0 pps=0 sd_rows=0 sd_errors=1 imu=0 heap=422856"
+  },
+  {
+    "elapsed_s": 177.693,
+    "device": "sony",
+    "line": "# imu=23512 imu_errors=0 gaps=0 queue_drops=0 gps_drops=0 sd=1 sd_rows=23707 sd_errors=0"
+  },
+  {
+    "elapsed_s": 177.693,
+    "device": "sony",
+    "line": "# gps_seq=193 fix=1 satellites=0 visible=2 max_signal=32.9 flags=12 tx_bytes=12352 tx_errors=0"
+  },
+  {
+    "elapsed_s": 177.853,
+    "device": "pico",
+    "line": "# sync=0 packets=0 pps=0 sd_rows=0 sd_errors=1 imu=0 heap=422856"
+  },
+  {
+    "elapsed_s": 178.68,
+    "device": "sony",
+    "line": "# imu=23633 imu_errors=0 gaps=0 queue_drops=0 gps_drops=0 sd=1 sd_rows=23829 sd_errors=0"
+  },
+  {
+    "elapsed_s": 178.68,
+    "device": "sony",
+    "line": "# gps_seq=194 fix=1 satellites=0 visible=2 max_signal=32.8 flags=12 tx_bytes=12416 tx_errors=0"
+  },
+  {
+    "elapsed_s": 178.854,
+    "device": "pico",
+    "line": "# sync=0 packets=0 pps=0 sd_rows=0 sd_errors=1 imu=0 heap=422856"
+  },
+  {
+    "elapsed_s": 179.685,
+    "device": "sony",
+    "line": "# imu=23754 imu_errors=0 gaps=0 queue_drops=0 gps_drops=0 sd=1 sd_rows=23951 sd_errors=0"
+  },
+  {
+    "elapsed_s": 179.685,
+    "device": "sony",
+    "line": "# gps_seq=195 fix=1 satellites=0 visible=2 max_signal=32.6 flags=12 tx_bytes=12480 tx_errors=0"
+  },
+  {
+    "elapsed_s": 179.848,
+    "device": "pico",
+    "line": "# sync=0 packets=0 pps=0 sd_rows=0 sd_errors=1 imu=0 heap=422856"
+  },
+  {
+    "elapsed_s": 180.043,
+    "device": "sony",
+    "line": "# STOPPED_REMOVE_SD"
+  },
+  {
+    "elapsed_s": 180.731,
+    "device": "sony",
+    "line": "# imu=23874 imu_errors=0 gaps=0 queue_drops=0 gps_drops=0 sd=0 sd_rows=23989 sd_errors=0"
+  },
+  {
+    "elapsed_s": 180.738,
+    "device": "sony",
+    "line": "# gps_seq=196 fix=1 satellites=0 visible=2 max_signal=32.2 flags=8 tx_bytes=12544 tx_errors=0"
+  },
+  {
+    "elapsed_s": 181.731,
+    "device": "sony",
+    "line": "# imu=23995 imu_errors=0 gaps=0 queue_drops=0 gps_drops=0 sd=0 sd_rows=23989 sd_errors=0"
+  },
+  {
+    "elapsed_s": 181.739,
+    "device": "sony",
+    "line": "# gps_seq=197 fix=1 satellites=0 visible=2 max_signal=32.8 flags=8 tx_bytes=12608 tx_errors=0"
+  },
+  {
+    "elapsed_s": 182.731,
+    "device": "sony",
+    "line": "# imu=24116 imu_errors=0 gaps=0 queue_drops=0 gps_drops=0 sd=0 sd_rows=23989 sd_errors=0"
+  },
+  {
+    "elapsed_s": 182.739,
+    "device": "sony",
+    "line": "# gps_seq=198 fix=1 satellites=0 visible=2 max_signal=32.8 flags=8 tx_bytes=12672 tx_errors=0"
+  },
+  {
+    "elapsed_s": 183.732,
+    "device": "sony",
+    "line": "# imu=24237 imu_errors=0 gaps=0 queue_drops=0 gps_drops=0 sd=0 sd_rows=23989 sd_errors=0"
+  },
+  {
+    "elapsed_s": 183.74,
+    "device": "sony",
+    "line": "# gps_seq=199 fix=1 satellites=0 visible=2 max_signal=33.0 flags=8 tx_bytes=12736 tx_errors=0"
+  },
+  {
+    "elapsed_s": 184.732,
+    "device": "sony",
+    "line": "# imu=24357 imu_errors=0 gaps=0 queue_drops=0 gps_drops=0 sd=0 sd_rows=23989 sd_errors=0"
+  },
+  {
+    "elapsed_s": 184.739,
+    "device": "sony",
+    "line": "# gps_seq=200 fix=1 satellites=0 visible=2 max_signal=32.8 flags=8 tx_bytes=12800 tx_errors=0"
+  }
+]

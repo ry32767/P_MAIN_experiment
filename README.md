@@ -89,7 +89,7 @@ GitHub PagesのHTTPS画面からPicoのHTTP APIを直接呼ぶ構成にはして
 
 両方とも概ね1秒ごとに保存確定します。電源断では直近の未確定分を失う可能性があるため、終了時はPicoをWeb画面またはUSBの `q` で停止、SpresenseにもUSBの `q` を送り、`STOPPED_REMOVE_SD` を確認します。Spresenseの停止後の再開は再起動です。Picoは `r` で再開、`s` で再マウント・検証・新規記録、`h` で状態表示です。SDの安全な抜き差しは停止後に行い、挿し直したら再マウントします。
 
-Spresenseは停止完了後にUSBへ `i` を送るとその起動セッションのIMU CSV、`g` でGNSS CSVを出力します。`# EXPORT_BEGIN` と `# EXPORT_END` の間を保存し、`verify_logs.py`で検証してください。記録中の回収は拒否します。USBの`gps_seq/fix/satellites/flags`は最後に記録キューから取り出した状態で、停止後は更新されません。
+Spresenseは停止完了後にUSBへ `i` を送るとその起動セッションのIMU CSV、`g` でGNSS CSVを出力します。`# EXPORT_BEGIN` と `# EXPORT_END` の間を保存し、`verify_logs.py`で検証してください。記録中の回収は拒否します。USBの`gps_seq/fix/satellites/flags`は記録停止後も更新されます。`visible/max_signal`は受信衛星情報、`tx_bytes/tx_errors`はUART書込APIの受付状況です（端子上の波形を保証する値ではありません）。親機の`h`には受信バイト数・CRCエラー・入力レベルも表示します。
 
 PicoのUSB `i` は記録停止中だけI²C機器の応答とRTC候補のレジスターを読み取ります。アドレスだけで機種は確定しません。SD初期化比較用`pico2w_sd100`は診断専用で、通常構成は`pico2w`です。
 

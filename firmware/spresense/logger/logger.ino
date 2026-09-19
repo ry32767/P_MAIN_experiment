@@ -41,7 +41,13 @@ std::atomic<bool> imuReady{false}, sdReady{false}, recording{true};
 pthread_mutex_t recordingMutex=PTHREAD_MUTEX_INITIALIZER;
 int imuFile=-1, gpsFile=-1;
 char imuPath[64], gpsPath[64];
-uint32_t lastGpsSequence=0; unsigned lastGpsFix=0,lastGpsSatellites=0,lastGpsFlags=0;
+struct GpsStatus {
+  uint32_t sequence=0, txBytes=0, txErrors=0;
+  unsigned fix=0, used=0, visible=0, flags=0;
+  float maxSignal=0;
+};
+GpsStatus liveGps;
+pthread_mutex_t gpsStatusMutex=PTHREAD_MUTEX_INITIALIZER;
 
 uint64_t monoUs() {
   timespec t; clock_gettime(CLOCK_MONOTONIC,&t);
@@ -110,7 +116,17 @@ void *gpsTask(void *) {
     out.imu_samples=imuSamples; out.imu_errors=imuErrors; out.imu_gaps=imuGaps.load()+queueDrops.load();
     out.sd_errors=sdErrors.load()+gpsDrops.load(); out.sd_rows=sdRows; out.uptime_ms=uint32_t(received/1000);
     uint8_t frame[aq::frame_size]; aq::encode(out,frame);
-    Serial2.write(frame,sizeof(frame)); // Send before any SD operation.
+    size_t sent=Serial2.write(frame,sizeof(frame)); // Send before any SD operation.
+    float maxSignal=0;
+    for(unsigned i=0;i<nav.numSatellites && i<24;++i) {
+      float signal=nav.getSatelliteSignalLevel(i);
+      if(isfinite(signal) && signal>maxSignal) maxSignal=signal;
+    }
+    pthread_mutex_lock(&gpsStatusMutex);
+    liveGps.sequence=out.sequence; liveGps.fix=out.fix; liveGps.used=out.satellites;
+    liveGps.visible=nav.numSatellites; liveGps.flags=out.flags; liveGps.maxSignal=maxSignal;
+    liveGps.txBytes+=sent; if(sent!=sizeof(frame)) ++liveGps.txErrors;
+    pthread_mutex_unlock(&gpsStatusMutex);
     pthread_mutex_lock(&recordingMutex);
     if(recording && !gpsQueue.push(GpsRow{received,out})) ++gpsDrops;
     pthread_mutex_unlock(&recordingMutex);
@@ -200,7 +216,6 @@ void loop() {
   GpsRow gps;
   while(gpsQueue.pop(gps)) {
     aq::Nav &n=gps.nav;
-    lastGpsSequence=n.sequence; lastGpsFix=n.fix; lastGpsSatellites=n.satellites; lastGpsFlags=n.flags;
     snprintf(line,sizeof(line),"%lu,%llu,%llu,%lu,%u,%u,%u,%ld,%ld,%ld,%lu,%lu,%lu,%lu,%lu\n",
       (unsigned long)n.sequence,(unsigned long long)gps.received_us,(unsigned long long)n.utc_s,(unsigned long)n.usec,n.flags,n.fix,n.satellites,
       (long)n.lat_e7,(long)n.lon_e7,(long)n.altitude_mm,(unsigned long)n.imu_samples,(unsigned long)n.imu_errors,(unsigned long)n.imu_gaps,(unsigned long)n.sd_errors,(unsigned long)n.sd_rows);
@@ -240,7 +255,9 @@ void loop() {
       (unsigned long)imuSamples.load(),(unsigned long)imuErrors.load(),(unsigned long)imuGaps.load(),(unsigned long)queueDrops.load(),
       (unsigned long)gpsDrops.load(),int(sdReady.load()),(unsigned long)sdRows.load(),(unsigned long)sdErrors.load());
     Serial.println(line);
-    Serial.printf("# gps_seq=%lu fix=%u satellites=%u flags=%u\n",(unsigned long)lastGpsSequence,lastGpsFix,lastGpsSatellites,lastGpsFlags);
+    pthread_mutex_lock(&gpsStatusMutex); GpsStatus g=liveGps; pthread_mutex_unlock(&gpsStatusMutex);
+    Serial.printf("# gps_seq=%lu fix=%u satellites=%u visible=%u max_signal=%.1f flags=%u tx_bytes=%lu tx_errors=%lu\n",
+      (unsigned long)g.sequence,g.fix,g.used,g.visible,g.maxSignal,g.flags,(unsigned long)g.txBytes,(unsigned long)g.txErrors);
   }
   delay(1);
 }
