@@ -1,0 +1,27 @@
+Driver installer exit code: 0
+Status: OK
+Class: Ports
+FriendlyName: Silicon Labs CP210x USB to UART Bridge (COM7)
+
+Final XMODEM transfer:
+blocks 1403 errors 1
+transfer_ok True
+179552 bytes loaded.
+Package validation is OK.
+Saving package to "nuttx"
+updater#
+
+After reboot:
+Welcome to nash (build 7bf64de)
+updater#
+
+set bootable M0P
+M0P is not valid bootable. config not changed.
+
+set
+boot mode: auto
+bootdelay: 100
+bootable : loader
+clock    : 200 MHz
+Rec pin  : not assigned
+charger : OFF
