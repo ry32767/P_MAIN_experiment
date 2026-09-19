@@ -1,0 +1,41 @@
+name: Firmware and tests
+on: [push, pull_request, workflow_dispatch]
+permissions:
+  contents: read
+jobs:
+  tests:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: g++ -std=c++17 -Wall -Wextra -Werror -Icommon/AquaBeacon/src tests/test_core.cpp -o /tmp/test_core
+      - run: /tmp/test_core
+      - run: python -m unittest discover -s tests -v
+      - run: python scripts/embed_web.py
+  pico:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: pip install platformio==6.2.0
+      - run: pio run -e pico2w -e pico2w_logger
+      - uses: actions/upload-artifact@v4
+        with:
+          name: pico-firmware
+          path: .pio/build/*/firmware.uf2
+  spresense:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: arduino/setup-arduino-cli@v2
+      - run: arduino-cli core update-index --additional-urls https://github.com/sonydevworld/spresense-arduino-compatible/releases/download/generic/package_spresense_index.json
+      - run: arduino-cli core install SPRESENSE:spresense@3.4.7 --additional-urls https://github.com/sonydevworld/spresense-arduino-compatible/releases/download/generic/package_spresense_index.json
+      - run: arduino-cli compile --fqbn SPRESENSE:spresense:spresense --libraries common --build-path build/spresense firmware/spresense/logger
+      - uses: actions/upload-artifact@v4
+        with:
+          name: spresense-firmware
+          path: build/spresense/*.spk

@@ -1,0 +1,9 @@
+.venv/
+.tools/
+.pio/
+build/
+__pycache__/
+reports/raw/
+firmware/pico/include/secrets.h
+firmware/pico/include/web_page.h
+.DS_Store
