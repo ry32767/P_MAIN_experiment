@@ -323,6 +323,7 @@ void loop() {
     if(c=='q') stopLog(); if(c=='r') startLog(); if(c=='s') mountSd();
     if(c=='h') {
       Snapshot s=snapshot();
+      Serial.printf("# DIAG power_started=%u buttons_adc=%u sd_cd=%u sd_code=0x%02x sd_data=0x%02x ina_ok=%u bus_v=%.5f current_a=%.6f alert=%u\n",powerReady,analogRead(pins::buttons),digitalRead(pins::sd_cd),SD.sdErrorCode(),SD.sdErrorData(),inaOk,busV,currentA,digitalRead(pins::ina_alert));
       Serial.printf("# sync=%u packets=%lu PPS=%lu period_us=%lu uart_age_us=%lu heap=%lu sd=%s file=%s rows=%lu\n",s.synchronized,(unsigned long)s.packets,(unsigned long)s.pps_count,(unsigned long)s.period_us,(unsigned long)s.uart_age_us,(unsigned long)rp2040.getFreeHeap(),sdError,logName,(unsigned long)rows);
 #if AQ_WIFI
       Serial.printf("# WIFI password=%s url=http://192.168.4.1/\n",apPassword);

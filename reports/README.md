@@ -7,6 +7,7 @@
 | 2026-09-19〜20 | [001 初期ファームウェアの動作確認](2026-09-20_001_initial_validation/README.md) | ビルド・PCテスト合格、実機未検証 |
 | 2026-09-20 | [002 実機検証：接続確認](2026-09-20_002_hardware_preflight/README.md) | COM6検出・受信0バイト、Spresense接続確認待ち |
 | 2026-09-20 | [003 親機への書き込み・起動・SD確認](2026-09-20_003_parent_bringup/README.md) | 書込・USB応答成功、SDマウント失敗 |
+| 2026-09-20 | [004 SD・USBの切り分け](2026-09-20_004_sd_usb_diagnostics/README.md) | INA226通信成功、SD初期化失敗、Spresenseドライバー待ち |
 
 ```text
 reports/

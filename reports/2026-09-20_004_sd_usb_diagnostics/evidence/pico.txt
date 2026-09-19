@@ -1,0 +1,17 @@
+# DIAG power_started=1 buttons_adc=4095 sd_cd=0 sd_code=0x17 sd_data=0x01 ina_ok=1 bus_v=12.28875 current_a=0.075375 alert=1
+# sync=0 packets=0 PPS=0 period_us=0 uart_age_us=0 heap=422872 sd=MOUNT_FAILED file= rows=0
+# WIFI password=[REDACTED] url=http://192.168.4.1/
+# sync=0 packets=0 pps=0 sd_rows=0 sd_errors=1 imu=0 heap=422872
+# sync=0 packets=0 pps=0 sd_rows=0 sd_errors=1 imu=0 heap=422872
+# sync=0 packets=0 pps=0 sd_rows=0 sd_errors=1 imu=0 heap=422872
+# sync=0 packets=0 pps=0 sd_rows=0 sd_errors=1 imu=0 heap=422872
+# STOPPED_REMOVE_SD
+# SD_ERROR MOUNT_FAILED
+# DIAG power_started=1 buttons_adc=4095 sd_cd=0 sd_code=0x17 sd_data=0x01 ina_ok=1 bus_v=12.28250 current_a=0.094500 alert=1
+# sync=0 packets=0 PPS=0 period_us=0 uart_age_us=0 heap=422872 sd=MOUNT_FAILED file= rows=0
+# WIFI password=[REDACTED] url=http://192.168.4.1/
+# sync=0 packets=0 pps=0 sd_rows=0 sd_errors=2 imu=0 heap=422872
+# sync=0 packets=0 pps=0 sd_rows=0 sd_errors=2 imu=0 heap=422872
+# sync=0 packets=0 pps=0 sd_rows=0 sd_errors=2 imu=0 heap=422872
+# sync=0 packets=0 pps=0 sd_rows=0 sd_errors=2 imu=0 heap=422872
+
