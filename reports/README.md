@@ -11,6 +11,7 @@
 | 2026-09-20 | [005 Spresense導入・転送](2026-09-20_005_spresense_bringup/README.md) | ドライバー・転送成功、取得アプリ起動未達 |
 | 2026-09-20 | [006 Spresense起動原因](2026-09-20_006_spresense_bootloader/README.md) | 公式資料でブートローダー未導入に一致、書込承認待ち |
 | 2026-09-20 | [007 親機SD・I²C・RTC](2026-09-20_007_sd_clock/README.md) | SD低速化で改善なし、RTC進行確認・時刻未設定 |
+| 2026-09-20 | [008 Spresense公式導入再開](2026-09-20_008_spresense_boot/README.md) | 公式インストーラー起動、ライセンス・転送完了未確認 |
 
 ```text
 reports/
