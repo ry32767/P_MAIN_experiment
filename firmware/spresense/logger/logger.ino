@@ -1,5 +1,7 @@
 #include <Arduino.h>
 #include <GNSS.h>
+#include <MP.h>
+#include <ImuBatch.h>
 #include <SDHCI.h>
 #include <AquaBeacon.h>
 #include <nuttx/sensors/cxd5602pwbimu.h>
@@ -19,7 +21,11 @@
 // SD I/O runs only in loop(); GNSS/UART and IMU acquisition have dedicated tasks.
 SDClass card;
 SpGnss gnss;
-struct ImuRow { uint64_t received_us; uint32_t seq; cxd5602pwbimu_data_t data; };
+using ImuRow=aqimu::Row;
+static_assert(sizeof(aqimu::Data)==sizeof(cxd5602pwbimu_data_t), "IMU driver ABI");
+aqimu::Batch *batch=nullptr;
+bool workerOk=false, workerPending=false;
+uint32_t workerStarted=0, workerId=0, workerBatches=0, workerErrors=0;
 struct GpsRow { uint64_t received_us; aq::Nav nav; };
 template<class T, unsigned N> struct Queue {
   T data[N]; std::atomic<unsigned> head{0}, tail{0};
@@ -58,7 +64,7 @@ void *imuTask(void *) {
   int fd=open("/dev/imu0",O_RDONLY|O_NONBLOCK);
   cxd5602pwbimu_range_t range{4,500};
   if(fd<0) { ++imuErrors; return nullptr; }
-  if(ioctl(fd,SNIOC_SSAMPRATE,120) || ioctl(fd,SNIOC_SDRANGE,(unsigned long)(uintptr_t)&range)
+  if(ioctl(fd,SNIOC_SSAMPRATE,aqimu::rate) || ioctl(fd,SNIOC_SDRANGE,(unsigned long)(uintptr_t)&range)
      || ioctl(fd,SNIOC_SFIFOTHRESH,1) || ioctl(fd,SNIOC_ENABLE,1)) {
     ++imuErrors; close(fd); return nullptr;
   }
@@ -79,7 +85,7 @@ void *imuTask(void *) {
     // events (not estimated lost samples); preserve raw data for analysis.
     if(havePrevious) {
       uint32_t step=row.data.timestamp-previous;
-      constexpr uint32_t nominalStep=19200000UL/120;
+      constexpr uint32_t nominalStep=19200000UL/aqimu::rate;
       if(!step || step>nominalStep+nominalStep/2) ++imuGaps;
     }
     previous=row.data.timestamp; havePrevious=true;
@@ -146,6 +152,40 @@ bool saveLine(int fd,const char *line,bool checksum=true) {
   if(fd<0 || write(fd,line,len)!=(ssize_t)len) { ++sdErrors; sdReady=false; return false; }
   ++sdRows; return true;
 }
+void failWorker() {
+  workerOk=false; workerPending=false; ++workerErrors; ++sdErrors;
+  sdReady=false;
+  pthread_mutex_lock(&recordingMutex); recording=false; pthread_mutex_unlock(&recordingMutex);
+  Serial.println("# FORMATTER_FAILED recording stopped");
+}
+void serviceFormatter() {
+  if(!workerOk) { ImuRow discard; while(imuQueue.pop(discard)) ++queueDrops; return; }
+  if(workerPending) {
+    int8_t message=0; uint32_t response=0;
+    int ret=MP.Recv(&message,&response,1);
+    if(ret>=0) {
+      __sync_synchronize();
+      if(message!=11 || response!=batch->id || batch->version!=aqimu::magic || batch->error ||
+         !batch->length || batch->length>sizeof(batch->csv) || batch->count>aqimu::batchSize) { failWorker(); return; }
+      workerPending=false; ++workerBatches;
+      if(sdReady) {
+        // One SD operation per batch; no float formatting on the acquisition core.
+        if(write(imuFile,batch->csv,batch->length)!=(ssize_t)batch->length) { failWorker(); return; }
+        sdRows+=batch->count;
+      }
+    } else if(millis()-workerStarted>2000) { failWorker(); return; }
+  }
+  if(!workerPending) {
+    batch->count=0;
+    while(batch->count<aqimu::batchSize && imuQueue.pop(batch->rows[batch->count])) ++batch->count;
+    if(batch->count) {
+      batch->version=aqimu::magic; batch->id=++workerId; batch->error=1; batch->length=0;
+      __sync_synchronize();
+      if(MP.Send(10,(void*)batch,1)<0) { failWorker(); return; }
+      workerPending=true; workerStarted=millis();
+    }
+  }
+}
 bool openLogs() {
   if(!card.begin()) return false;
   char path[64];
@@ -204,6 +244,12 @@ void exportStoppedLog(const char *path) {
 }
 void setup() {
   Serial.begin(115200);
+  int mpResult=MP.begin(1);
+  if(mpResult>=0) batch=static_cast<aqimu::Batch*>(MP.AllocSharedMemory(sizeof(aqimu::Batch)));
+  workerOk=mpResult>=0 && batch;
+  MP.RecvTimeout(MP_RECV_POLLING);
+  Serial.printf("# FORMATTER subcore=1 ready=%u result=%d rate_hz=%lu shared_bytes=%u\n",workerOk,mpResult,(unsigned long)aqimu::rate,sizeof(aqimu::Batch));
+  if(!workerOk) { ++workerErrors; recording=false; }
   sdReady=openLogs(); if(!sdReady) ++sdErrors;
   Serial.println(sdReady ? "# SD_READBACK_OK" : "# SD_FAILED");
   Serial.println(imuPath); Serial.println(gpsPath);
@@ -221,13 +267,7 @@ void loop() {
       (long)n.lat_e7,(long)n.lon_e7,(long)n.altitude_mm,(unsigned long)n.imu_samples,(unsigned long)n.imu_errors,(unsigned long)n.imu_gaps,(unsigned long)n.sd_errors,(unsigned long)n.sd_rows);
     if(sdReady) saveLine(gpsFile,line);
   }
-  ImuRow row;
-  for(int i=0;i<32 && imuQueue.pop(row);i++) {
-    auto &d=row.data;
-    snprintf(line,sizeof(line),"%lu,%llu,%lu,%.6f,%.8f,%.8f,%.8f,%.8f,%.8f,%.8f\n",
-      (unsigned long)row.seq,(unsigned long long)row.received_us,(unsigned long)d.timestamp,d.temp,d.gx,d.gy,d.gz,d.ax,d.ay,d.az);
-    if(sdReady) saveLine(imuFile,line);
-  }
+  serviceFormatter();
   if(sdReady && millis()-lastFlush>=1000) {
     lastFlush=millis();
     if(fsync(imuFile)!=0 || fsync(gpsFile)!=0) { ++sdErrors; sdReady=false; }
@@ -243,8 +283,8 @@ void loop() {
     if(c=='i') exportStoppedLog(imuPath);
     if(c=='g') exportStoppedLog(gpsPath);
   }
-  if(!recording && imuQueue.head==imuQueue.tail && gpsQueue.head==gpsQueue.tail && imuFile>=0) {
-    bool ok=fsync(imuFile)==0 && fsync(gpsFile)==0;
+  if(!recording && !workerPending && imuQueue.head==imuQueue.tail && gpsQueue.head==gpsQueue.tail && imuFile>=0) {
+    bool ok=fsync(imuFile)==0 && fsync(gpsFile)==0 && workerErrors==0;
     ok=(close(imuFile)==0) && ok; ok=(close(gpsFile)==0) && ok;
     imuFile=gpsFile=-1; sdReady=false; if(!ok) ++sdErrors;
     Serial.println(ok ? "# STOPPED_REMOVE_SD" : "# STOP_FAILED");
@@ -255,9 +295,10 @@ void loop() {
       (unsigned long)imuSamples.load(),(unsigned long)imuErrors.load(),(unsigned long)imuGaps.load(),(unsigned long)queueDrops.load(),
       (unsigned long)gpsDrops.load(),int(sdReady.load()),(unsigned long)sdRows.load(),(unsigned long)sdErrors.load());
     Serial.println(line);
+    Serial.printf("# formatter_batches=%lu formatter_errors=%lu pending=%u rate_hz=%lu\n",(unsigned long)workerBatches,(unsigned long)workerErrors,workerPending,(unsigned long)aqimu::rate);
     pthread_mutex_lock(&gpsStatusMutex); GpsStatus g=liveGps; pthread_mutex_unlock(&gpsStatusMutex);
     Serial.printf("# gps_seq=%lu fix=%u satellites=%u visible=%u max_signal=%.1f flags=%u tx_bytes=%lu tx_errors=%lu\n",
       (unsigned long)g.sequence,g.fix,g.used,g.visible,g.maxSignal,g.flags,(unsigned long)g.txBytes,(unsigned long)g.txErrors);
   }
-  delay(1);
+  usleep(1000); // Yield MainCore task; sensor poll and worker run independently.
 }

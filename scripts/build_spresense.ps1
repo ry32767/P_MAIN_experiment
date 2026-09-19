@@ -5,6 +5,8 @@ Push-Location $root
 try {
     $cliArgs = @()
     if ($Config) { $cliArgs += @('--config-file', $Config) }
+    & $Cli @cliArgs compile --fqbn 'SPRESENSE:spresense:spresense:Core=Sub1' --libraries common --build-path build/formatter firmware/spresense/formatter
+    if ($LASTEXITCODE -ne 0) { throw 'Spresense SubCore build failed' }
     & $Cli @cliArgs compile --fqbn 'SPRESENSE:spresense:spresense' --libraries common --build-path build/spresense firmware/spresense/logger
     if ($LASTEXITCODE -ne 0) { throw 'Spresense build failed' }
 } finally { Pop-Location }

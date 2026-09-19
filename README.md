@@ -6,7 +6,7 @@ P-MAIN（Pico **2 W**）＋P-PWRと、Sony Spresense＋マルチIMU Add-onの取
 
 | 機器 | 実装内容 |
 |---|---|
-| Spresense | 内蔵GNSS 1 Hz、Sony CXD5602PWBIMUを120 Hzで取得、ハードウェア1PPS出力、D01 UARTでGPS・状態を送信、SDへIMU/GPSを別々にCSV記録 |
+| Spresense | 内蔵GNSS 1 Hz、Sony CXD5602PWBIMUを960 Hz設定で取得、SubCore 1でCSV整形・CRC、ハードウェア1PPS出力、D01 UARTでGPS・状態を送信、SDへIMU/GPSを別々にCSV記録 |
 | P-MAIN | GP7のPIO UART受信、GP6のPPS割り込み、UTC対応候補の検査、10 HzのCSV記録、電源基板INA226の電圧・電流監視 |
 | 両SD | 512バイトの書き込み→保存確定→閉じる→開き直して読み戻し、既存ログを上書きしない採番、データ行CRC32、保存エラーの記録 |
 | スマホ | PicoのWi-Fi APに接続し状態表示、記録停止・再開、P-MAINの確定済みログを取得 |
@@ -60,13 +60,17 @@ Sony公式コア**3.4.7**でコンパイル確認済みです。マルチIMUの�
 ```powershell
 arduino-cli core update-index --additional-urls https://github.com/sonydevworld/spresense-arduino-compatible/releases/download/generic/package_spresense_index.json
 arduino-cli core install SPRESENSE:spresense@3.4.7 --additional-urls https://github.com/sonydevworld/spresense-arduino-compatible/releases/download/generic/package_spresense_index.json
+arduino-cli compile --fqbn SPRESENSE:spresense:spresense:Core=Sub1 --libraries common --build-path build/formatter firmware/spresense/formatter
 arduino-cli compile --fqbn SPRESENSE:spresense:spresense --libraries common --build-path build/spresense firmware/spresense/logger
+arduino-cli upload --fqbn SPRESENSE:spresense:spresense:Core=Sub1 --port COM番号 --input-dir build/formatter firmware/spresense/formatter
 arduino-cli upload --fqbn SPRESENSE:spresense:spresense --port COM番号 --input-dir build/spresense firmware/spresense/logger
 ```
 
 このPCの専用インストールを使う場合は、Arduino CLIに `--config-file .tools/arduino-cli.yaml` を付けます。CLI実体はArduino IDEに同梱されています。補助スクリプト `scripts/build_spresense.ps1 -Cli <CLIのパス> -Config .tools/arduino-cli.yaml` も使用できます。
 
-Arduino IDEを使う場合は `common/AquaBeacon` をスケッチブックの `libraries/AquaBeacon` にコピーし、`firmware/spresense/logger/logger.ino` を開きます。ボード=Spresense、MainCore、Memory=768KB。初めて使うボードはSony公式手順に従ってブートローダーを用意してください。
+Arduino IDEを使う場合は `common/AquaBeacon` をスケッチブックの `libraries/AquaBeacon` にコピーし、`firmware/spresense/logger/logger.ino` を開きます。ボード=Spresense、MainCore、Memory=768KB。先に`formatter/formatter.ino`をSubCore 1として書き込み、その後loggerをMainCoreへ書き込みます。初めて使うボードはSony公式手順に従ってブートローダーを用意してください。
+
+取得タスク（優先度150）とGNSSタスク（120）はMainCoreで動き、SubCore 1が共有バッファのCSV整形・CRCを行います。MainCoreは戻ったバッチをSDへ書き込みます。サブコア応答が2秒途切れた場合は記録失敗として停止します。設定値は`common/AquaBeacon/src/ImuBatch.h`に集約しています。一定周期性はセンサー時刻と受信時刻を分けて実測評価します。
 
 ## スマホで使う
 

@@ -12,7 +12,9 @@ from pathlib import Path
 import zlib
 
 
-def verify(path, require_sync=False):
+def verify(path, require_sync=False, expected_imu_rate=120):
+    if expected_imu_rate<=0:
+        raise ValueError("expected_imu_rate must be positive")
     path = Path(path)
     result = dict(file=path.name, rows=0, errors=[], warnings=[])
     digest = hashlib.sha256()
@@ -89,8 +91,9 @@ def verify(path, require_sync=False):
         result['warnings'].append('--require-sync applies only to P-MAIN logs')
     if kind == 'imu' and result['duration_s']:
         result['observed_rate_hz'] = (result['rows']-1)/result['duration_s']
-        if not 115 <= result['observed_rate_hz'] <= 125:
-            result['warnings'].append('Received rate outside 115..125 Hz; inspect FIFO losses and receipt batching')
+        low,high=expected_imu_rate*(115/120),expected_imu_rate*(125/120)
+        if not low <= result['observed_rate_hz'] <= high:
+            result['warnings'].append(f'Received rate outside {low:g}..{high:g} Hz; inspect FIFO losses and receipt batching')
     return result
 
 
@@ -98,12 +101,13 @@ def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument('files', nargs='+', type=Path)
     parser.add_argument('--require-sync', action='store_true')
+    parser.add_argument('--imu-rate', type=float, default=120)
     parser.add_argument('--output', type=Path)
     args = parser.parse_args()
     results = []
     for path in args.files:
         try:
-            results.append(verify(path, args.require_sync))
+            results.append(verify(path, args.require_sync,args.imu_rate))
         except (OSError, UnicodeError) as exc:
             results.append(dict(file=str(path), errors=[str(exc)]))
     text = json.dumps(results, ensure_ascii=False, indent=2)

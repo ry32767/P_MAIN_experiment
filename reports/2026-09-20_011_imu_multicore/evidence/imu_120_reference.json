@@ -1,0 +1,74 @@
+{
+  "requested_rate_hz": 120,
+  "validation": {
+    "file": "I_priority.CSV",
+    "rows": 6999,
+    "errors": [],
+    "warnings": [],
+    "sha256": "696e48ca28de5c00e6aef84cb2cacb49d87885c080acbfa31b5eea606d73979e",
+    "kind": "imu",
+    "duration_s": 57.817935,
+    "observed_rate_hz": 121.03510787785832
+  },
+  "sensor_interval_ms": {
+    "median": 8.587708333333333,
+    "min": 5.728072916666667,
+    "max": 8.590729166666666,
+    "mean": 8.280457065113842,
+    "zero_count": 0,
+    "above_1_5_nominal_count": 0
+  },
+  "sensor_interval_stddev_ms": 0.4133882153054204,
+  "sensor_rate_hz": 120.76628042829563,
+  "received_interval_ms": {
+    "min": 0.03,
+    "max": 8.362,
+    "median": 8.27,
+    "stddev": 0.39065766740575136
+  },
+  "native_driver_values": {
+    "temp": {
+      "mean": 32.852347300042865,
+      "sample_stddev": 0.046051976103833,
+      "min": 32.776367,
+      "max": 32.960938
+    },
+    "gx": {
+      "mean": 0.00027644807829689956,
+      "sample_stddev": 0.00019343660028957302,
+      "min": -0.00255211,
+      "max": 0.00379829
+    },
+    "gy": {
+      "mean": 0.00014332678525503644,
+      "sample_stddev": 0.00026741589229073974,
+      "min": -0.00204099,
+      "max": 0.00302234
+    },
+    "gz": {
+      "mean": 4.5456228032576084e-05,
+      "sample_stddev": 0.0004045541000886597,
+      "min": -0.00226875,
+      "max": 0.00162685
+    },
+    "ax": {
+      "mean": 0.5019177020045721,
+      "sample_stddev": 0.009025650334814138,
+      "min": 0.47760743,
+      "max": 0.52211201
+    },
+    "ay": {
+      "mean": 0.0167054335105015,
+      "sample_stddev": 0.002815818126354568,
+      "min": 0.00148,
+      "max": 0.0422587
+    },
+    "az": {
+      "mean": 9.78425575564795,
+      "sample_stddev": 0.0028512480122141783,
+      "min": 9.74838448,
+      "max": 9.81664944
+    }
+  },
+  "limitations": "Motion and calibrated reference not confirmed; summary is not an accuracy result."
+}
