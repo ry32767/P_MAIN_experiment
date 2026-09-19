@@ -4,6 +4,10 @@
 build/
 __pycache__/
 reports/raw/
+*.csv
+*.CSV
+*.uf2
+*.spk
 firmware/pico/include/secrets.h
 firmware/pico/include/web_page.h
 .DS_Store
