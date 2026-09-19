@@ -15,6 +15,7 @@
 | 2026-09-20 | [009 IMU・GNSS・SD取得](2026-09-20_009_initial_sensors/README.md) | IMU取得を88→121Hzへ改善、SD検証成功。測位・統合同期は未達 |
 | 2026-09-20 | [010 窓際GNSS・UART/PPS再検証](2026-09-20_010_window_link/README.md) | 衛星信号あり、測位・親機への通信と同期は未達 |
 | 2026-09-20 | [011 IMU 960Hz・実サブコア並列化](2026-09-20_011_imu_multicore/README.md) | 平均967Hz、13,389行検証成功。厳密な等間隔性は未達 |
+| 2026-09-20 | [012 配線修正後UART・PPS](2026-09-20_012_corrected_link/README.md) | 有効データ60件・PPS60回受信。UTC同期は未成立 |
 
 ```text
 reports/

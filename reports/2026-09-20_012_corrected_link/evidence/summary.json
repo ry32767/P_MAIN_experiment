@@ -1,0 +1,49 @@
+{
+  "pico_start": {
+    "t": 0.004,
+    "sync": 0.0,
+    "packets": 1223.0,
+    "PPS": 1254.0,
+    "period_us": 1000001.0,
+    "uart_age_us": 10019.0,
+    "heap": 422856.0,
+    "rows": 0.0
+  },
+  "pico_end": {
+    "t": 59.784,
+    "sync": 0.0,
+    "packets": 1283.0,
+    "pps": 1314.0,
+    "sd_rows": 0.0,
+    "sd_errors": 1.0,
+    "imu": 1150990.0,
+    "heap": 422856.0
+  },
+  "received_packet_increase": 60.0,
+  "pps_increase": 60.0,
+  "crc_errors_last": 0.0,
+  "overflows_last": 0.0,
+  "pps_period_snapshot_us": [
+    1000001.0,
+    999998.0,
+    1000001.0,
+    1000003.0,
+    1000000.0,
+    1000000.0
+  ],
+  "uart_age_snapshot_us": [
+    10019.0,
+    10267.0,
+    10113.0,
+    10146.0,
+    10347.0,
+    10041.0
+  ],
+  "sync_max": 0.0,
+  "gps_visible_min": 2.0,
+  "gps_visible_max": 4.0,
+  "gps_used_max": 0.0,
+  "flags": [
+    8.0
+  ]
+}
