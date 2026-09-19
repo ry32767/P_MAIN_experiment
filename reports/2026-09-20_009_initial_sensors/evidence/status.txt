@@ -1,0 +1,69 @@
+# imu=3461 imu_errors=0 gaps=0 queue_drops=0 gps_drops=0 sd=1 sd_rows=3490 sd_errors=0
+# gps_seq=27 fix=1 satellites=0 flags=12
+# imu=3582 imu_errors=0 gaps=0 queue_drops=0 gps_drops=0 sd=1 sd_rows=3612 sd_errors=0
+# gps_seq=28 fix=1 satellites=0 flags=12
+# imu=3702 imu_errors=0 gaps=0 queue_drops=0 gps_drops=0 sd=1 sd_rows=3733 sd_errors=0
+# gps_seq=29 fix=1 satellites=0 flags=12
+# imu=3823 imu_errors=0 gaps=0 queue_drops=0 gps_drops=0 sd=1 sd_rows=3855 sd_errors=0
+# gps_seq=30 fix=1 satellites=0 flags=12
+# imu=3944 imu_errors=0 gaps=0 queue_drops=0 gps_drops=0 sd=1 sd_rows=3977 sd_errors=0
+# gps_seq=31 fix=1 satellites=0 flags=12
+# imu=4065 imu_errors=0 gaps=0 queue_drops=0 gps_drops=0 sd=1 sd_rows=4099 sd_errors=0
+# gps_seq=32 fix=1 satellites=0 flags=12
+# imu=4186 imu_errors=0 gaps=0 queue_drops=0 gps_drops=0 sd=1 sd_rows=4220 sd_errors=0
+# gps_seq=33 fix=1 satellites=0 flags=12
+# imu=4306 imu_errors=0 gaps=0 queue_drops=0 gps_drops=0 sd=1 sd_rows=4342 sd_errors=0
+# gps_seq=34 fix=1 satellites=0 flags=12
+# imu=4427 imu_errors=0 gaps=0 queue_drops=0 gps_drops=0 sd=1 sd_rows=4464 sd_errors=0
+# gps_seq=35 fix=1 satellites=0 flags=12
+# imu=4548 imu_errors=0 gaps=0 queue_drops=0 gps_drops=0 sd=1 sd_rows=4586 sd_errors=0
+# gps_seq=36 fix=1 satellites=0 flags=12
+# imu=4669 imu_errors=0 gaps=0 queue_drops=0 gps_drops=0 sd=1 sd_rows=4708 sd_errors=0
+# gps_seq=37 fix=1 satellites=0 flags=12
+# imu=4789 imu_errors=0 gaps=0 queue_drops=0 gps_drops=0 sd=1 sd_rows=4829 sd_errors=0
+# gps_seq=38 fix=1 satellites=0 flags=12
+# imu=4910 imu_errors=0 gaps=0 queue_drops=0 gps_drops=0 sd=1 sd_rows=4951 sd_errors=0
+# gps_seq=39 fix=1 satellites=0 flags=12
+# imu=5031 imu_errors=0 gaps=0 queue_drops=0 gps_drops=0 sd=1 sd_rows=5073 sd_errors=0
+# gps_seq=40 fix=1 satellites=0 flags=12
+# imu=5152 imu_errors=0 gaps=0 queue_drops=0 gps_drops=0 sd=1 sd_rows=5195 sd_errors=0
+# gps_seq=41 fix=1 satellites=0 flags=12
+# imu=5272 imu_errors=0 gaps=0 queue_drops=0 gps_drops=0 sd=1 sd_rows=5316 sd_errors=0
+# gps_seq=42 fix=1 satellites=0 flags=12
+# imu=5393 imu_errors=0 gaps=0 queue_drops=0 gps_drops=0 sd=1 sd_rows=5438 sd_errors=0
+# gps_seq=43 fix=1 satellites=0 flags=12
+# imu=5514 imu_errors=0 gaps=0 queue_drops=0 gps_drops=0 sd=1 sd_rows=5560 sd_errors=0
+# gps_seq=44 fix=1 satellites=0 flags=12
+# imu=5635 imu_errors=0 gaps=0 queue_drops=0 gps_drops=0 sd=1 sd_rows=5682 sd_errors=0
+# gps_seq=45 fix=1 satellites=0 flags=12
+# imu=5756 imu_errors=0 gaps=0 queue_drops=0 gps_drops=0 sd=1 sd_rows=5804 sd_errors=0
+# gps_seq=46 fix=1 satellites=0 flags=12
+# imu=5876 imu_errors=0 gaps=0 queue_drops=0 gps_drops=0 sd=1 sd_rows=5925 sd_errors=0
+# gps_seq=47 fix=1 satellites=0 flags=12
+# imu=5997 imu_errors=0 gaps=0 queue_drops=0 gps_drops=0 sd=1 sd_rows=6047 sd_errors=0
+# gps_seq=48 fix=1 satellites=0 flags=12
+# imu=6118 imu_errors=0 gaps=0 queue_drops=0 gps_drops=0 sd=1 sd_rows=6169 sd_errors=0
+# gps_seq=49 fix=1 satellites=0 flags=12
+# imu=6239 imu_errors=0 gaps=0 queue_drops=0 gps_drops=0 sd=1 sd_rows=6291 sd_errors=0
+# gps_seq=50 fix=1 satellites=0 flags=12
+# imu=6360 imu_errors=0 gaps=0 queue_drops=0 gps_drops=0 sd=1 sd_rows=6413 sd_errors=0
+# gps_seq=51 fix=1 satellites=0 flags=12
+# imu=6480 imu_errors=0 gaps=0 queue_drops=0 gps_drops=0 sd=1 sd_rows=6534 sd_errors=0
+# gps_seq=52 fix=1 satellites=0 flags=12
+# imu=6601 imu_errors=0 gaps=0 queue_drops=0 gps_drops=0 sd=1 sd_rows=6656 sd_errors=0
+# gps_seq=53 fix=1 satellites=0 flags=12
+# imu=6722 imu_errors=0 gaps=0 queue_drops=0 gps_drops=0 sd=1 sd_rows=6778 sd_errors=0
+# gps_seq=54 fix=1 satellites=0 flags=12
+# imu=6843 imu_errors=0 gaps=0 queue_drops=0 gps_drops=0 sd=1 sd_rows=6900 sd_errors=0
+# gps_seq=55 fix=1 satellites=0 flags=12
+# imu=6964 imu_errors=0 gaps=0 queue_drops=0 gps_drops=0 sd=1 sd_rows=7022 sd_errors=0
+# gps_seq=56 fix=1 satellites=0 flags=12
+# STOPPED_REMOVE_SD
+# imu=7084 imu_errors=0 gaps=0 queue_drops=0 gps_drops=0 sd=0 sd_rows=7057 sd_errors=0
+# gps_seq=56 fix=1 satellites=0 flags=12
+# imu=7205 imu_errors=0 gaps=0 queue_drops=0 gps_drops=0 sd=0 sd_rows=7057 sd_errors=0
+# gps_seq=56 fix=1 satellites=0 flags=12
+# imu=7326 imu_errors=0 gaps=0 queue_drops=0 gps_drops=0 sd=0 sd_rows=7057 sd_errors=0
+# gps_seq=56 fix=1 satellites=0 flags=12
+# imu=7447 imu_errors=0 gaps=0 queue_drops=0 gps_drops=0 sd=0 sd_rows=7057 sd_errors=0
+# gps_seq=56 fix=1 satellites=0 flags=12

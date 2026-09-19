@@ -5,6 +5,7 @@
 #include <nuttx/sensors/cxd5602pwbimu.h>
 #include <arch/board/cxd56_cxd5602pwbimu.h>
 #include <pthread.h>
+#include <sched.h>
 #include <poll.h>
 #include <sys/ioctl.h>
 #include <fcntl.h>
@@ -40,6 +41,7 @@ std::atomic<bool> imuReady{false}, sdReady{false}, recording{true};
 pthread_mutex_t recordingMutex=PTHREAD_MUTEX_INITIALIZER;
 int imuFile=-1, gpsFile=-1;
 char imuPath[64], gpsPath[64];
+uint32_t lastGpsSequence=0; unsigned lastGpsFix=0,lastGpsSatellites=0,lastGpsFlags=0;
 
 uint64_t monoUs() {
   timespec t; clock_gettime(CLOCK_MONOTONIC,&t);
@@ -56,7 +58,6 @@ void *imuTask(void *) {
   }
   imuReady=true;
   uint32_t previous=0; bool havePrevious=false;
-  uint32_t expectedStep=0;
   while(true) {
     pollfd p{fd,POLLIN,0}; int ready=poll(&p,1,1000);
     if(ready<0 && errno==EINTR) continue;
@@ -66,12 +67,14 @@ void *imuTask(void *) {
     if(n<0 && (errno==EAGAIN || errno==EINTR)) continue;
     if(n!=sizeof(row.data)) { ++imuErrors; continue; }
     row.received_us=monoUs(); row.seq=++imuSamples; imuReady=true;
-    // Preserve hardware timestamp verbatim. Detect discontinuity against the
-    // smallest observed nonzero step; units are deliberately not guessed.
+    // Sony's reference uses a 19.2 MHz timestamp counter. Do not learn the
+    // threshold from the smallest observed interval: one short interval would
+    // incorrectly mark every later sample as missing. Count discontinuity
+    // events (not estimated lost samples); preserve raw data for analysis.
     if(havePrevious) {
       uint32_t step=row.data.timestamp-previous;
-      if(step && (!expectedStep || step<expectedStep)) expectedStep=step;
-      if(!step || (expectedStep && step>expectedStep+expectedStep/2)) ++imuGaps;
+      constexpr uint32_t nominalStep=19200000UL/120;
+      if(!step || step>nominalStep+nominalStep/2) ++imuGaps;
     }
     previous=row.data.timestamp; havePrevious=true;
     pthread_mutex_lock(&recordingMutex);
@@ -159,18 +162,37 @@ bool openLogs() {
   return saveLine(imuFile,"seq,received_mono_us,sensor_timestamp_raw,temp,gx,gy,gz,ax,ay,az,crc32\n",false) &&
     saveLine(gpsFile,"seq,received_mono_us,utc_s,nav_usec,flags,fix,satellites,lat_e7,lon_e7,altitude_mm,imu_samples,imu_errors,imu_gaps,sd_errors,sd_rows,crc32\n",false);
 }
-bool startTask(void *(*fn)(void *)) {
+bool startTask(void *(*fn)(void *), int priority) {
   pthread_attr_t a; pthread_attr_init(&a); pthread_attr_setstacksize(&a,16384);
+  sched_param scheduling{}; scheduling.sched_priority=priority;
+  if(pthread_attr_setinheritsched(&a,PTHREAD_EXPLICIT_SCHED)!=0 ||
+     pthread_attr_setschedpolicy(&a,SCHED_FIFO)!=0 ||
+     pthread_attr_setschedparam(&a,&scheduling)!=0) {
+    pthread_attr_destroy(&a); return false;
+  }
   pthread_t t; int r=pthread_create(&t,&a,fn,nullptr); pthread_attr_destroy(&a);
   if(!r) pthread_detach(t); return r==0;
+}
+void exportStoppedLog(const char *path) {
+  if(recording || imuFile>=0 || gpsFile>=0) { Serial.println("# EXPORT_REFUSED stop with q first"); return; }
+  int fd=open(path,O_RDONLY);
+  if(fd<0) { Serial.println("# EXPORT_OPEN_FAILED"); return; }
+  Serial.println("# EXPORT_BEGIN");
+  uint8_t buffer[512]; ssize_t count; bool ok=true;
+  while((count=read(fd,buffer,sizeof(buffer)))>0) {
+    if(Serial.write(buffer,size_t(count))!=size_t(count)) { ok=false; break; }
+  }
+  if(count<0) ok=false;
+  if(close(fd)!=0) ok=false;
+  Serial.println(ok ? "# EXPORT_END" : "# EXPORT_FAILED");
 }
 void setup() {
   Serial.begin(115200);
   sdReady=openLogs(); if(!sdReady) ++sdErrors;
   Serial.println(sdReady ? "# SD_READBACK_OK" : "# SD_FAILED");
   Serial.println(imuPath); Serial.println(gpsPath);
-  if(!startTask(imuTask)) ++imuErrors;
-  if(!startTask(gpsTask)) Serial.println("# GNSS_THREAD_FAILED");
+  if(!startTask(imuTask,150)) ++imuErrors;
+  if(!startTask(gpsTask,120)) Serial.println("# GNSS_THREAD_FAILED");
 }
 void loop() {
   static uint32_t lastFlush=0, lastStatus=0;
@@ -178,6 +200,7 @@ void loop() {
   GpsRow gps;
   while(gpsQueue.pop(gps)) {
     aq::Nav &n=gps.nav;
+    lastGpsSequence=n.sequence; lastGpsFix=n.fix; lastGpsSatellites=n.satellites; lastGpsFlags=n.flags;
     snprintf(line,sizeof(line),"%lu,%llu,%llu,%lu,%u,%u,%u,%ld,%ld,%ld,%lu,%lu,%lu,%lu,%lu\n",
       (unsigned long)n.sequence,(unsigned long long)gps.received_us,(unsigned long long)n.utc_s,(unsigned long)n.usec,n.flags,n.fix,n.satellites,
       (long)n.lat_e7,(long)n.lon_e7,(long)n.altitude_mm,(unsigned long)n.imu_samples,(unsigned long)n.imu_errors,(unsigned long)n.imu_gaps,(unsigned long)n.sd_errors,(unsigned long)n.sd_rows);
@@ -194,11 +217,16 @@ void loop() {
     lastFlush=millis();
     if(fsync(imuFile)!=0 || fsync(gpsFile)!=0) { ++sdErrors; sdReady=false; }
   }
-  if(Serial.available() && Serial.read()=='q') {
-    pthread_mutex_lock(&recordingMutex);
-    recording=false;
-    pthread_mutex_unlock(&recordingMutex);
-    // Finish draining queues before closing on a subsequent loop.
+  if(Serial.available()) {
+    int c=Serial.read();
+    if(c=='q') {
+      pthread_mutex_lock(&recordingMutex);
+      recording=false;
+      pthread_mutex_unlock(&recordingMutex);
+      // Finish draining queues before closing on a subsequent loop.
+    }
+    if(c=='i') exportStoppedLog(imuPath);
+    if(c=='g') exportStoppedLog(gpsPath);
   }
   if(!recording && imuQueue.head==imuQueue.tail && gpsQueue.head==gpsQueue.tail && imuFile>=0) {
     bool ok=fsync(imuFile)==0 && fsync(gpsFile)==0;
@@ -212,6 +240,7 @@ void loop() {
       (unsigned long)imuSamples.load(),(unsigned long)imuErrors.load(),(unsigned long)imuGaps.load(),(unsigned long)queueDrops.load(),
       (unsigned long)gpsDrops.load(),int(sdReady.load()),(unsigned long)sdRows.load(),(unsigned long)sdErrors.load());
     Serial.println(line);
+    Serial.printf("# gps_seq=%lu fix=%u satellites=%u flags=%u\n",(unsigned long)lastGpsSequence,lastGpsFix,lastGpsSatellites,lastGpsFlags);
   }
   delay(1);
 }

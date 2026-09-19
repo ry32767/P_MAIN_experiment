@@ -1,0 +1,30 @@
+[
+  {
+    "file": "G_export.CSV",
+    "rows": 36,
+    "errors": [],
+    "warnings": [],
+    "sha256": "13667c1a164513c51a221063af4c5fd97e1e63048cf78a4e96cd520b21bfc88e",
+    "kind": "gps",
+    "duration_s": 35.109331,
+    "fix_values": [
+      1
+    ],
+    "satellites_max": 0,
+    "position_time_valid_rows": 0
+  },
+  {
+    "file": "G_priority.CSV",
+    "rows": 56,
+    "errors": [],
+    "warnings": [],
+    "sha256": "28427cd79a0f4d5d41fbea73d67931132cd599efe35221b2bdbfb968b5280890",
+    "kind": "gps",
+    "duration_s": 54.998993,
+    "fix_values": [
+      1
+    ],
+    "satellites_max": 0,
+    "position_time_valid_rows": 0
+  }
+]

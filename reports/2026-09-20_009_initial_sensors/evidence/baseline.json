@@ -1,0 +1,67 @@
+{
+  "validation": {
+    "file": "I_export.CSV",
+    "rows": 3301,
+    "errors": [],
+    "warnings": [
+      "Received rate outside 115..125 Hz; inspect FIFO losses and receipt batching"
+    ],
+    "sha256": "f00ec258e79a01d5db8c8291fffc89d20d4c19901df9616222987e1d3655bd29",
+    "kind": "imu",
+    "duration_s": 37.437065,
+    "observed_rate_hz": 88.14793574229176
+  },
+  "sensor_interval_ms": {
+    "median": 8.58765625,
+    "min": 5.0516145833333335,
+    "max": 91.86322916666667,
+    "mean": 11.383645785984848,
+    "zero_count": 0,
+    "above_1_5_nominal_count": 160
+  },
+  "native_driver_values": {
+    "temp": {
+      "mean": 32.23717305362012,
+      "sample_stddev": 0.03423669895303075,
+      "min": 32.161621,
+      "max": 32.308594
+    },
+    "gx": {
+      "mean": 0.00028518102696152683,
+      "sample_stddev": 0.00020239657808927516,
+      "min": -0.00149318,
+      "max": 0.00386008
+    },
+    "gy": {
+      "mean": 0.0001482247379581945,
+      "sample_stddev": 0.0002614843886624037,
+      "min": -0.00192689,
+      "max": 0.00296601
+    },
+    "gz": {
+      "mean": 4.611775522568918e-05,
+      "sample_stddev": 0.00043103879477882697,
+      "min": -0.00108686,
+      "max": 0.00097026
+    },
+    "ax": {
+      "mean": 0.5007870179945471,
+      "sample_stddev": 0.009716771706800206,
+      "min": 0.46784934,
+      "max": 0.53343952
+    },
+    "ay": {
+      "mean": 0.016724993029385033,
+      "sample_stddev": 0.003173927466164895,
+      "min": -0.00612786,
+      "max": 0.03782539
+    },
+    "az": {
+      "mean": 9.781822488809452,
+      "sample_stddev": 0.00245676178458926,
+      "min": 9.76980019,
+      "max": 9.79291821
+    }
+  },
+  "limitations": "Motion and calibrated reference not confirmed; summary is not an accuracy result."
+}
