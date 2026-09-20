@@ -34,3 +34,5 @@ reports/
 - [電池残量目安表示](2026-09-20_002_battery_estimate/README.md)
 
 - [Spresense・GPS時刻同期の状態表示](2026-09-20_003_spresense_status/README.md)
+
+- [スマホ位置・時刻共有](2026-09-20_004_phone_reference/README.md)

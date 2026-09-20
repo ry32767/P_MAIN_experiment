@@ -3,6 +3,7 @@
 .battery{margin-bottom:18px}.battery p{margin:8px 0}.battery meter{width:100%;height:24px}</style>
 <header><p>GITHUB PAGES · 親子実験コントローラー</p><p class="note">インターネット接続中にこの画面を開き、機体のWi-Fi「AquaBeacon-MAIN」に接続してから「親機に接続」を押してください。通信は端末から親機へ直接行います。</p><div class="actions"><button id="connectDevice" class="primary">親機に接続</button><a href="http://192.168.4.1/" target="_blank" rel="noopener">機体内の操作画面を開く</a></div><p id="offlineReady" class="note">オフライン用の画面を準備中…</p><p class="note">対応するChromeでは「ローカルネットワークへのアクセス」を許可してください。接続できない場合は機体内画面を使えます。これはインターネット越しの遠隔操作ではありません。</p><p>AQUABEACON · SYSTEM STATUS</p><h1>親機と子機の状態</h1><p id="connection">接続中…</p></header>
 <article aria-label="実験操作"><h2>実験操作</h2><div class="actions"><button class="primary" data-action="new">新しい実験・記録開始</button><button data-action="startRange">測距送信を開始</button><button class="stop" id="stopRange">測距送信を停止</button></div><div class="actions"><button data-action="resume">親子の記録を再開</button><button class="stop" data-action="stopRecord">実験終了・親子の記録を停止</button></div><p id="message" role="status" aria-live="polite">新しい実験では親子とも新規ファイルを作成します。測距送信は別途開始してください。</p></article>
+<details><summary>スマホから位置・時刻を共有</summary><p class="note">この画面を開いている端末の時計を親機へ送ります。位置共有はHTTPSのGitHub Pagesで位置情報の許可が必要です。スマホ位置はGPS以外の推定も含みます。送信先は親機で、SD記録中は時刻・位置・精度を保存します。</p><div class="actions"><button id="phoneTime">時刻共有を開始</button><button id="phonePosition">位置・時刻共有を開始</button><button id="phoneStop">共有停止・親機の共有情報を解除</button></div><p id="phoneMessage" role="status">共有停止中。スマホの日時を自動設定にしてください。</p><dl id="phoneStatus">未取得</dl><p class="note">画面を開いている間、約30秒ごとに更新します。端末時計と通信遅延に依存する参考時刻で、GPSの1PPS精度はありません。時刻は更新停止から3分、位置は取得から1分で無効になります。位置の取得に失敗しても時刻共有は続けます。SpresenseのUTC対応が成立すればそちらを優先します。子機の相対同期・測距時間は変更しません。</p></details>
 <details><summary>受信ゲインの確認</summary><p class="note">60秒間、100 kサンプル/秒で受信電圧を取得し、各更新区間のピークを表示します。子機SD保存を一時停止し、終了後に再開します。ゲインの可変抵抗は手で調整してください。</p><div class="actions"><button data-action="gain">60秒の受信グラフを開始</button><button id="cancelGain">受信確認を終了</button></div><p id="gainState">待機中</p><canvas id="rxChart" aria-label="受信電圧の推移"></canvas><p class="note">緑：ピーク、青：平均。単位mV（ADC入力・未校正）。受信判定は下の距離測位欄を参照してください。</p></details>
 <details><summary>記録設定・センサーの復帰</summary><label for="rate">子機BNO保存周期</label> <select id="rate"><option value="100">100 Hz</option><option value="50">50 Hz</option></select><div class="actions"><button data-action="rate">周期を適用して新規記録</button><button data-action="resetImu">BNO085を再初期化</button></div><p class="note">周期変更は子機記録を停止し、新しいファイルで再開します。電源投入時は100Hz構成です。再初期化中は一時的に未取得になります。</p></details>
 <details><summary>SDログの回収</summary><p class="note">「実験終了」で親子の保存を停止してから一覧を開いてください。子機のログはテザーを通して転送するため、大きなファイルには時間がかかります。</p><label for="logTarget">回収する機器</label> <select id="logTarget"><option value="c">子機</option><option value="p">親機</option></select><div class="actions"><button data-action="list">ファイル一覧を取得</button><button id="cancelDownload">転送を中止</button></div><p id="downloadState" role="status"></p><progress id="downloadProgress" value="0" max="1"></progress><div id="loglist"></div></details>
@@ -91,7 +92,56 @@ document.querySelectorAll('[data-action]').forEach(b=>b.onclick=()=>action(actio
 el('stopRange').onclick=()=>{abortGain=true;rangeStop().then(()=>el('message').textContent='測距送信を停止しました').catch(e=>el('message').textContent=e.message)};
 el('cancelGain').onclick=()=>{abortGain=true};el('cancelDownload').onclick=()=>{abortDownload=true};
 
-async function tick(){if(!deviceConnected){el('connection').textContent='未接続 · 機体Wi-Fiに接続後、親機に接続を押してください';setTimeout(tick,1000);return;}if(busy){setTimeout(tick,1000);return;}try{const r=await deviceFetch('/api/status',{signal:AbortSignal.timeout(2000)});if(!r.ok)throw Error();const s=await r.json();el('connection').textContent='更新 '+new Date().toLocaleTimeString()+' · 子機 '+(s.link_age_ms<3000?'接続中':'応答なし');renderSpresense(s.spresense);render('parent',s.local,false,false);render('child',s.remote,s.link_age_ms>=3000,true);el('range').textContent=!s.ranging?'測距停止中':(['受信待ち','受信なし','早期反応あり（近接・距離未評価）','参考距離 '+fmt(s.range_m,' m'),'同期／取得異常','比較器HIGH・有効エッジなし'][s.range_state]||'確認中');el('timing').textContent='測定 #'+s.shot_seq+' · テザー同期 '+(s.sync_ok?'成立':'未成立')+' · 推定不確かさ ±'+s.uncertainty_us+' µs';el('files').textContent='親機ログ '+s.log_file+' / '+s.health_file+' · SD '+s.sd_reason;}catch(e){el('connection').textContent='親機との通信が途絶えました';renderSpresense(null,true);render('parent',{},true,false);render('child',{},true,true);el('range').textContent='最新状態を確認できません';}setTimeout(tick,1000)}tick();
+
+// PHONE_CLIENT_BEGIN
+function phoneClockSample(wallStart,wallEnd,elapsed){
+ if(!Number.isFinite(elapsed)||elapsed<0||elapsed>1000||Math.abs((wallEnd-wallStart)-elapsed)>100)throw Error('通信が遅いか端末時計が変わりました。再試行してください');
+ return {epoch:Math.round(wallStart+elapsed/2),rtt:Math.ceil(elapsed)};
+}
+function phonePositionValues(p,now){
+ const c=p.coords,age=now-p.timestamp;
+ if(![c.latitude,c.longitude,c.accuracy,age].every(Number.isFinite)||Math.abs(c.latitude)>90||Math.abs(c.longitude)>180||c.accuracy<0||c.accuracy>100000||age<0||age>=60000)throw Error('位置情報が古いか無効です');
+ return [Math.round(c.latitude*1e7),Math.round(c.longitude*1e7),Math.ceil(c.accuracy*1000),Math.ceil(age)];
+}
+// PHONE_CLIENT_END
+let phoneStopping=false,phoneMode='',phoneGeneration=0,phoneTimer,phoneWork=Promise.resolve(),phoneStatusExpiry;
+function renderPhone(p,stale=false){
+ clearTimeout(phoneStatusExpiry);const box=el('phoneStatus');
+ if(stale){box.textContent='通信途絶・共有状態不明';return;}
+ if(!p){box.textContent='親機の更新が必要です';return;}
+ const source={none:'未同期',phone_clock:'スマホ／端末の時計（簡易同期）',spresense_candidate:'Spresense（UTC対応・精度未検証）'};
+ const rows=[['親機の記録用時刻',source[p.source]||'不明'],['UTC参考時刻',p.utc_ms?new Date(p.utc_ms).toISOString():'未取得'],['端末時刻の共有',p.phone_time_fresh?'有効・通信往復 '+p.rtt_ms+' ms（時刻精度ではありません）':'未取得／期限切れ'],['スマホ位置',p.position_fresh?p.latitude.toFixed(6)+', '+p.longitude.toFixed(6):'未取得／期限切れ'],['位置の取得精度',p.position_fresh?'約 '+p.accuracy_m+' m':'未取得']];
+ box.replaceChildren(...rows.flatMap(([k,v])=>{const a=document.createElement('dt'),b=document.createElement('dd');a.textContent=k;b.textContent=v;return[a,b]}));phoneStatusExpiry=setTimeout(()=>renderPhone(null,true),3000);
+}
+function schedulePhone(){clearTimeout(phoneTimer);if(phoneMode)phoneTimer=setTimeout(()=>{phoneWork=phoneCycle()},30000)}
+async function phoneCycle(){
+ if(!phoneMode)return;if(busy||document.hidden){schedulePhone();return;}
+ const generation=phoneGeneration;setBusy(true);
+ try{
+  const start=Date.now(),mono=performance.now(),probe=await post('/api/phone/probe');
+  const sample=phoneClockSample(start,Date.now(),performance.now()-mono);
+  if(generation!==phoneGeneration)return;
+  await post('/api/phone/time/'+[probe.session,probe.token,sample.epoch,sample.rtt].join('/'));
+  if(generation!==phoneGeneration)return;
+  el('phoneMessage').textContent='時刻共有中 · '+new Date().toLocaleTimeString();
+  if(phoneMode==='position'){
+   try{
+    if(!window.isSecureContext||!navigator.geolocation)throw Error('位置共有にはHTTPSのGitHub Pagesを使用してください');
+    el('phoneMessage').textContent='時刻共有済み・スマホ位置を取得中…';
+    const pos=await new Promise((resolve,reject)=>navigator.geolocation.getCurrentPosition(resolve,reject,{enableHighAccuracy:true,maximumAge:0,timeout:15000}));
+    if(generation!==phoneGeneration)return;
+    await post('/api/phone/position/'+[probe.session,...phonePositionValues(pos,Date.now())].join('/'));
+    if(generation===phoneGeneration)el('phoneMessage').textContent='位置・時刻を共有しました · '+new Date().toLocaleTimeString();
+   }catch(e){if(generation===phoneGeneration){el('phoneMessage').textContent='時刻共有済み・位置は取得できません：'+(e.code===1?'位置情報が許可されていません':e.message||'取得失敗');if(e.code===1||!window.isSecureContext)phoneMode='time';}}
+  }
+ }catch(e){if(generation===phoneGeneration)el('phoneMessage').textContent='共有失敗：'+e.message+'（約30秒後に再試行）';}
+ finally{setBusy(false);if(generation===phoneGeneration)schedulePhone();}
+}
+function startPhone(mode){if(busy||phoneStopping){el('phoneMessage').textContent='実行中の操作が終わってから共有を開始してください';return;}clearTimeout(phoneTimer);phoneMode=mode;++phoneGeneration;phoneWork=phoneCycle()}
+el('phoneTime').onclick=()=>startPhone('time');el('phonePosition').onclick=()=>startPhone('position');
+el('phoneStop').onclick=async()=>{if(phoneStopping)return;phoneStopping=true;phoneMode='';++phoneGeneration;clearTimeout(phoneTimer);el('phoneMessage').textContent='共有を停止しています…';await phoneWork;try{await post('/api/phone/clear');el('phoneMessage').textContent='共有停止・親機の共有情報を解除しました（保存済みSDログは残ります）'}catch(e){el('phoneMessage').textContent='この端末からの共有は停止しました。親機の解除に失敗：'+e.message+'。時刻は最大3分、位置は最大1分で失効します。'}finally{phoneStopping=false}};
+
+async function tick(){if(!deviceConnected){el('connection').textContent='未接続 · 機体Wi-Fiに接続後、親機に接続を押してください';setTimeout(tick,1000);return;}if(busy){setTimeout(tick,1000);return;}try{const r=await deviceFetch('/api/status',{signal:AbortSignal.timeout(2000)});if(!r.ok)throw Error();const s=await r.json();el('connection').textContent='更新 '+new Date().toLocaleTimeString()+' · 子機 '+(s.link_age_ms<3000?'接続中':'応答なし');renderPhone(s.phone);renderSpresense(s.spresense);render('parent',s.local,false,false);render('child',s.remote,s.link_age_ms>=3000,true);el('range').textContent=!s.ranging?'測距停止中':(['受信待ち','受信なし','早期反応あり（近接・距離未評価）','参考距離 '+fmt(s.range_m,' m'),'同期／取得異常','比較器HIGH・有効エッジなし'][s.range_state]||'確認中');el('timing').textContent='測定 #'+s.shot_seq+' · テザー同期 '+(s.sync_ok?'成立':'未成立')+' · 推定不確かさ ±'+s.uncertainty_us+' µs';el('files').textContent='親機ログ '+s.log_file+' / '+s.health_file+' · SD '+s.sd_reason;}catch(e){el('connection').textContent='親機との通信が途絶えました';renderPhone(null,true);renderSpresense(null,true);render('parent',{},true,false);render('child',{},true,true);el('range').textContent='最新状態を確認できません';}setTimeout(tick,1000)}tick();
 setBusy(true);busy=false;
 el('connectDevice').onclick=async()=>{el('connectDevice').disabled=true;deviceConnected=true;try{const r=await deviceFetch('/api/status',{signal:AbortSignal.timeout(8000)});if(!r.ok)throw Error('親機から正常な応答がありません');const s=await r.json();if(s.role!=='P_MAIN')throw Error('親機を確認できません');setBusy(false);el('message').textContent='親機に接続しました';}catch(e){deviceConnected=false;el('message').textContent='接続できません。機体Wi-Fi、ローカルネットワークの許可を確認するか、機体内画面を開いてください。';}finally{el('connectDevice').disabled=false}};
 if('serviceWorker' in navigator){navigator.serviceWorker.register('./sw.js').then(()=>navigator.serviceWorker.ready).then(()=>el('offlineReady').textContent='画面を保存しました。機体Wi-Fiへ切り替えた後もこのページを使用できます。').catch(()=>el('offlineReady').textContent='オフライン保存ができません。このページを開いたまま機体Wi-Fiへ接続してください。')}
