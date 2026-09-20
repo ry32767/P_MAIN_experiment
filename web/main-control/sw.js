@@ -1,4 +1,4 @@
-const CACHE='aquabeacon-main-control-v2';
+const CACHE='aquabeacon-main-control-v3';
 self.addEventListener('install',event=>event.waitUntil(caches.open(CACHE).then(cache=>cache.addAll(['./','./index.html'])).then(()=>self.skipWaiting())));
 self.addEventListener('activate',event=>event.waitUntil(self.clients.claim()));
 self.addEventListener('fetch',event=>{

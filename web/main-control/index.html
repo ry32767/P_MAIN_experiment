@@ -6,8 +6,8 @@
 <details><summary>受信ゲインの確認</summary><p class="note">60秒間、100 kサンプル/秒で受信電圧を取得し、各更新区間のピークを表示します。子機SD保存を一時停止し、終了後に再開します。ゲインの可変抵抗は手で調整してください。</p><div class="actions"><button data-action="gain">60秒の受信グラフを開始</button><button id="cancelGain">受信確認を終了</button></div><p id="gainState">待機中</p><canvas id="rxChart" aria-label="受信電圧の推移"></canvas><p class="note">緑：ピーク、青：平均。単位mV（ADC入力・未校正）。受信判定は下の距離測位欄を参照してください。</p></details>
 <details><summary>記録設定・センサーの復帰</summary><label for="rate">子機BNO保存周期</label> <select id="rate"><option value="100">100 Hz</option><option value="50">50 Hz</option></select><div class="actions"><button data-action="rate">周期を適用して新規記録</button><button data-action="resetImu">BNO085を再初期化</button></div><p class="note">周期変更は子機記録を停止し、新しいファイルで再開します。電源投入時は100Hz構成です。再初期化中は一時的に未取得になります。</p></details>
 <details><summary>SDログの回収</summary><p class="note">「実験終了」で親子の保存を停止してから一覧を開いてください。子機のログはテザーを通して転送するため、大きなファイルには時間がかかります。</p><label for="logTarget">回収する機器</label> <select id="logTarget"><option value="c">子機</option><option value="p">親機</option></select><div class="actions"><button data-action="list">ファイル一覧を取得</button><button id="cancelDownload">転送を中止</button></div><p id="downloadState" role="status"></p><progress id="downloadProgress" value="0" max="1"></progress><div id="loglist"></div></details>
-<article style="margin-bottom:18px"><h2>距離測位</h2><p id="range">確認中</p><p id="timing"></p><p class="note">距離は未校正の参考値です。近接配置の早期反応は受信の確認に使用できますが、距離精度は未検証です。時刻は親機を基準に同期し、UTCは未検証です。</p></article>
-<div class="grid"><article><h2>親機</h2><div class="battery" id="parentBattery">残量未取得</div><dl id="parent"></dl><p class="note">温度・水圧センサ、LCDは未接続。Spresenseは今回の検証対象外。</p></article><article><h2>子機</h2><div class="battery" id="childBattery">残量未取得</div><dl id="child"></dl><p class="note">漏水表示は電極入力の状態です。電極線の断線は検出できません。音響入力の変化だけでは受信成功を保証しません。</p></article></div><p class="note">電池：親子とも標準3S LiPo・11.1 V・2200 mAh（24.42 Wh）。残量は10.5 Vを0%、12.6 Vを100%とする電圧の簡易目安です。実際の残容量とは異なり、負荷や温度で変動します。10.8 V以下で低電圧を表示します。セル別電圧・残り時間は未測定です。</p><p class="note" id="files"></p>
+<article style="margin-bottom:18px"><h2>距離測位</h2><p id="range">確認中</p><p id="timing"></p><p class="note">距離は未校正の参考値です。近接配置の早期反応は受信の確認に使用できますが、距離精度は未検証です。子機の時刻は親機基準の相対同期です。UTCの状態はSpresense欄を参照してください。</p></article>
+<article style="margin-bottom:18px"><h2>Spresense・GPS時刻同期</h2><dl id="spresense">未取得</dl><p class="note">GPS測位、1PPS受信、UTCとの対応を分けて表示します。UTC対応の成立は連続した時刻・パルスの条件成立を示し、絶対時刻の精度や1秒ずれがないことは未検証です。子機とのテザー同期は下記とは独立です。捕捉中の衛星数・信号強度は現在のSpresense通信形式では取得できません。</p></article><div class="grid"><article><h2>親機</h2><div class="battery" id="parentBattery">残量未取得</div><dl id="parent"></dl><p class="note">温度・水圧センサ、LCDは未接続。Spresenseの状態は専用欄を参照。</p></article><article><h2>子機</h2><div class="battery" id="childBattery">残量未取得</div><dl id="child"></dl><p class="note">漏水表示は電極入力の状態です。電極線の断線は検出できません。音響入力の変化だけでは受信成功を保証しません。</p></article></div><p class="note">電池：親子とも標準3S LiPo・11.1 V・2200 mAh（24.42 Wh）。残量は10.5 Vを0%、12.6 Vを100%とする電圧の簡易目安です。実際の残容量とは異なり、負荷や温度で変動します。10.8 V以下で低電圧を表示します。セル別電圧・残り時間は未測定です。</p><p class="note" id="files"></p>
 <script>
 let deviceConnected=false;
 function deviceFetch(path,options){if(!deviceConnected)return Promise.reject(Error('先に親機へ接続してください'));return window.fetch('http://192.168.4.1'+path,options)}
@@ -41,6 +41,34 @@ function renderBattery(id,h,stale){
 
 function render(id,h,stale,child){renderBattery(id,h,stale);let rows=[];const add=(k,v)=>rows.push([k,v]);if(stale){el(id).textContent='通信途絶：最新状態を確認できません';el(id).className='bad';return;}el(id).className='';let f=h.flags;add('周辺電源',f&1?'検出':'未検出');add('SD保存',f&2?'保存中':'停止／異常');add('保存 / 同期済み',h.rows+' / '+h.durable_rows+' 行');add('SDエラー',h.sd_errors);add('記録欠落',h.dropped);add('電源電圧',fmt(h.bus_v,' V'));add('電流',fmt(h.current_ma,' mA'));add('磁気 X / Y / Z',[h.mag_x,h.mag_y,h.mag_z].map(x=>fmt(x)).join(' / ')+' µT');if(child){add('漏水入力',f&8?'濡れ検知':'濡れ未検知');add('水温',fmt(h.temp_c,' °C'));add('水圧',fmt(h.pressure_mbar,' mbar'));add('BNO085',f&4?'取得中':'未取得／遅延');add('姿勢レポート累計',h.imu_samples);add('IMU欠落・更新不足',h.imu_gaps);add('最大記録遅れ',h.max_lateness_us+' µs');add('受信比較器',f&512?'HIGH':'LOW');add('受信入力のエッジ',h.rx_edges);add('受信包絡線',h.env_mv+' mV');}el(id).replaceChildren(...rows.flatMap(([k,v])=>{let dt=document.createElement('dt'),dd=document.createElement('dd');dt.textContent=k;dd.textContent=v;return[dt,dd]}));}
 
+
+// SPRESENSE_VIEW_BEGIN
+function spresenseRows(g){
+ if(!g)return [['状態','未対応の親機ファームウェア／未取得']];
+ const fresh=g.link_fresh,yn=(yes,a,b)=>yes?a:b;
+ return [
+ ['Spresense通信',fresh?'受信中':'応答なし'],
+ ['GPS測位',!fresh?'不明':g.fix_valid?'測位成立・GPS受信確認':'未測位（信号受信の有無は不明）'],
+ ['測位に使用中の衛星',fresh?g.satellites_used+' 機':'不明'],
+ ['1PPS信号',yn(g.pps_fresh,'検出中','未検出／途絶')],
+ ['1PPS周期',g.pps_fresh&&g.pps_period_us?g.pps_period_us+' µs':'未取得'],
+ ['GPS時刻データ',!fresh?'不明':yn(g.time_valid,'有効','無効／取得待ち')],
+ ['親機とUTCの対応',yn(g.sync_candidate,'成立（精度未検証）','未成立')],
+ ['UTC参考時刻',g.sync_candidate&&Number.isFinite(g.utc_candidate_us)?new Date(g.utc_candidate_us/1000).toISOString():'未取得'],
+ ['Spresense SD',!fresh?'不明':yn(g.sd_ok,'正常応答','異常／未準備')],
+ ['Spresense IMU',!fresh?'不明':yn(g.imu_ok,'取得中','未取得／異常')],
+ ['受信パケット / CRCエラー',g.packets+' / '+g.crc_errors]
+ ];
+}
+// SPRESENSE_VIEW_END
+let spresenseExpiry;
+function renderSpresense(g,stale=false){
+ clearTimeout(spresenseExpiry);const box=el('spresense');
+ if(stale){box.textContent='親機の状態更新が途絶えました・同期状態不明';box.className='bad';return;}
+ box.className='';box.replaceChildren(...spresenseRows(g).flatMap(([k,v])=>{let dt=document.createElement('dt'),dd=document.createElement('dd');dt.textContent=k;dd.textContent=v;return[dt,dd]}));
+ spresenseExpiry=setTimeout(()=>renderSpresense(null,true),3000);
+}
+
 let busy=false,abortGain=false,abortDownload=false;
 const errors=['','処理中です','SDカードを確認してください','入力が不正です','先に記録を停止してください','ファイルが見つかりません','子機の応答がタイムアウトしました','対応していない操作です'];
 const pause=ms=>new Promise(r=>setTimeout(r,ms));
@@ -63,7 +91,7 @@ document.querySelectorAll('[data-action]').forEach(b=>b.onclick=()=>action(actio
 el('stopRange').onclick=()=>{abortGain=true;rangeStop().then(()=>el('message').textContent='測距送信を停止しました').catch(e=>el('message').textContent=e.message)};
 el('cancelGain').onclick=()=>{abortGain=true};el('cancelDownload').onclick=()=>{abortDownload=true};
 
-async function tick(){if(!deviceConnected){el('connection').textContent='未接続 · 機体Wi-Fiに接続後、親機に接続を押してください';setTimeout(tick,1000);return;}if(busy){setTimeout(tick,1000);return;}try{const r=await deviceFetch('/api/status',{signal:AbortSignal.timeout(2000)});if(!r.ok)throw Error();const s=await r.json();el('connection').textContent='更新 '+new Date().toLocaleTimeString()+' · 子機 '+(s.link_age_ms<3000?'接続中':'応答なし');render('parent',s.local,false,false);render('child',s.remote,s.link_age_ms>=3000,true);el('range').textContent=!s.ranging?'測距停止中':(['受信待ち','受信なし','早期反応あり（近接・距離未評価）','参考距離 '+fmt(s.range_m,' m'),'同期／取得異常','比較器HIGH・有効エッジなし'][s.range_state]||'確認中');el('timing').textContent='測定 #'+s.shot_seq+' · テザー同期 '+(s.sync_ok?'成立':'未成立')+' · 推定不確かさ ±'+s.uncertainty_us+' µs';el('files').textContent='親機ログ '+s.log_file+' / '+s.health_file+' · SD '+s.sd_reason;}catch(e){el('connection').textContent='親機との通信が途絶えました';render('parent',{},true,false);render('child',{},true,true);el('range').textContent='最新状態を確認できません';}setTimeout(tick,1000)}tick();
+async function tick(){if(!deviceConnected){el('connection').textContent='未接続 · 機体Wi-Fiに接続後、親機に接続を押してください';setTimeout(tick,1000);return;}if(busy){setTimeout(tick,1000);return;}try{const r=await deviceFetch('/api/status',{signal:AbortSignal.timeout(2000)});if(!r.ok)throw Error();const s=await r.json();el('connection').textContent='更新 '+new Date().toLocaleTimeString()+' · 子機 '+(s.link_age_ms<3000?'接続中':'応答なし');renderSpresense(s.spresense);render('parent',s.local,false,false);render('child',s.remote,s.link_age_ms>=3000,true);el('range').textContent=!s.ranging?'測距停止中':(['受信待ち','受信なし','早期反応あり（近接・距離未評価）','参考距離 '+fmt(s.range_m,' m'),'同期／取得異常','比較器HIGH・有効エッジなし'][s.range_state]||'確認中');el('timing').textContent='測定 #'+s.shot_seq+' · テザー同期 '+(s.sync_ok?'成立':'未成立')+' · 推定不確かさ ±'+s.uncertainty_us+' µs';el('files').textContent='親機ログ '+s.log_file+' / '+s.health_file+' · SD '+s.sd_reason;}catch(e){el('connection').textContent='親機との通信が途絶えました';renderSpresense(null,true);render('parent',{},true,false);render('child',{},true,true);el('range').textContent='最新状態を確認できません';}setTimeout(tick,1000)}tick();
 setBusy(true);busy=false;
 el('connectDevice').onclick=async()=>{el('connectDevice').disabled=true;deviceConnected=true;try{const r=await deviceFetch('/api/status',{signal:AbortSignal.timeout(8000)});if(!r.ok)throw Error('親機から正常な応答がありません');const s=await r.json();if(s.role!=='P_MAIN')throw Error('親機を確認できません');setBusy(false);el('message').textContent='親機に接続しました';}catch(e){deviceConnected=false;el('message').textContent='接続できません。機体Wi-Fi、ローカルネットワークの許可を確認するか、機体内画面を開いてください。';}finally{el('connectDevice').disabled=false}};
 if('serviceWorker' in navigator){navigator.serviceWorker.register('./sw.js').then(()=>navigator.serviceWorker.ready).then(()=>el('offlineReady').textContent='画面を保存しました。機体Wi-Fiへ切り替えた後もこのページを使用できます。').catch(()=>el('offlineReady').textContent='オフライン保存ができません。このページを開いたまま機体Wi-Fiへ接続してください。')}
