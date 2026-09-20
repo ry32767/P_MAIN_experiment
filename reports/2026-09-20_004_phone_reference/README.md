@@ -45,3 +45,5 @@
 親機SDが正常なら、毎回新規の`P_MAIN_TIME_POSITION_00000.csv`等に1秒ごとに親機単調時刻、参考UTCミリ秒、時刻源、端末時刻の更新経過、通信往復時間、スマホ位置と精度、CRC32を保存します。以前の`P_MAIN_GNSS_RESERVED`の新規生成は廃止し、既存ファイルは保持します。時刻未取得はUTC値0と`time_source=none`、位置失効は有効フラグ0とNaNです。位置は親機へ直接送信し、この画面のコードはGitHub等へ送信しません。
 
 実装根拠：[W3C Geolocation](https://www.w3.org/TR/geolocation/)（位置の取得元、HTTPS・許可、取得時刻の意味）。
+
+公開コミット343104c。Pages公開成功、公開HTMLの新操作・共有処理を確認。[公開処理](https://github.com/ry32767/P_MAIN_experiment/actions/runs/35493563380)。
