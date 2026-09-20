@@ -1,0 +1,11 @@
+[
+  {
+    "file": "gps_power.csv",
+    "rows": 27,
+    "errors": [],
+    "warnings": [],
+    "sha256": "7799c2ebb2ed19883e4b651c26281909db04ff733c24c470234399a77335dd5a",
+    "kind": "gps",
+    "duration_s": 25.999512
+  }
+]

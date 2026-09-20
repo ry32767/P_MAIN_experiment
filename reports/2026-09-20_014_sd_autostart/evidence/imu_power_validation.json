@@ -1,0 +1,12 @@
+[
+  {
+    "file": "imu_power.csv",
+    "rows": 27839,
+    "errors": [],
+    "warnings": [],
+    "sha256": "3991e8ba66ac2acaa9e83065d548efdd784c0c7144059bee1b6f96ac064f4761",
+    "kind": "imu",
+    "duration_s": 28.799289,
+    "observed_rate_hz": 966.6210856802749
+  }
+]
