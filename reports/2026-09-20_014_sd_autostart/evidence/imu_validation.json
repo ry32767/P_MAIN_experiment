@@ -1,0 +1,12 @@
+[
+  {
+    "file": "imu.csv",
+    "rows": 10397,
+    "errors": [],
+    "warnings": [],
+    "sha256": "03d937006e83773f6f2577dcc25feb1bfbf01c449e6deda67e7289ce7808a052",
+    "kind": "imu",
+    "duration_s": 10.748399,
+    "observed_rate_hz": 967.2138148202351
+  }
+]
