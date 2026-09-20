@@ -29,3 +29,5 @@ reports/
 [報告書テンプレート](../docs/REPORT_TEMPLATE.md)を使い、ピン配置・接続機器・未接続機器を毎回記載します。実測と模擬データ、実接続と予定の構成を区別してください。
 
 - [親子実験操作画面のPages公開](2026-09-20_001_main_control_pages/README.md)
+
+- [電池残量目安表示](2026-09-20_002_battery_estimate/README.md)

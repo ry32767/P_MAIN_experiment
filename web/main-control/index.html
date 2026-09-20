@@ -1,19 +1,45 @@
 <!doctype html><html lang="ja"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>AquaBeacon 親子実験コントローラー</title>
 <style>:root{--ink:#183944;--muted:#536b71;--paper:#edf3f2;--panel:#fff;--accent:#087d86;--danger:#a93025;--space:12px;--radius:12px;font-family:system-ui,sans-serif;color:#183944;background:#edf3f2}body{max-width:1000px;margin:24px auto;padding:0 20px}header{border-bottom:2px solid #087d86;margin-bottom:22px}h1{font-size:30px}h2{font-size:20px}.grid{display:grid;grid-template-columns:1fr 1fr;gap:18px}article{background:white;padding:24px;border-radius:12px}dl{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin:0}dt{color:#536b71}dd{margin:0;text-align:right;font-variant-numeric:tabular-nums}.note{font-size:14px;color:#536b71;line-height:1.7}.bad{color:#a93025}.good{color:#067467}#range{font-size:22px}@media(max-width:650px){.grid{grid-template-columns:1fr}article{padding:18px}}button,select{font:inherit;min-height:44px;border:1px solid var(--accent);border-radius:8px;padding:9px 15px;background:var(--panel);color:var(--ink)}button{cursor:pointer}button.primary{background:var(--accent);color:var(--panel)}button.stop{border-color:var(--danger);color:var(--danger)}button:disabled{opacity:.45;cursor:wait}button:focus-visible,select:focus-visible,summary:focus-visible{outline:3px solid var(--accent);outline-offset:3px}.actions{display:flex;flex-wrap:wrap;gap:var(--space);margin:var(--space) 0}details{background:var(--panel);border-radius:var(--radius);padding:18px;margin:18px 0}summary{cursor:pointer;font-size:20px;min-height:44px}#message{min-height:24px;white-space:pre-line}#loglist{display:grid;gap:8px}.file{display:flex;align-items:center;justify-content:space-between;gap:12px;overflow-wrap:anywhere}.file span{min-width:0}canvas{width:100%;height:240px}dd{overflow-wrap:anywhere;min-width:0}#stopRange{position:sticky;top:8px}progress{width:100%;height:20px}@media(max-width:650px){.actions button{flex:1 1 42%}.file{display:block}.file button{margin:8px 0}body{padding:0 12px}}
-</style>
+.battery{margin-bottom:18px}.battery p{margin:8px 0}.battery meter{width:100%;height:24px}</style>
 <header><p>GITHUB PAGES · 親子実験コントローラー</p><p class="note">インターネット接続中にこの画面を開き、機体のWi-Fi「AquaBeacon-MAIN」に接続してから「親機に接続」を押してください。通信は端末から親機へ直接行います。</p><div class="actions"><button id="connectDevice" class="primary">親機に接続</button><a href="http://192.168.4.1/" target="_blank" rel="noopener">機体内の操作画面を開く</a></div><p id="offlineReady" class="note">オフライン用の画面を準備中…</p><p class="note">対応するChromeでは「ローカルネットワークへのアクセス」を許可してください。接続できない場合は機体内画面を使えます。これはインターネット越しの遠隔操作ではありません。</p><p>AQUABEACON · SYSTEM STATUS</p><h1>親機と子機の状態</h1><p id="connection">接続中…</p></header>
 <article aria-label="実験操作"><h2>実験操作</h2><div class="actions"><button class="primary" data-action="new">新しい実験・記録開始</button><button data-action="startRange">測距送信を開始</button><button class="stop" id="stopRange">測距送信を停止</button></div><div class="actions"><button data-action="resume">親子の記録を再開</button><button class="stop" data-action="stopRecord">実験終了・親子の記録を停止</button></div><p id="message" role="status" aria-live="polite">新しい実験では親子とも新規ファイルを作成します。測距送信は別途開始してください。</p></article>
 <details><summary>受信ゲインの確認</summary><p class="note">60秒間、100 kサンプル/秒で受信電圧を取得し、各更新区間のピークを表示します。子機SD保存を一時停止し、終了後に再開します。ゲインの可変抵抗は手で調整してください。</p><div class="actions"><button data-action="gain">60秒の受信グラフを開始</button><button id="cancelGain">受信確認を終了</button></div><p id="gainState">待機中</p><canvas id="rxChart" aria-label="受信電圧の推移"></canvas><p class="note">緑：ピーク、青：平均。単位mV（ADC入力・未校正）。受信判定は下の距離測位欄を参照してください。</p></details>
 <details><summary>記録設定・センサーの復帰</summary><label for="rate">子機BNO保存周期</label> <select id="rate"><option value="100">100 Hz</option><option value="50">50 Hz</option></select><div class="actions"><button data-action="rate">周期を適用して新規記録</button><button data-action="resetImu">BNO085を再初期化</button></div><p class="note">周期変更は子機記録を停止し、新しいファイルで再開します。電源投入時は100Hz構成です。再初期化中は一時的に未取得になります。</p></details>
 <details><summary>SDログの回収</summary><p class="note">「実験終了」で親子の保存を停止してから一覧を開いてください。子機のログはテザーを通して転送するため、大きなファイルには時間がかかります。</p><label for="logTarget">回収する機器</label> <select id="logTarget"><option value="c">子機</option><option value="p">親機</option></select><div class="actions"><button data-action="list">ファイル一覧を取得</button><button id="cancelDownload">転送を中止</button></div><p id="downloadState" role="status"></p><progress id="downloadProgress" value="0" max="1"></progress><div id="loglist"></div></details>
 <article style="margin-bottom:18px"><h2>距離測位</h2><p id="range">確認中</p><p id="timing"></p><p class="note">距離は未校正の参考値です。近接配置の早期反応は受信の確認に使用できますが、距離精度は未検証です。時刻は親機を基準に同期し、UTCは未検証です。</p></article>
-<div class="grid"><article><h2>親機</h2><dl id="parent"></dl><p class="note">温度・水圧センサ、LCDは未接続。Spresenseは今回の検証対象外。</p></article><article><h2>子機</h2><dl id="child"></dl><p class="note">漏水表示は電極入力の状態です。電極線の断線は検出できません。音響入力の変化だけでは受信成功を保証しません。</p></article></div><p class="note" id="files"></p>
+<div class="grid"><article><h2>親機</h2><div class="battery" id="parentBattery">残量未取得</div><dl id="parent"></dl><p class="note">温度・水圧センサ、LCDは未接続。Spresenseは今回の検証対象外。</p></article><article><h2>子機</h2><div class="battery" id="childBattery">残量未取得</div><dl id="child"></dl><p class="note">漏水表示は電極入力の状態です。電極線の断線は検出できません。音響入力の変化だけでは受信成功を保証しません。</p></article></div><p class="note">電池：親子とも標準3S LiPo・11.1 V・2200 mAh（24.42 Wh）。残量は10.5 Vを0%、12.6 Vを100%とする電圧の簡易目安です。実際の残容量とは異なり、負荷や温度で変動します。10.8 V以下で低電圧を表示します。セル別電圧・残り時間は未測定です。</p><p class="note" id="files"></p>
 <script>
 let deviceConnected=false;
 function deviceFetch(path,options){if(!deviceConnected)return Promise.reject(Error('先に親機へ接続してください'));return window.fetch('http://192.168.4.1'+path,options)}
 
 const el=id=>document.getElementById(id), fmt=(x,u='')=>x==null?'未取得':Number(x).toFixed(2)+u;
-function render(id,h,stale,child){let rows=[];const add=(k,v)=>rows.push([k,v]);if(stale){el(id).textContent='通信途絶：最新状態を確認できません';el(id).className='bad';return;}el(id).className='';let f=h.flags;add('周辺電源',f&1?'検出':'未検出');add('SD保存',f&2?'保存中':'停止／異常');add('保存 / 同期済み',h.rows+' / '+h.durable_rows+' 行');add('SDエラー',h.sd_errors);add('記録欠落',h.dropped);add('電源電圧',fmt(h.bus_v,' V'));add('電流',fmt(h.current_ma,' mA'));add('磁気 X / Y / Z',[h.mag_x,h.mag_y,h.mag_z].map(x=>fmt(x)).join(' / ')+' µT');if(child){add('漏水入力',f&8?'濡れ検知':'濡れ未検知');add('水温',fmt(h.temp_c,' °C'));add('水圧',fmt(h.pressure_mbar,' mbar'));add('BNO085',f&4?'取得中':'未取得／遅延');add('姿勢レポート累計',h.imu_samples);add('IMU欠落・更新不足',h.imu_gaps);add('最大記録遅れ',h.max_lateness_us+' µs');add('受信比較器',f&512?'HIGH':'LOW');add('受信入力のエッジ',h.rx_edges);add('受信包絡線',h.env_mv+' mV');}el(id).replaceChildren(...rows.flatMap(([k,v])=>{let dt=document.createElement('dt'),dd=document.createElement('dd');dt.textContent=k;dd.textContent=v;return[dt,dd]}));}
+// BATTERY_ESTIMATE_BEGIN
+// Voltage-only display index, not a calibrated capacity measurement.
+// Linear fallback approach: https://github.com/iNavFlight/inav/blob/master/src/main/sensors/battery.c
+const batteryProfile={cells:3,capacityMah:2200,nominalWh:24.42,emptyV:10.5,fullV:12.6,warningV:10.8};
+function batteryEstimate(h,stale=false){
+ const v=h?.bus_v;
+ if(stale)return {percent:null,message:'通信途絶・残量不明'};
+ if(!h || !(h.flags&16) || typeof v!=='number' || !Number.isFinite(v))return {percent:null,message:'電圧未取得・残量不明'};
+ if(!(h.flags&1) || v<6)return {percent:null,message:'電池電源を確認してください（USB給電など）'};
+ if(v>12.9)return {percent:null,message:'想定電圧範囲外・残量不明'};
+ const p=batteryProfile;
+ const percent=Math.round(Math.max(0,Math.min(100,(v-p.emptyV)/(p.fullV-p.emptyV)*100))/5)*5;
+ return {percent,low:v<=p.warningV,message:v<=p.warningV?'低電圧・電池を確認してください':'電圧からの簡易推定'};
+}
+// BATTERY_ESTIMATE_END
+const batteryExpiry={};
+function renderBattery(id,h,stale){
+ clearTimeout(batteryExpiry[id]);
+ if(!stale)batteryExpiry[id]=setTimeout(()=>renderBattery(id,{},true),3000);
+ const b=batteryEstimate(h,stale),box=el(id+'Battery');
+ const label=document.createElement('p');label.className=b.low?'bad':'';
+ label.textContent=b.percent===null?b.message:'推定残量 約 '+b.percent+'% · '+b.message;
+ box.replaceChildren(label);
+ if(b.percent!==null){const meter=document.createElement('meter');meter.min=0;meter.max=100;meter.low=20;meter.high=100;meter.optimum=100;meter.value=b.percent;meter.setAttribute('aria-label',(id==='parent'?'親機':'子機')+'の推定電池残量');box.append(meter);}
+}
+
+function render(id,h,stale,child){renderBattery(id,h,stale);let rows=[];const add=(k,v)=>rows.push([k,v]);if(stale){el(id).textContent='通信途絶：最新状態を確認できません';el(id).className='bad';return;}el(id).className='';let f=h.flags;add('周辺電源',f&1?'検出':'未検出');add('SD保存',f&2?'保存中':'停止／異常');add('保存 / 同期済み',h.rows+' / '+h.durable_rows+' 行');add('SDエラー',h.sd_errors);add('記録欠落',h.dropped);add('電源電圧',fmt(h.bus_v,' V'));add('電流',fmt(h.current_ma,' mA'));add('磁気 X / Y / Z',[h.mag_x,h.mag_y,h.mag_z].map(x=>fmt(x)).join(' / ')+' µT');if(child){add('漏水入力',f&8?'濡れ検知':'濡れ未検知');add('水温',fmt(h.temp_c,' °C'));add('水圧',fmt(h.pressure_mbar,' mbar'));add('BNO085',f&4?'取得中':'未取得／遅延');add('姿勢レポート累計',h.imu_samples);add('IMU欠落・更新不足',h.imu_gaps);add('最大記録遅れ',h.max_lateness_us+' µs');add('受信比較器',f&512?'HIGH':'LOW');add('受信入力のエッジ',h.rx_edges);add('受信包絡線',h.env_mv+' mV');}el(id).replaceChildren(...rows.flatMap(([k,v])=>{let dt=document.createElement('dt'),dd=document.createElement('dd');dt.textContent=k;dd.textContent=v;return[dt,dd]}));}
 
 let busy=false,abortGain=false,abortDownload=false;
 const errors=['','処理中です','SDカードを確認してください','入力が不正です','先に記録を停止してください','ファイルが見つかりません','子機の応答がタイムアウトしました','対応していない操作です'];
