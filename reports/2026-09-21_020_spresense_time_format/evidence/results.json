@@ -1,0 +1,15 @@
+{
+  "method": "Existing source and previously recovered GPS CSV inspection only; no new device operation",
+  "previous_report": "2026-09-21_016_gnss_multisystem",
+  "gps_rows": 54,
+  "time_valid_rows": 20,
+  "gps_time_columns": [
+    "utc_s",
+    "nav_usec",
+    "flags"
+  ],
+  "imu_has_utc_column": false,
+  "source": "firmware/spresense/logger/logger.ino + common/AquaBeacon/src/ImuBatch.h",
+  "utc_formula_microseconds": "utc_s * 1000000 + nav_usec",
+  "validity_condition": "flags & 1 != 0"
+}

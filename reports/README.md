@@ -45,3 +45,5 @@ reports/
 - [GPS UTC同期の実機確認](2026-09-21_018_utc_validation/README.md) — 相対通信復帰、GPS有効時刻・PPS未確認。
 
 - [親子UTC同期・Wi-Fi時刻・RTC保持](2026-09-21_019_utc_rtc/README.md) — GPS親子同期、RTC保存・ソフト再起動復元を実機確認。Wi-Fi実受信・物理電源断は未確認。
+
+- [Spresense保存形式の時刻確認](2026-09-21_020_spresense_time_format/README.md) — GPS UTCは保存済み、IMU行へのUTC付与は未実装。
