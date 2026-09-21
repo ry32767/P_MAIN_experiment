@@ -36,3 +36,5 @@ reports/
 - [Spresense・GPS時刻同期の状態表示](2026-09-20_003_spresense_status/README.md)
 
 - [スマホ位置・時刻共有](2026-09-20_004_phone_reference/README.md)
+
+- [親機SDの復旧](2026-09-21_005_parent_sd_recovery/README.md)

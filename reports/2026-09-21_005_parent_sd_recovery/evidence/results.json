@@ -1,0 +1,21 @@
+{
+  "soak_seconds": 110,
+  "rows_first": 35,
+  "rows_last": 144,
+  "sd_errors_first": 0,
+  "sd_errors_last": 0,
+  "readback": {
+    "time_position": {
+      "rows": 145,
+      "crc_errors": 0
+    },
+    "health": {
+      "rows": 145,
+      "crc_errors": 0
+    }
+  },
+  "stop_disables_recovery": true,
+  "resume_uses_new_files": true,
+  "resumed_rows": 11,
+  "actual_fault_during_test": false
+}
