@@ -1,0 +1,23 @@
+{
+  "first_fix_elapsed_gnss_ms": 34154.0,
+  "first_fixed_status_elapsed_capture_s": 39.521,
+  "fixed_status_count": 25,
+  "gps_status_count": 61,
+  "max_visible": 8.0,
+  "max_used": 6.0,
+  "imu_last": {
+    "t": 63.698,
+    "imu": 23722.0,
+    "imu_errors": 0.0,
+    "gaps": 0.0,
+    "queue_drops": 0.0,
+    "gps_drops": 0.0,
+    "sd": 0.0,
+    "sd_rows": 18989.0,
+    "sd_errors": 0.0
+  },
+  "safe_stop": true,
+  "saved_gps_rows": 54,
+  "saved_valid_position_rows": 21,
+  "saved_valid_time_rows": 20
+}

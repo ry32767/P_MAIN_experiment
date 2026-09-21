@@ -1,0 +1,11 @@
+[
+  {
+    "file": "simultaneous_gps.csv",
+    "rows": 175,
+    "errors": [],
+    "warnings": [],
+    "sha256": "1ae84cb7be5b2cca7044aff55b82418cda637a1d4f89c002afa45616120b6548",
+    "kind": "gps",
+    "duration_s": 173.996979
+  }
+]

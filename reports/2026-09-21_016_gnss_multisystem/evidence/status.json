@@ -1,0 +1,990 @@
+[
+  {
+    "t": 2.416,
+    "line": "# FORMATTER subcore=1 ready=1 result=0 rate_hz=960 shared_bytes=9240"
+  },
+  {
+    "t": 3.438,
+    "line": "# imu=0 imu_errors=0 gaps=0 queue_drops=0 gps_drops=0 sd=1 sd_rows=2 sd_errors=0"
+  },
+  {
+    "t": 3.444,
+    "line": "# formatter_batches=0 formatter_errors=0 pending=0 rate_hz=960"
+  },
+  {
+    "t": 3.444,
+    "line": "# gnss_first_fix_ms=0"
+  },
+  {
+    "t": 3.451,
+    "line": "# gps_seq=0 fix=0 satellites=0 visible=0 max_signal=0.0 flags=0 tx_bytes=0 tx_errors=0"
+  },
+  {
+    "t": 4.439,
+    "line": "# imu=0 imu_errors=0 gaps=0 queue_drops=0 gps_drops=0 sd=1 sd_rows=2 sd_errors=0"
+  },
+  {
+    "t": 4.444,
+    "line": "# formatter_batches=0 formatter_errors=0 pending=0 rate_hz=960"
+  },
+  {
+    "t": 4.444,
+    "line": "# gnss_first_fix_ms=0"
+  },
+  {
+    "t": 4.452,
+    "line": "# gps_seq=0 fix=0 satellites=0 visible=0 max_signal=0.0 flags=0 tx_bytes=0 tx_errors=0"
+  },
+  {
+    "t": 4.728,
+    "line": "# GNSS_CONFIG GPS+GLONASS+QZSS_L1CA cold_start interval_s=1"
+  },
+  {
+    "t": 5.439,
+    "line": "# imu=0 imu_errors=0 gaps=0 queue_drops=0 gps_drops=0 sd=1 sd_rows=2 sd_errors=0"
+  },
+  {
+    "t": 5.444,
+    "line": "# formatter_batches=0 formatter_errors=0 pending=0 rate_hz=960"
+  },
+  {
+    "t": 5.444,
+    "line": "# gnss_first_fix_ms=0"
+  },
+  {
+    "t": 5.452,
+    "line": "# gps_seq=0 fix=0 satellites=0 visible=0 max_signal=0.0 flags=0 tx_bytes=0 tx_errors=0"
+  },
+  {
+    "t": 6.44,
+    "line": "# imu=0 imu_errors=0 gaps=0 queue_drops=0 gps_drops=0 sd=1 sd_rows=3 sd_errors=0"
+  },
+  {
+    "t": 6.446,
+    "line": "# formatter_batches=0 formatter_errors=0 pending=0 rate_hz=960"
+  },
+  {
+    "t": 6.446,
+    "line": "# gnss_first_fix_ms=0"
+  },
+  {
+    "t": 6.453,
+    "line": "# gps_seq=1 fix=1 satellites=0 visible=0 max_signal=0.0 flags=4 tx_bytes=64 tx_errors=0"
+  },
+  {
+    "t": 7.44,
+    "line": "# imu=0 imu_errors=0 gaps=0 queue_drops=0 gps_drops=0 sd=1 sd_rows=4 sd_errors=0"
+  },
+  {
+    "t": 7.446,
+    "line": "# formatter_batches=0 formatter_errors=0 pending=0 rate_hz=960"
+  },
+  {
+    "t": 7.446,
+    "line": "# gnss_first_fix_ms=0"
+  },
+  {
+    "t": 7.453,
+    "line": "# gps_seq=2 fix=1 satellites=0 visible=1 max_signal=20.9 flags=4 tx_bytes=128 tx_errors=0"
+  },
+  {
+    "t": 8.442,
+    "line": "# imu=0 imu_errors=0 gaps=0 queue_drops=0 gps_drops=0 sd=1 sd_rows=5 sd_errors=0"
+  },
+  {
+    "t": 8.448,
+    "line": "# formatter_batches=0 formatter_errors=0 pending=0 rate_hz=960"
+  },
+  {
+    "t": 8.448,
+    "line": "# gnss_first_fix_ms=0"
+  },
+  {
+    "t": 8.455,
+    "line": "# gps_seq=3 fix=1 satellites=0 visible=2 max_signal=23.3 flags=4 tx_bytes=192 tx_errors=0"
+  },
+  {
+    "t": 9.458,
+    "line": "# imu=0 imu_errors=0 gaps=0 queue_drops=0 gps_drops=0 sd=1 sd_rows=6 sd_errors=0"
+  },
+  {
+    "t": 9.464,
+    "line": "# formatter_batches=0 formatter_errors=0 pending=0 rate_hz=960"
+  },
+  {
+    "t": 9.464,
+    "line": "# gnss_first_fix_ms=0"
+  },
+  {
+    "t": 9.472,
+    "line": "# gps_seq=4 fix=1 satellites=0 visible=2 max_signal=23.6 flags=4 tx_bytes=256 tx_errors=0"
+  },
+  {
+    "t": 10.458,
+    "line": "# imu=0 imu_errors=0 gaps=0 queue_drops=0 gps_drops=0 sd=1 sd_rows=7 sd_errors=0"
+  },
+  {
+    "t": 10.464,
+    "line": "# formatter_batches=0 formatter_errors=0 pending=0 rate_hz=960"
+  },
+  {
+    "t": 10.464,
+    "line": "# gnss_first_fix_ms=0"
+  },
+  {
+    "t": 10.472,
+    "line": "# gps_seq=5 fix=1 satellites=0 visible=3 max_signal=23.7 flags=4 tx_bytes=320 tx_errors=0"
+  },
+  {
+    "t": 11.458,
+    "line": "# imu=0 imu_errors=0 gaps=0 queue_drops=0 gps_drops=0 sd=1 sd_rows=8 sd_errors=0"
+  },
+  {
+    "t": 11.465,
+    "line": "# formatter_batches=0 formatter_errors=0 pending=0 rate_hz=960"
+  },
+  {
+    "t": 11.465,
+    "line": "# gnss_first_fix_ms=0"
+  },
+  {
+    "t": 11.472,
+    "line": "# gps_seq=6 fix=1 satellites=0 visible=3 max_signal=26.3 flags=4 tx_bytes=384 tx_errors=0"
+  },
+  {
+    "t": 12.458,
+    "line": "# imu=0 imu_errors=0 gaps=0 queue_drops=0 gps_drops=0 sd=1 sd_rows=9 sd_errors=0"
+  },
+  {
+    "t": 12.464,
+    "line": "# formatter_batches=0 formatter_errors=0 pending=0 rate_hz=960"
+  },
+  {
+    "t": 12.464,
+    "line": "# gnss_first_fix_ms=0"
+  },
+  {
+    "t": 12.472,
+    "line": "# gps_seq=7 fix=1 satellites=0 visible=6 max_signal=30.8 flags=4 tx_bytes=448 tx_errors=0"
+  },
+  {
+    "t": 13.458,
+    "line": "# imu=0 imu_errors=0 gaps=0 queue_drops=0 gps_drops=0 sd=1 sd_rows=10 sd_errors=0"
+  },
+  {
+    "t": 13.464,
+    "line": "# formatter_batches=0 formatter_errors=0 pending=0 rate_hz=960"
+  },
+  {
+    "t": 13.464,
+    "line": "# gnss_first_fix_ms=0"
+  },
+  {
+    "t": 13.471,
+    "line": "# gps_seq=8 fix=1 satellites=0 visible=6 max_signal=36.0 flags=4 tx_bytes=512 tx_errors=0"
+  },
+  {
+    "t": 14.458,
+    "line": "# imu=0 imu_errors=0 gaps=0 queue_drops=0 gps_drops=0 sd=1 sd_rows=11 sd_errors=0"
+  },
+  {
+    "t": 14.464,
+    "line": "# formatter_batches=0 formatter_errors=0 pending=0 rate_hz=960"
+  },
+  {
+    "t": 14.464,
+    "line": "# gnss_first_fix_ms=0"
+  },
+  {
+    "t": 14.471,
+    "line": "# gps_seq=9 fix=1 satellites=0 visible=6 max_signal=37.5 flags=4 tx_bytes=576 tx_errors=0"
+  },
+  {
+    "t": 15.458,
+    "line": "# imu=0 imu_errors=0 gaps=0 queue_drops=0 gps_drops=0 sd=1 sd_rows=12 sd_errors=0"
+  },
+  {
+    "t": 15.464,
+    "line": "# formatter_batches=0 formatter_errors=0 pending=0 rate_hz=960"
+  },
+  {
+    "t": 15.464,
+    "line": "# gnss_first_fix_ms=0"
+  },
+  {
+    "t": 15.472,
+    "line": "# gps_seq=10 fix=1 satellites=0 visible=6 max_signal=37.8 flags=4 tx_bytes=640 tx_errors=0"
+  },
+  {
+    "t": 16.458,
+    "line": "# imu=0 imu_errors=0 gaps=0 queue_drops=0 gps_drops=0 sd=1 sd_rows=13 sd_errors=0"
+  },
+  {
+    "t": 16.464,
+    "line": "# formatter_batches=0 formatter_errors=0 pending=0 rate_hz=960"
+  },
+  {
+    "t": 16.464,
+    "line": "# gnss_first_fix_ms=0"
+  },
+  {
+    "t": 16.472,
+    "line": "# gps_seq=11 fix=1 satellites=0 visible=7 max_signal=38.2 flags=4 tx_bytes=704 tx_errors=0"
+  },
+  {
+    "t": 17.458,
+    "line": "# imu=0 imu_errors=0 gaps=0 queue_drops=0 gps_drops=0 sd=1 sd_rows=14 sd_errors=0"
+  },
+  {
+    "t": 17.464,
+    "line": "# formatter_batches=0 formatter_errors=0 pending=0 rate_hz=960"
+  },
+  {
+    "t": 17.464,
+    "line": "# gnss_first_fix_ms=0"
+  },
+  {
+    "t": 17.472,
+    "line": "# gps_seq=12 fix=1 satellites=0 visible=7 max_signal=38.2 flags=4 tx_bytes=768 tx_errors=0"
+  },
+  {
+    "t": 18.458,
+    "line": "# imu=0 imu_errors=0 gaps=0 queue_drops=0 gps_drops=0 sd=1 sd_rows=15 sd_errors=0"
+  },
+  {
+    "t": 18.464,
+    "line": "# formatter_batches=0 formatter_errors=0 pending=0 rate_hz=960"
+  },
+  {
+    "t": 18.464,
+    "line": "# gnss_first_fix_ms=0"
+  },
+  {
+    "t": 18.472,
+    "line": "# gps_seq=13 fix=1 satellites=0 visible=7 max_signal=38.1 flags=4 tx_bytes=832 tx_errors=0"
+  },
+  {
+    "t": 19.458,
+    "line": "# imu=0 imu_errors=0 gaps=0 queue_drops=0 gps_drops=0 sd=1 sd_rows=16 sd_errors=0"
+  },
+  {
+    "t": 19.464,
+    "line": "# formatter_batches=0 formatter_errors=0 pending=0 rate_hz=960"
+  },
+  {
+    "t": 19.464,
+    "line": "# gnss_first_fix_ms=0"
+  },
+  {
+    "t": 19.472,
+    "line": "# gps_seq=14 fix=1 satellites=0 visible=7 max_signal=38.2 flags=4 tx_bytes=896 tx_errors=0"
+  },
+  {
+    "t": 20.458,
+    "line": "# imu=0 imu_errors=0 gaps=0 queue_drops=0 gps_drops=0 sd=1 sd_rows=17 sd_errors=0"
+  },
+  {
+    "t": 20.464,
+    "line": "# formatter_batches=0 formatter_errors=0 pending=0 rate_hz=960"
+  },
+  {
+    "t": 20.464,
+    "line": "# gnss_first_fix_ms=0"
+  },
+  {
+    "t": 20.472,
+    "line": "# gps_seq=15 fix=1 satellites=0 visible=7 max_signal=38.3 flags=4 tx_bytes=960 tx_errors=0"
+  },
+  {
+    "t": 21.46,
+    "line": "# imu=0 imu_errors=0 gaps=0 queue_drops=0 gps_drops=0 sd=1 sd_rows=18 sd_errors=0"
+  },
+  {
+    "t": 21.465,
+    "line": "# formatter_batches=0 formatter_errors=0 pending=0 rate_hz=960"
+  },
+  {
+    "t": 21.465,
+    "line": "# gnss_first_fix_ms=0"
+  },
+  {
+    "t": 21.473,
+    "line": "# gps_seq=16 fix=1 satellites=0 visible=7 max_signal=38.4 flags=4 tx_bytes=1024 tx_errors=0"
+  },
+  {
+    "t": 22.46,
+    "line": "# imu=0 imu_errors=0 gaps=0 queue_drops=0 gps_drops=0 sd=1 sd_rows=19 sd_errors=0"
+  },
+  {
+    "t": 22.465,
+    "line": "# formatter_batches=0 formatter_errors=0 pending=0 rate_hz=960"
+  },
+  {
+    "t": 22.465,
+    "line": "# gnss_first_fix_ms=0"
+  },
+  {
+    "t": 22.473,
+    "line": "# gps_seq=17 fix=1 satellites=0 visible=7 max_signal=38.5 flags=4 tx_bytes=1088 tx_errors=0"
+  },
+  {
+    "t": 23.48,
+    "line": "# imu=0 imu_errors=0 gaps=0 queue_drops=0 gps_drops=0 sd=1 sd_rows=20 sd_errors=0"
+  },
+  {
+    "t": 23.485,
+    "line": "# formatter_batches=0 formatter_errors=0 pending=0 rate_hz=960"
+  },
+  {
+    "t": 23.485,
+    "line": "# gnss_first_fix_ms=0"
+  },
+  {
+    "t": 23.493,
+    "line": "# gps_seq=18 fix=1 satellites=0 visible=7 max_signal=38.2 flags=4 tx_bytes=1152 tx_errors=0"
+  },
+  {
+    "t": 24.48,
+    "line": "# imu=0 imu_errors=0 gaps=0 queue_drops=0 gps_drops=0 sd=1 sd_rows=21 sd_errors=0"
+  },
+  {
+    "t": 24.485,
+    "line": "# formatter_batches=0 formatter_errors=0 pending=0 rate_hz=960"
+  },
+  {
+    "t": 24.485,
+    "line": "# gnss_first_fix_ms=0"
+  },
+  {
+    "t": 24.493,
+    "line": "# gps_seq=19 fix=1 satellites=0 visible=6 max_signal=38.3 flags=4 tx_bytes=1216 tx_errors=0"
+  },
+  {
+    "t": 25.48,
+    "line": "# imu=0 imu_errors=0 gaps=0 queue_drops=0 gps_drops=0 sd=1 sd_rows=22 sd_errors=0"
+  },
+  {
+    "t": 25.485,
+    "line": "# formatter_batches=0 formatter_errors=0 pending=0 rate_hz=960"
+  },
+  {
+    "t": 25.485,
+    "line": "# gnss_first_fix_ms=0"
+  },
+  {
+    "t": 25.493,
+    "line": "# gps_seq=20 fix=1 satellites=0 visible=6 max_signal=38.5 flags=4 tx_bytes=1280 tx_errors=0"
+  },
+  {
+    "t": 26.483,
+    "line": "# imu=0 imu_errors=0 gaps=0 queue_drops=0 gps_drops=0 sd=1 sd_rows=23 sd_errors=0"
+  },
+  {
+    "t": 26.487,
+    "line": "# formatter_batches=0 formatter_errors=0 pending=0 rate_hz=960"
+  },
+  {
+    "t": 26.487,
+    "line": "# gnss_first_fix_ms=0"
+  },
+  {
+    "t": 26.495,
+    "line": "# gps_seq=21 fix=1 satellites=0 visible=6 max_signal=38.6 flags=4 tx_bytes=1344 tx_errors=0"
+  },
+  {
+    "t": 27.498,
+    "line": "# imu=0 imu_errors=0 gaps=0 queue_drops=0 gps_drops=0 sd=1 sd_rows=24 sd_errors=0"
+  },
+  {
+    "t": 27.503,
+    "line": "# formatter_batches=0 formatter_errors=0 pending=0 rate_hz=960"
+  },
+  {
+    "t": 27.503,
+    "line": "# gnss_first_fix_ms=0"
+  },
+  {
+    "t": 27.511,
+    "line": "# gps_seq=22 fix=1 satellites=0 visible=6 max_signal=38.4 flags=4 tx_bytes=1408 tx_errors=0"
+  },
+  {
+    "t": 28.498,
+    "line": "# imu=0 imu_errors=0 gaps=0 queue_drops=0 gps_drops=0 sd=1 sd_rows=25 sd_errors=0"
+  },
+  {
+    "t": 28.503,
+    "line": "# formatter_batches=0 formatter_errors=0 pending=0 rate_hz=960"
+  },
+  {
+    "t": 28.503,
+    "line": "# gnss_first_fix_ms=0"
+  },
+  {
+    "t": 28.511,
+    "line": "# gps_seq=23 fix=1 satellites=0 visible=6 max_signal=38.4 flags=4 tx_bytes=1472 tx_errors=0"
+  },
+  {
+    "t": 29.498,
+    "line": "# imu=0 imu_errors=0 gaps=0 queue_drops=0 gps_drops=0 sd=1 sd_rows=26 sd_errors=0"
+  },
+  {
+    "t": 29.503,
+    "line": "# formatter_batches=0 formatter_errors=0 pending=0 rate_hz=960"
+  },
+  {
+    "t": 29.504,
+    "line": "# gnss_first_fix_ms=0"
+  },
+  {
+    "t": 29.511,
+    "line": "# gps_seq=24 fix=1 satellites=0 visible=6 max_signal=37.9 flags=4 tx_bytes=1536 tx_errors=0"
+  },
+  {
+    "t": 30.498,
+    "line": "# imu=0 imu_errors=0 gaps=0 queue_drops=0 gps_drops=0 sd=1 sd_rows=27 sd_errors=0"
+  },
+  {
+    "t": 30.503,
+    "line": "# formatter_batches=0 formatter_errors=0 pending=0 rate_hz=960"
+  },
+  {
+    "t": 30.503,
+    "line": "# gnss_first_fix_ms=0"
+  },
+  {
+    "t": 30.511,
+    "line": "# gps_seq=25 fix=1 satellites=0 visible=6 max_signal=38.2 flags=4 tx_bytes=1600 tx_errors=0"
+  },
+  {
+    "t": 31.499,
+    "line": "# imu=0 imu_errors=0 gaps=0 queue_drops=0 gps_drops=0 sd=1 sd_rows=28 sd_errors=0"
+  },
+  {
+    "t": 31.503,
+    "line": "# formatter_batches=0 formatter_errors=0 pending=0 rate_hz=960"
+  },
+  {
+    "t": 31.503,
+    "line": "# gnss_first_fix_ms=0"
+  },
+  {
+    "t": 31.511,
+    "line": "# gps_seq=26 fix=1 satellites=0 visible=6 max_signal=38.2 flags=4 tx_bytes=1664 tx_errors=0"
+  },
+  {
+    "t": 32.498,
+    "line": "# imu=0 imu_errors=0 gaps=0 queue_drops=0 gps_drops=0 sd=1 sd_rows=29 sd_errors=0"
+  },
+  {
+    "t": 32.503,
+    "line": "# formatter_batches=0 formatter_errors=0 pending=0 rate_hz=960"
+  },
+  {
+    "t": 32.503,
+    "line": "# gnss_first_fix_ms=0"
+  },
+  {
+    "t": 32.511,
+    "line": "# gps_seq=27 fix=1 satellites=0 visible=6 max_signal=38.3 flags=4 tx_bytes=1728 tx_errors=0"
+  },
+  {
+    "t": 33.498,
+    "line": "# imu=0 imu_errors=0 gaps=0 queue_drops=0 gps_drops=0 sd=1 sd_rows=30 sd_errors=0"
+  },
+  {
+    "t": 33.503,
+    "line": "# formatter_batches=0 formatter_errors=0 pending=0 rate_hz=960"
+  },
+  {
+    "t": 33.503,
+    "line": "# gnss_first_fix_ms=0"
+  },
+  {
+    "t": 33.511,
+    "line": "# gps_seq=28 fix=1 satellites=0 visible=6 max_signal=37.8 flags=4 tx_bytes=1792 tx_errors=0"
+  },
+  {
+    "t": 34.498,
+    "line": "# imu=0 imu_errors=0 gaps=0 queue_drops=0 gps_drops=0 sd=1 sd_rows=31 sd_errors=0"
+  },
+  {
+    "t": 34.503,
+    "line": "# formatter_batches=0 formatter_errors=0 pending=0 rate_hz=960"
+  },
+  {
+    "t": 34.503,
+    "line": "# gnss_first_fix_ms=0"
+  },
+  {
+    "t": 34.511,
+    "line": "# gps_seq=29 fix=1 satellites=0 visible=6 max_signal=38.2 flags=4 tx_bytes=1856 tx_errors=0"
+  },
+  {
+    "t": 35.498,
+    "line": "# imu=0 imu_errors=0 gaps=0 queue_drops=0 gps_drops=0 sd=1 sd_rows=32 sd_errors=0"
+  },
+  {
+    "t": 35.503,
+    "line": "# formatter_batches=0 formatter_errors=0 pending=0 rate_hz=960"
+  },
+  {
+    "t": 35.503,
+    "line": "# gnss_first_fix_ms=0"
+  },
+  {
+    "t": 35.511,
+    "line": "# gps_seq=30 fix=1 satellites=0 visible=6 max_signal=38.3 flags=4 tx_bytes=1920 tx_errors=0"
+  },
+  {
+    "t": 36.498,
+    "line": "# imu=0 imu_errors=0 gaps=0 queue_drops=0 gps_drops=0 sd=1 sd_rows=33 sd_errors=0"
+  },
+  {
+    "t": 36.503,
+    "line": "# formatter_batches=0 formatter_errors=0 pending=0 rate_hz=960"
+  },
+  {
+    "t": 36.503,
+    "line": "# gnss_first_fix_ms=0"
+  },
+  {
+    "t": 36.511,
+    "line": "# gps_seq=31 fix=1 satellites=0 visible=6 max_signal=38.1 flags=4 tx_bytes=1984 tx_errors=0"
+  },
+  {
+    "t": 37.498,
+    "line": "# imu=0 imu_errors=0 gaps=0 queue_drops=0 gps_drops=0 sd=1 sd_rows=34 sd_errors=0"
+  },
+  {
+    "t": 37.503,
+    "line": "# formatter_batches=0 formatter_errors=0 pending=0 rate_hz=960"
+  },
+  {
+    "t": 37.503,
+    "line": "# gnss_first_fix_ms=0"
+  },
+  {
+    "t": 37.511,
+    "line": "# gps_seq=32 fix=1 satellites=0 visible=6 max_signal=38.2 flags=4 tx_bytes=2048 tx_errors=0"
+  },
+  {
+    "t": 38.498,
+    "line": "# imu=0 imu_errors=0 gaps=0 queue_drops=0 gps_drops=0 sd=1 sd_rows=35 sd_errors=0"
+  },
+  {
+    "t": 38.503,
+    "line": "# formatter_batches=0 formatter_errors=0 pending=0 rate_hz=960"
+  },
+  {
+    "t": 38.503,
+    "line": "# gnss_first_fix_ms=0"
+  },
+  {
+    "t": 38.511,
+    "line": "# gps_seq=33 fix=1 satellites=0 visible=6 max_signal=38.1 flags=4 tx_bytes=2112 tx_errors=0"
+  },
+  {
+    "t": 39.507,
+    "line": "# imu=354 imu_errors=0 gaps=0 queue_drops=0 gps_drops=0 sd=1 sd_rows=346 sd_errors=0"
+  },
+  {
+    "t": 39.512,
+    "line": "# formatter_batches=16 formatter_errors=0 pending=1 rate_hz=960"
+  },
+  {
+    "t": 39.512,
+    "line": "# gnss_first_fix_ms=34155"
+  },
+  {
+    "t": 39.521,
+    "line": "# gps_seq=35 fix=3 satellites=6 visible=6 max_signal=38.3 flags=7 tx_bytes=2240 tx_errors=0"
+  },
+  {
+    "t": 40.535,
+    "line": "# imu=1347 imu_errors=0 gaps=0 queue_drops=0 gps_drops=0 sd=1 sd_rows=1342 sd_errors=0"
+  },
+  {
+    "t": 40.541,
+    "line": "# formatter_batches=64 formatter_errors=0 pending=1 rate_hz=960"
+  },
+  {
+    "t": 40.541,
+    "line": "# gnss_first_fix_ms=34155"
+  },
+  {
+    "t": 40.55,
+    "line": "# gps_seq=36 fix=3 satellites=6 visible=6 max_signal=34.8 flags=15 tx_bytes=2304 tx_errors=0"
+  },
+  {
+    "t": 41.546,
+    "line": "# imu=2323 imu_errors=0 gaps=0 queue_drops=0 gps_drops=0 sd=1 sd_rows=2318 sd_errors=0"
+  },
+  {
+    "t": 41.551,
+    "line": "# formatter_batches=112 formatter_errors=0 pending=1 rate_hz=960"
+  },
+  {
+    "t": 41.551,
+    "line": "# gnss_first_fix_ms=34155"
+  },
+  {
+    "t": 41.56,
+    "line": "# gps_seq=37 fix=3 satellites=6 visible=6 max_signal=32.5 flags=15 tx_bytes=2368 tx_errors=0"
+  },
+  {
+    "t": 42.556,
+    "line": "# imu=3299 imu_errors=0 gaps=0 queue_drops=0 gps_drops=0 sd=1 sd_rows=3295 sd_errors=0"
+  },
+  {
+    "t": 42.562,
+    "line": "# formatter_batches=160 formatter_errors=0 pending=1 rate_hz=960"
+  },
+  {
+    "t": 42.562,
+    "line": "# gnss_first_fix_ms=34155"
+  },
+  {
+    "t": 42.571,
+    "line": "# gps_seq=38 fix=3 satellites=6 visible=6 max_signal=33.6 flags=15 tx_bytes=2432 tx_errors=0"
+  },
+  {
+    "t": 43.565,
+    "line": "# imu=4274 imu_errors=0 gaps=0 queue_drops=0 gps_drops=0 sd=1 sd_rows=4272 sd_errors=0"
+  },
+  {
+    "t": 43.571,
+    "line": "# formatter_batches=208 formatter_errors=0 pending=1 rate_hz=960"
+  },
+  {
+    "t": 43.571,
+    "line": "# gnss_first_fix_ms=34155"
+  },
+  {
+    "t": 43.58,
+    "line": "# gps_seq=39 fix=3 satellites=6 visible=6 max_signal=33.6 flags=15 tx_bytes=2496 tx_errors=0"
+  },
+  {
+    "t": 44.576,
+    "line": "# imu=5250 imu_errors=0 gaps=0 queue_drops=0 gps_drops=0 sd=1 sd_rows=5248 sd_errors=0"
+  },
+  {
+    "t": 44.581,
+    "line": "# formatter_batches=256 formatter_errors=0 pending=1 rate_hz=960"
+  },
+  {
+    "t": 44.581,
+    "line": "# gnss_first_fix_ms=34155"
+  },
+  {
+    "t": 44.59,
+    "line": "# gps_seq=40 fix=3 satellites=6 visible=6 max_signal=34.0 flags=15 tx_bytes=2560 tx_errors=0"
+  },
+  {
+    "t": 45.585,
+    "line": "# imu=6225 imu_errors=0 gaps=0 queue_drops=0 gps_drops=0 sd=1 sd_rows=6225 sd_errors=0"
+  },
+  {
+    "t": 45.591,
+    "line": "# formatter_batches=304 formatter_errors=0 pending=1 rate_hz=960"
+  },
+  {
+    "t": 45.591,
+    "line": "# gnss_first_fix_ms=34155"
+  },
+  {
+    "t": 45.6,
+    "line": "# gps_seq=41 fix=3 satellites=6 visible=8 max_signal=33.8 flags=15 tx_bytes=2624 tx_errors=0"
+  },
+  {
+    "t": 46.595,
+    "line": "# imu=7201 imu_errors=0 gaps=0 queue_drops=0 gps_drops=0 sd=1 sd_rows=7201 sd_errors=0"
+  },
+  {
+    "t": 46.601,
+    "line": "# formatter_batches=352 formatter_errors=0 pending=1 rate_hz=960"
+  },
+  {
+    "t": 46.601,
+    "line": "# gnss_first_fix_ms=34155"
+  },
+  {
+    "t": 46.61,
+    "line": "# gps_seq=42 fix=3 satellites=6 visible=8 max_signal=33.7 flags=15 tx_bytes=2688 tx_errors=0"
+  },
+  {
+    "t": 47.606,
+    "line": "# imu=8177 imu_errors=0 gaps=0 queue_drops=0 gps_drops=0 sd=1 sd_rows=8178 sd_errors=0"
+  },
+  {
+    "t": 47.611,
+    "line": "# formatter_batches=400 formatter_errors=0 pending=1 rate_hz=960"
+  },
+  {
+    "t": 47.611,
+    "line": "# gnss_first_fix_ms=34155"
+  },
+  {
+    "t": 47.62,
+    "line": "# gps_seq=43 fix=3 satellites=6 visible=8 max_signal=33.6 flags=15 tx_bytes=2752 tx_errors=0"
+  },
+  {
+    "t": 48.615,
+    "line": "# imu=9152 imu_errors=0 gaps=0 queue_drops=0 gps_drops=0 sd=1 sd_rows=9155 sd_errors=0"
+  },
+  {
+    "t": 48.621,
+    "line": "# formatter_batches=448 formatter_errors=0 pending=1 rate_hz=960"
+  },
+  {
+    "t": 48.621,
+    "line": "# gnss_first_fix_ms=34155"
+  },
+  {
+    "t": 48.63,
+    "line": "# gps_seq=44 fix=3 satellites=6 visible=8 max_signal=34.0 flags=15 tx_bytes=2816 tx_errors=0"
+  },
+  {
+    "t": 49.625,
+    "line": "# imu=10128 imu_errors=0 gaps=0 queue_drops=0 gps_drops=0 sd=1 sd_rows=10131 sd_errors=0"
+  },
+  {
+    "t": 49.631,
+    "line": "# formatter_batches=495 formatter_errors=0 pending=1 rate_hz=960"
+  },
+  {
+    "t": 49.631,
+    "line": "# gnss_first_fix_ms=34155"
+  },
+  {
+    "t": 49.64,
+    "line": "# gps_seq=45 fix=3 satellites=6 visible=8 max_signal=33.0 flags=15 tx_bytes=2880 tx_errors=0"
+  },
+  {
+    "t": 50.626,
+    "line": "# imu=11094 imu_errors=0 gaps=0 queue_drops=0 gps_drops=0 sd=1 sd_rows=11098 sd_errors=0"
+  },
+  {
+    "t": 50.631,
+    "line": "# formatter_batches=543 formatter_errors=0 pending=1 rate_hz=960"
+  },
+  {
+    "t": 50.631,
+    "line": "# gnss_first_fix_ms=34155"
+  },
+  {
+    "t": 50.64,
+    "line": "# gps_seq=46 fix=3 satellites=6 visible=8 max_signal=33.6 flags=15 tx_bytes=2944 tx_errors=0"
+  },
+  {
+    "t": 51.638,
+    "line": "# imu=12072 imu_errors=0 gaps=0 queue_drops=0 gps_drops=0 sd=1 sd_rows=12075 sd_errors=0"
+  },
+  {
+    "t": 51.643,
+    "line": "# formatter_batches=591 formatter_errors=0 pending=1 rate_hz=960"
+  },
+  {
+    "t": 51.643,
+    "line": "# gnss_first_fix_ms=34155"
+  },
+  {
+    "t": 51.652,
+    "line": "# gps_seq=47 fix=3 satellites=6 visible=8 max_signal=33.8 flags=15 tx_bytes=3008 tx_errors=0"
+  },
+  {
+    "t": 52.645,
+    "line": "# imu=13046 imu_errors=0 gaps=0 queue_drops=0 gps_drops=0 sd=1 sd_rows=13052 sd_errors=0"
+  },
+  {
+    "t": 52.651,
+    "line": "# formatter_batches=637 formatter_errors=0 pending=1 rate_hz=960"
+  },
+  {
+    "t": 52.651,
+    "line": "# gnss_first_fix_ms=34155"
+  },
+  {
+    "t": 52.66,
+    "line": "# gps_seq=48 fix=3 satellites=6 visible=8 max_signal=33.0 flags=15 tx_bytes=3072 tx_errors=0"
+  },
+  {
+    "t": 53.655,
+    "line": "# imu=14021 imu_errors=0 gaps=0 queue_drops=0 gps_drops=0 sd=1 sd_rows=14028 sd_errors=0"
+  },
+  {
+    "t": 53.661,
+    "line": "# formatter_batches=684 formatter_errors=0 pending=1 rate_hz=960"
+  },
+  {
+    "t": 53.661,
+    "line": "# gnss_first_fix_ms=34155"
+  },
+  {
+    "t": 53.67,
+    "line": "# gps_seq=49 fix=3 satellites=6 visible=8 max_signal=33.1 flags=15 tx_bytes=3136 tx_errors=0"
+  },
+  {
+    "t": 54.666,
+    "line": "# imu=14997 imu_errors=0 gaps=0 queue_drops=0 gps_drops=0 sd=1 sd_rows=15005 sd_errors=0"
+  },
+  {
+    "t": 54.671,
+    "line": "# formatter_batches=733 formatter_errors=0 pending=1 rate_hz=960"
+  },
+  {
+    "t": 54.671,
+    "line": "# gnss_first_fix_ms=34155"
+  },
+  {
+    "t": 54.68,
+    "line": "# gps_seq=50 fix=3 satellites=6 visible=8 max_signal=33.1 flags=15 tx_bytes=3200 tx_errors=0"
+  },
+  {
+    "t": 55.666,
+    "line": "# imu=15963 imu_errors=0 gaps=0 queue_drops=0 gps_drops=0 sd=1 sd_rows=15972 sd_errors=0"
+  },
+  {
+    "t": 55.671,
+    "line": "# formatter_batches=778 formatter_errors=0 pending=1 rate_hz=960"
+  },
+  {
+    "t": 55.671,
+    "line": "# gnss_first_fix_ms=34155"
+  },
+  {
+    "t": 55.68,
+    "line": "# gps_seq=51 fix=3 satellites=6 visible=8 max_signal=33.3 flags=15 tx_bytes=3264 tx_errors=0"
+  },
+  {
+    "t": 56.676,
+    "line": "# imu=16938 imu_errors=0 gaps=0 queue_drops=0 gps_drops=0 sd=1 sd_rows=16949 sd_errors=0"
+  },
+  {
+    "t": 56.681,
+    "line": "# formatter_batches=825 formatter_errors=0 pending=1 rate_hz=960"
+  },
+  {
+    "t": 56.681,
+    "line": "# gnss_first_fix_ms=34155"
+  },
+  {
+    "t": 56.69,
+    "line": "# gps_seq=52 fix=3 satellites=6 visible=8 max_signal=33.2 flags=15 tx_bytes=3328 tx_errors=0"
+  },
+  {
+    "t": 57.685,
+    "line": "# imu=17914 imu_errors=0 gaps=0 queue_drops=0 gps_drops=0 sd=1 sd_rows=17925 sd_errors=0"
+  },
+  {
+    "t": 57.691,
+    "line": "# formatter_batches=874 formatter_errors=0 pending=1 rate_hz=960"
+  },
+  {
+    "t": 57.691,
+    "line": "# gnss_first_fix_ms=34155"
+  },
+  {
+    "t": 57.7,
+    "line": "# gps_seq=53 fix=3 satellites=6 visible=8 max_signal=32.5 flags=15 tx_bytes=3392 tx_errors=0"
+  },
+  {
+    "t": 58.696,
+    "line": "# imu=18890 imu_errors=0 gaps=0 queue_drops=0 gps_drops=0 sd=1 sd_rows=18903 sd_errors=0"
+  },
+  {
+    "t": 58.701,
+    "line": "# formatter_batches=922 formatter_errors=0 pending=1 rate_hz=960"
+  },
+  {
+    "t": 58.701,
+    "line": "# gnss_first_fix_ms=34155"
+  },
+  {
+    "t": 58.71,
+    "line": "# gps_seq=54 fix=3 satellites=6 visible=8 max_signal=33.3 flags=15 tx_bytes=3456 tx_errors=0"
+  },
+  {
+    "t": 58.774,
+    "line": "# STOPPED_REMOVE_SD"
+  },
+  {
+    "t": 59.698,
+    "line": "# imu=19858 imu_errors=0 gaps=0 queue_drops=0 gps_drops=0 sd=0 sd_rows=18989 sd_errors=0"
+  },
+  {
+    "t": 59.703,
+    "line": "# formatter_batches=926 formatter_errors=0 pending=0 rate_hz=960"
+  },
+  {
+    "t": 59.703,
+    "line": "# gnss_first_fix_ms=34155"
+  },
+  {
+    "t": 59.712,
+    "line": "# gps_seq=55 fix=3 satellites=6 visible=8 max_signal=33.4 flags=11 tx_bytes=3520 tx_errors=0"
+  },
+  {
+    "t": 60.697,
+    "line": "# imu=20824 imu_errors=0 gaps=0 queue_drops=0 gps_drops=0 sd=0 sd_rows=18989 sd_errors=0"
+  },
+  {
+    "t": 60.703,
+    "line": "# formatter_batches=926 formatter_errors=0 pending=0 rate_hz=960"
+  },
+  {
+    "t": 60.703,
+    "line": "# gnss_first_fix_ms=34155"
+  },
+  {
+    "t": 60.712,
+    "line": "# gps_seq=56 fix=3 satellites=6 visible=8 max_signal=36.3 flags=11 tx_bytes=3584 tx_errors=0"
+  },
+  {
+    "t": 61.698,
+    "line": "# imu=21790 imu_errors=0 gaps=0 queue_drops=0 gps_drops=0 sd=0 sd_rows=18989 sd_errors=0"
+  },
+  {
+    "t": 61.703,
+    "line": "# formatter_batches=926 formatter_errors=0 pending=0 rate_hz=960"
+  },
+  {
+    "t": 61.704,
+    "line": "# gnss_first_fix_ms=34155"
+  },
+  {
+    "t": 61.712,
+    "line": "# gps_seq=57 fix=3 satellites=6 visible=8 max_signal=37.2 flags=11 tx_bytes=3648 tx_errors=0"
+  },
+  {
+    "t": 62.698,
+    "line": "# imu=22756 imu_errors=0 gaps=0 queue_drops=0 gps_drops=0 sd=0 sd_rows=18989 sd_errors=0"
+  },
+  {
+    "t": 62.703,
+    "line": "# formatter_batches=926 formatter_errors=0 pending=0 rate_hz=960"
+  },
+  {
+    "t": 62.704,
+    "line": "# gnss_first_fix_ms=34155"
+  },
+  {
+    "t": 62.712,
+    "line": "# gps_seq=58 fix=3 satellites=6 visible=8 max_signal=37.4 flags=11 tx_bytes=3712 tx_errors=0"
+  },
+  {
+    "t": 63.698,
+    "line": "# imu=23722 imu_errors=0 gaps=0 queue_drops=0 gps_drops=0 sd=0 sd_rows=18989 sd_errors=0"
+  },
+  {
+    "t": 63.703,
+    "line": "# formatter_batches=926 formatter_errors=0 pending=0 rate_hz=960"
+  },
+  {
+    "t": 63.704,
+    "line": "# gnss_first_fix_ms=34155"
+  },
+  {
+    "t": 63.712,
+    "line": "# gps_seq=59 fix=3 satellites=6 visible=8 max_signal=37.5 flags=11 tx_bytes=3776 tx_errors=0"
+  }
+]

@@ -38,3 +38,4 @@ reports/
 - [スマホ位置・時刻共有](2026-09-20_004_phone_reference/README.md)
 
 - [親機SDの復旧](2026-09-21_005_parent_sd_recovery/README.md)
+- [016 GNSS衛星系・起動順序改善](2026-09-21_016_gnss_multisystem/README.md)：GNSS先行起動で3D測位成功、IMU・SD併用中も継続。
