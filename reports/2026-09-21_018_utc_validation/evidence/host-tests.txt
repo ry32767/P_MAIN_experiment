@@ -1,0 +1,4 @@
+PASS CRC, parser resync, 64-bit time, signed offset, queue full/empty/wrap, timing bounds; packet_bytes=130 air_us=11285
+PASS: CRC, frame corruption/resync, coordinate/date bounds, PPS lock/timeout/duplicates/jumps, sequence and 64-bit time wrap
+PASS phone numeric validation, bounds, RTT, token replay, expiry, 64-bit uptime, position age and clear
+PASS SD retry delays, exhaustion, explicit stop, manual reset, stability and millis wrap

@@ -41,3 +41,5 @@ reports/
 - [016 GNSS衛星系・起動順序改善](2026-09-21_016_gnss_multisystem/README.md)：GNSS先行起動で3D測位成功、IMU・SD併用中も継続。
 
 - [子機の再接続・IMU／SD／相対同期](2026-09-21_017_child_reconnect/README.md) — 再保存はCRC一致。旧ログ破損・センサー時刻逆転は未解決。
+
+- [GPS UTC同期の実機確認](2026-09-21_018_utc_validation/README.md) — 相対通信復帰、GPS有効時刻・PPS未確認。

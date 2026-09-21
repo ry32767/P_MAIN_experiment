@@ -1,0 +1,192 @@
+{
+  "observed_at_jst": "2026-09-21T11:29:02.510358+09:00",
+  "phases": {
+    "status": {
+      "COM3": {
+        "samples": 13,
+        "role": "C_MAIN",
+        "link_rx_start_end": [
+          1052,
+          1052
+        ],
+        "sync_true_samples": 0,
+        "utc_valid_true_samples": 0,
+        "link_errors_start_end": [
+          0,
+          0
+        ],
+        "last_link_age_ms": 563788
+      },
+      "COM6": {
+        "samples": 13,
+        "role": "P_MAIN",
+        "link_rx_start_end": [
+          1051,
+          1051
+        ],
+        "sync_true_samples": 0,
+        "utc_valid_true_samples": 0,
+        "link_errors_start_end": [
+          0,
+          0
+        ],
+        "last_link_age_ms": 563962,
+        "spresense": {
+          "packets": [
+            789,
+            801
+          ],
+          "crc_errors": [
+            0,
+            0
+          ],
+          "sync_rejected": [
+            788,
+            800
+          ],
+          "pps_count": [
+            9691,
+            9691
+          ],
+          "pps_period_us": [
+            52815,
+            52815
+          ],
+          "link_fresh_true_samples": 13,
+          "fix_valid_true_samples": 0,
+          "time_valid_true_samples": 0,
+          "sync_candidate_true_samples": 0,
+          "pps_fresh_true_samples": 0,
+          "satellites_used_max": 0
+        }
+      }
+    },
+    "monitor": {
+      "COM3": {
+        "samples": 60,
+        "role": "C_MAIN",
+        "link_rx_start_end": [
+          1052,
+          1060
+        ],
+        "sync_true_samples": 8,
+        "utc_valid_true_samples": 0,
+        "link_errors_start_end": [
+          0,
+          0
+        ],
+        "last_link_age_ms": 780
+      },
+      "COM6": {
+        "samples": 60,
+        "role": "P_MAIN",
+        "link_rx_start_end": [
+          1051,
+          1059
+        ],
+        "sync_true_samples": 8,
+        "utc_valid_true_samples": 0,
+        "link_errors_start_end": [
+          0,
+          0
+        ],
+        "last_link_age_ms": 954,
+        "spresense": {
+          "packets": [
+            848,
+            907
+          ],
+          "crc_errors": [
+            0,
+            0
+          ],
+          "sync_rejected": [
+            847,
+            906
+          ],
+          "pps_count": [
+            9691,
+            9691
+          ],
+          "pps_period_us": [
+            52815,
+            52815
+          ],
+          "link_fresh_true_samples": 60,
+          "fix_valid_true_samples": 0,
+          "time_valid_true_samples": 0,
+          "sync_candidate_true_samples": 0,
+          "pps_fresh_true_samples": 0,
+          "satellites_used_max": 0
+        }
+      }
+    },
+    "reconnected": {
+      "COM3": {
+        "samples": 26,
+        "role": "C_MAIN",
+        "link_rx_start_end": [
+          1099,
+          1123
+        ],
+        "sync_true_samples": 26,
+        "utc_valid_true_samples": 0,
+        "link_errors_start_end": [
+          0,
+          0
+        ],
+        "last_link_age_ms": 779
+      },
+      "COM6": {
+        "samples": 26,
+        "role": "P_MAIN",
+        "link_rx_start_end": [
+          1098,
+          1122
+        ],
+        "sync_true_samples": 26,
+        "utc_valid_true_samples": 0,
+        "link_errors_start_end": [
+          0,
+          0
+        ],
+        "last_link_age_ms": 953,
+        "spresense": {
+          "packets": [
+            945,
+            970
+          ],
+          "crc_errors": [
+            0,
+            0
+          ],
+          "sync_rejected": [
+            944,
+            969
+          ],
+          "pps_count": [
+            9691,
+            9691
+          ],
+          "pps_period_us": [
+            52815,
+            52815
+          ],
+          "link_fresh_true_samples": 26,
+          "fix_valid_true_samples": 0,
+          "time_valid_true_samples": 0,
+          "sync_candidate_true_samples": 0,
+          "pps_fresh_true_samples": 0,
+          "satellites_used_max": 0
+        }
+      }
+    }
+  },
+  "firmware_modified": false,
+  "source_hashes": {
+    "common/protocol.h": "466d44bd243568e1c626703dcdb40dd6a3bc9db3d8f44c397a4b9d54040f194a",
+    "common/spresense_protocol.h": "bca081061b1aa409d15e7cbd4f74312defec94d86fb84ba963bd883e374daa79",
+    "include/spresense_link.h": "bee0f5cfa70e3d7eadb466e297dca4c2e9fde882e0d691cc723fe15afeec5e54",
+    "src/main.cpp": "d5ae1106a4508fdbdfc22e50e1737c68427d10909306ce781bc13c4b3f218121"
+  }
+}
