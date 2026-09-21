@@ -1,0 +1,11 @@
+--- logger.ino (a2b547c)
++++ fifo4.ino
+@@ -89,7 +89,7 @@
+   cxd5602pwbimu_range_t range{4,500};
+   if(fd<0) { ++imuErrors; return nullptr; }
+   if(ioctl(fd,SNIOC_SSAMPRATE,aqimu::rate) || ioctl(fd,SNIOC_SDRANGE,(unsigned long)(uintptr_t)&range)
+-     || ioctl(fd,SNIOC_SFIFOTHRESH,1) || ioctl(fd,SNIOC_ENABLE,1)) {
++     || ioctl(fd,SNIOC_SFIFOTHRESH,4) || ioctl(fd,SNIOC_ENABLE,1)) {
+     ++imuErrors; close(fd); return nullptr;
+   }
+   imuReady=true;

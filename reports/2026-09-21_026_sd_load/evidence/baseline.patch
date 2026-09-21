@@ -1,0 +1,12 @@
+--- logger.ino (a2b547c)
++++ baseline.ino
+@@ -82,7 +82,8 @@
+ pthread_mutex_t utcMutex=PTHREAD_MUTEX_INITIALIZER;
+ void *imuTask(void *) {
+   uint64_t waitStarted=monoUs();
+-  while(!gnssHasFix && monoUs()-waitStarted<uint64_t(gnssAcquisitionWaitMs)*1000) usleep(100000);
++  Serial.println("# DIAGNOSTIC IMU deferred 300 seconds; then normal 960 Hz FIFO1");
++  while(monoUs()-waitStarted<300000000ULL) usleep(100000);
+   Serial.printf("# IMU_START gnss_fix=%u wait_ms=%lu\n",int(gnssHasFix.load()),(unsigned long)((monoUs()-waitStarted)/1000));
+   if(board_cxd5602pwbimu_initialize(5)<0) { ++imuErrors; return nullptr; }
+   int fd=open("/dev/imu0",O_RDONLY|O_NONBLOCK);
