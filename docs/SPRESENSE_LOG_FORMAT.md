@@ -43,3 +43,7 @@ PPS→GNSS通知の間隔が2～500 ms、PPS周期が990～1010 ms、UTC秒とPP
 GPS受信やPPS成立で記録を停止しない。通常の監視は`scripts/monitor_spresense.py --output <保存先>`を使用し、監視が終了しても記録は継続する。旧実験のreports/raw内のスクリプトは停止qを送るものがあるため再利用しない。
 
 明示的にqで安全停止した後は、rでGNSSを再起動せず新しいI/Gファイルに記録を再開できる。記録中のrは何もしない。未完了の停止やSD/formatter異常がある場合は再開を拒否し、異常を隠さない。sd_rowsは起動中の累計。シリアルのsd_stateはRECORDING/STOPPED/ERROR/NOT_READYを区別する。親機側の旧表示は未更新。
+
+## 起動時の取得開始
+
+IMUはSD・SubCoreの初期化後に取得を開始する。GPS測位待ちや固定の2分・5分待機は設けない。UTC未確定の行はutc_valid=0として保存し、GPS受信後にUTCを付与する。

@@ -30,7 +30,6 @@ constexpr uint32_t gpsLedOnMs = 100;
 SDClass card;
 SpGnss gnss;
 std::atomic<bool> gnssHasFix{false};
-constexpr uint32_t gnssAcquisitionWaitMs=120000; // Bounded first-fix head start before IMU SPI activity.
 using ImuRow=aqimu::Row;
 static_assert(sizeof(aqimu::Data)==sizeof(cxd5602pwbimu_data_t), "IMU driver ABI");
 aqimu::Batch *batch=nullptr;
@@ -81,9 +80,8 @@ aqimu::Edge snapshotPps() {
 aqimu::UtcClock imuUtc;
 pthread_mutex_t utcMutex=PTHREAD_MUTEX_INITIALIZER;
 void *imuTask(void *) {
-  uint64_t waitStarted=monoUs();
-  while(!gnssHasFix && monoUs()-waitStarted<uint64_t(gnssAcquisitionWaitMs)*1000) usleep(100000);
-  Serial.printf("# IMU_START gnss_fix=%u wait_ms=%lu\n",int(gnssHasFix.load()),(unsigned long)((monoUs()-waitStarted)/1000));
+  // Acquisition starts independently of GNSS fix; UTC becomes valid later.
+  Serial.printf("# IMU_START gnss_fix=%u wait_ms=0\n",int(gnssHasFix.load()));
   if(board_cxd5602pwbimu_initialize(5)<0) { ++imuErrors; return nullptr; }
   int fd=open("/dev/imu0",O_RDONLY|O_NONBLOCK);
   cxd5602pwbimu_range_t range{4,500};
