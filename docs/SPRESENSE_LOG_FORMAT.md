@@ -37,3 +37,9 @@ PPS→GNSS通知の間隔が2～500 ms、PPS周期が990～1010 ms、UTC秒とPP
 ## 確認方法
 
 `scripts/build_spresense.ps1` で両コアをビルドし、識別済みポートに両方のSPKを書き込む。起動時に `IMU_UTC schema=2`、`SD_READBACK_OK` を確認する。測位後に `pps_count` の増加と `utc_source=2` を確認し、`q` の安全停止後、`i` / `g` でSDファイルを回収する。UTCが無効な場合もIMUデータ自体は保存する。
+
+## 連続運転と再開
+
+GPS受信やPPS成立で記録を停止しない。通常の監視は`scripts/monitor_spresense.py --output <保存先>`を使用し、監視が終了しても記録は継続する。旧実験のreports/raw内のスクリプトは停止qを送るものがあるため再利用しない。
+
+明示的にqで安全停止した後は、rでGNSSを再起動せず新しいI/Gファイルに記録を再開できる。記録中のrは何もしない。未完了の停止やSD/formatter異常がある場合は再開を拒否し、異常を隠さない。sd_rowsは起動中の累計。シリアルのsd_stateはRECORDING/STOPPED/ERROR/NOT_READYを区別する。親機側の旧表示は未更新。

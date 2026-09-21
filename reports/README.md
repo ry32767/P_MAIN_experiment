@@ -53,3 +53,5 @@ reports/
 - [022 窓開放時のGPS・PPS・SD同時検証](2026-09-21_022_window_sd/README.md)：PPS継続中のSD異常は再現せず。正常停止でも親機に異常／未準備と表示される条件を確認。GPS未測位。
 
 - [023 受信中のGPS・PPSとSD停止状態](2026-09-21_023_live_gps_sd/README.md)：GPS 3D・6衛星、UTC/PPS対応条件成立。SDエラー0、前回の正常停止が継続。
+
+- [024 GPS受信後の連続記録・SDタイムアウト診断](2026-09-21_024_continuous_recording/README.md)：検証による自動停止を撤廃。実機で別のSD書込みタイムアウトを再現し、カード確認待ち。

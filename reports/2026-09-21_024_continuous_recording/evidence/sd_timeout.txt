@@ -1,0 +1,30 @@
+# imu=103112 imu_errors=0 gaps=0 queue_drops=0 gps_drops=0 sd=1 sd_rows=103297 sd_errors=0
+# recording=1 sd_state=RECORDING
+# formatter_batches=5034 formatter_errors=0 pending=1 rate_hz=960
+# pps_count=1 utc_source=0 utc_sync_valid=0 utc_age_us=0
+# gnss_first_fix_ms=0
+# gps_seq=225 fix=1 satellites=0 visible=4 max_signal=33.7 flags=12 tx_bytes=14400 tx_errors=0
+# SD_WRITE_FAILED errno=110 result=-1 written=0 requested=2422
+# SD_SPACE total_bytes=15625879552 free_bytes=15411281920
+# RECORDING_FAILED reason=IMU_SD_WRITE detail=110 recording_stopped
+# imu=104128 imu_errors=0 gaps=0 queue_drops=0 gps_drops=0 sd=0 sd_rows=103808 sd_errors=1
+# recording=0 sd_state=ERROR
+# formatter_batches=5060 formatter_errors=1 pending=0 rate_hz=960
+# pps_count=1 utc_source=0 utc_sync_valid=0 utc_age_us=0
+# gnss_first_fix_ms=0
+# gps_seq=226 fix=1 satellites=0 visible=3 max_signal=32.8 flags=12 tx_bytes=14464 tx_errors=0
+# STOP_FAILED
+# imu=105102 imu_errors=0 gaps=0 queue_drops=529 gps_drops=0 sd=0 sd_rows=103808 sd_errors=2
+# recording=0 sd_state=ERROR
+# formatter_batches=5060 formatter_errors=1 pending=0 rate_hz=960
+# pps_count=1 utc_source=0 utc_sync_valid=0 utc_age_us=0
+# gnss_first_fix_ms=0
+# gps_seq=227 fix=1 satellites=0 visible=3 max_signal=27.0 flags=8 tx_bytes=14528 tx_errors=0
+# imu=106067 imu_errors=0 gaps=0 queue_drops=529 gps_drops=0 sd=0 sd_rows=103808 sd_errors=2
+# recording=0 sd_state=ERROR
+# formatter_batches=5060 formatter_errors=1 pending=0 rate_hz=960
+# pps_count=1 utc_source=0 utc_sync_valid=0 utc_age_us=0
+# gnss_first_fix_ms=0
+# gps_seq=228 fix=1 satellites=0 visible=3 max_signal=20.9 flags=8 tx_bytes=14592 tx_errors=0
+# imu=107031 imu_errors=0 gaps=0 queue_drops=529 gps_drops=0 sd=0 sd_rows=103808 sd_errors=2
+# recording=0 sd_state=ERROR
