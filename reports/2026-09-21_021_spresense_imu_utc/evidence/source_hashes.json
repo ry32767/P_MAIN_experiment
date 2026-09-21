@@ -1,0 +1,6 @@
+{
+  "common\\AquaBeacon\\src\\ImuUtc.h": "bfedb1c64ff335fb8b9272c882fdea62098163917062caeb04ca85c0935d8aaf",
+  "common\\AquaBeacon\\src\\ImuBatch.h": "8c644d4d4d07e78b74c03f4c7d46d9680531b83a81e699096ca1e390597c09fd",
+  "firmware\\spresense\\logger\\logger.ino": "498ebcfc0b0b0a1fa3a00b00ffc0c24f0e189dbd91b35a0043cd086468935fc2",
+  "tests\\test_imu_batch.cpp": "d8c1e6fd5653f919240679b3c370ceecce7fb221b61d022917e5e56b3f114ddf"
+}

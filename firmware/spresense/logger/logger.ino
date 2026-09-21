@@ -16,10 +16,12 @@
 #include <time.h>
 #include <math.h>
 #include <atomic>
+#include <nuttx/irq.h>
 
 // Sony CXD5602PWBIMU Add-on, official Arduino core 3.4.7.
 // SD I/O runs only in loop(); GNSS/UART and IMU acquisition have dedicated tasks.
 namespace pins {
+constexpr uint8_t ppsFeedback = PIN_D03; // Extension D02 hardware PPS -> D03 input, JP1=3.3V.
 constexpr uint8_t gpsReceivedLed = LED0; // Spresense main-board LED0.
 }
 constexpr uint32_t gpsLedOnMs = 100;
@@ -33,7 +35,7 @@ static_assert(sizeof(aqimu::Data)==sizeof(cxd5602pwbimu_data_t), "IMU driver ABI
 aqimu::Batch *batch=nullptr;
 bool workerOk=false, workerPending=false;
 uint32_t workerStarted=0, workerId=0, workerBatches=0, workerErrors=0;
-struct GpsRow { uint64_t received_us; aq::Nav nav; };
+struct GpsRow { uint64_t received_us; aq::Nav nav; aqimu::Edge pps; };
 template<class T, unsigned N> struct Queue {
   T data[N]; std::atomic<unsigned> head{0}, tail{0};
   bool push(const T &v) {
@@ -64,10 +66,19 @@ struct GpsStatus {
 GpsStatus liveGps;
 pthread_mutex_t gpsStatusMutex=PTHREAD_MUTEX_INITIALIZER;
 
-uint64_t monoUs() {
-  timespec t; clock_gettime(CLOCK_MONOTONIC,&t);
-  return uint64_t(t.tv_sec)*1000000ULL+t.tv_nsec/1000;
+// Use the same 64-bit Arduino power-on clock for both IRQ and task timestamps.
+// Core 3.4.7 micros() reads the hardware RTC counter; this is NOT UTC/RTC calendar.
+uint64_t monoUs() { return micros(); }
+volatile uint64_t ppsUs=0;
+volatile uint32_t ppsCount=0;
+void ppsInterrupt() { ppsUs=micros(); ++ppsCount; }
+aqimu::Edge snapshotPps() {
+  irqstate_t state=enter_critical_section();
+  aqimu::Edge e{ppsUs,ppsCount};
+  leave_critical_section(state); return e;
 }
+aqimu::UtcClock imuUtc;
+pthread_mutex_t utcMutex=PTHREAD_MUTEX_INITIALIZER;
 void *imuTask(void *) {
   uint64_t waitStarted=monoUs();
   while(!gnssHasFix && monoUs()-waitStarted<uint64_t(gnssAcquisitionWaitMs)*1000) usleep(100000);
@@ -91,6 +102,9 @@ void *imuTask(void *) {
     if(n<0 && (errno==EAGAIN || errno==EINTR)) continue;
     if(n!=sizeof(row.data)) { ++imuErrors; continue; }
     row.received_us=monoUs(); row.seq=++imuSamples; imuReady=true;
+    pthread_mutex_lock(&utcMutex);
+    row.utc=imuUtc.at(row.received_us,snapshotPps());
+    pthread_mutex_unlock(&utcMutex);
     // Sony's reference uses a 19.2 MHz timestamp counter. Do not learn the
     // threshold from the smallest observed interval: one short interval would
     // incorrectly mark every later sample as missing. Count discontinuity
@@ -124,6 +138,7 @@ void *gpsTask(void *) {
     if(!gnss.waitUpdate(1)) continue;
     SpNavData nav{}; gnss.getNavData(&nav);
     uint64_t received=monoUs();
+    aqimu::Edge edge=snapshotPps();
     out.sequence++; out.flags=0; out.fix=nav.posFixMode; out.satellites=nav.numSatellitesCalcPos;
     out.utc_s=aq::unix_seconds(nav.time.year,nav.time.month,nav.time.day,nav.time.hour,nav.time.minute,nav.time.sec);
     out.usec=nav.time.usec;
@@ -135,6 +150,9 @@ void *gpsTask(void *) {
       out.flags|=aq::position_valid;
       out.lat_e7=lround(nav.latitude*1e7); out.lon_e7=lround(nav.longitude*1e7); out.altitude_mm=lround(nav.altitude*1000);
     } else { out.lat_e7=out.lon_e7=out.altitude_mm=0; }
+    pthread_mutex_lock(&utcMutex);
+    imuUtc.update(out.flags & aq::time_valid,out.utc_s,out.usec,out.sequence,received,edge);
+    pthread_mutex_unlock(&utcMutex);
     if(sdReady) out.flags|=aq::sd_ok;
     if(imuReady) out.flags|=aq::imu_ok;
     out.imu_samples=imuSamples; out.imu_errors=imuErrors; out.imu_gaps=imuGaps.load()+queueDrops.load();
@@ -156,7 +174,7 @@ void *gpsTask(void *) {
     liveGps.txBytes+=sent; if(sent!=sizeof(frame)) ++liveGps.txErrors;
     pthread_mutex_unlock(&gpsStatusMutex);
     pthread_mutex_lock(&recordingMutex);
-    if(recording && !gpsQueue.push(GpsRow{received,out})) ++gpsDrops;
+    if(recording && !gpsQueue.push(GpsRow{received,out,edge})) ++gpsDrops;
     pthread_mutex_unlock(&recordingMutex);
   }
   return nullptr;
@@ -237,8 +255,8 @@ bool openLogs() {
     if(gpsFile>=0) close(gpsFile);
     imuFile=gpsFile=-1; return false;
   }
-  return saveLine(imuFile,"seq,received_mono_us,sensor_timestamp_raw,temp,gx,gy,gz,ax,ay,az,crc32\n",false) &&
-    saveLine(gpsFile,"seq,received_mono_us,utc_s,nav_usec,flags,fix,satellites,lat_e7,lon_e7,altitude_mm,imu_samples,imu_errors,imu_gaps,sd_errors,sd_rows,crc32\n",false);
+  return saveLine(imuFile,"seq,received_mono_us,sensor_timestamp_raw,temp,gx,gy,gz,ax,ay,az,utc_received_us,utc_valid,utc_sync_valid,utc_source,utc_age_us,utc_anchor_seq,crc32\n",false) &&
+    saveLine(gpsFile,"seq,received_mono_us,utc_s,nav_usec,flags,fix,satellites,lat_e7,lon_e7,altitude_mm,imu_samples,imu_errors,imu_gaps,sd_errors,sd_rows,pps_mono_us,pps_count,crc32\n",false);
 }
 bool startTask(void *(*fn)(void *), int priority) {
   pthread_attr_t a; pthread_attr_init(&a); pthread_attr_setstacksize(&a,16384);
@@ -284,6 +302,9 @@ void exportStoppedLog(const char *path) {
 void setup() {
   Serial.begin(115200);
   ledOff(pins::gpsReceivedLed);
+  pinMode(pins::ppsFeedback,INPUT_PULLDOWN);
+  attachInterrupt(digitalPinToInterrupt(pins::ppsFeedback),ppsInterrupt,RISING);
+  Serial.println("# IMU_UTC schema=2 D02_to_D03 required_for_pps timebase=arduino_power_on_us");
   int mpResult=MP.begin(1);
   if(mpResult>=0) batch=static_cast<aqimu::Batch*>(MP.AllocSharedMemory(sizeof(aqimu::Batch)));
   workerOk=mpResult>=0 && batch;
@@ -303,9 +324,9 @@ void loop() {
   GpsRow gps;
   while(gpsQueue.pop(gps)) {
     aq::Nav &n=gps.nav;
-    snprintf(line,sizeof(line),"%lu,%llu,%llu,%lu,%u,%u,%u,%ld,%ld,%ld,%lu,%lu,%lu,%lu,%lu\n",
+    snprintf(line,sizeof(line),"%lu,%llu,%llu,%lu,%u,%u,%u,%ld,%ld,%ld,%lu,%lu,%lu,%lu,%lu,%llu,%lu\n",
       (unsigned long)n.sequence,(unsigned long long)gps.received_us,(unsigned long long)n.utc_s,(unsigned long)n.usec,n.flags,n.fix,n.satellites,
-      (long)n.lat_e7,(long)n.lon_e7,(long)n.altitude_mm,(unsigned long)n.imu_samples,(unsigned long)n.imu_errors,(unsigned long)n.imu_gaps,(unsigned long)n.sd_errors,(unsigned long)n.sd_rows);
+      (long)n.lat_e7,(long)n.lon_e7,(long)n.altitude_mm,(unsigned long)n.imu_samples,(unsigned long)n.imu_errors,(unsigned long)n.imu_gaps,(unsigned long)n.sd_errors,(unsigned long)n.sd_rows,(unsigned long long)gps.pps.us,(unsigned long)gps.pps.count);
     if(sdReady) saveLine(gpsFile,line);
   }
   serviceFormatter();
@@ -338,6 +359,9 @@ void loop() {
     Serial.println(line);
     Serial.printf("# formatter_batches=%lu formatter_errors=%lu pending=%u rate_hz=%lu\n",(unsigned long)workerBatches,(unsigned long)workerErrors,workerPending,(unsigned long)aqimu::rate);
     pthread_mutex_lock(&gpsStatusMutex); GpsStatus g=liveGps; pthread_mutex_unlock(&gpsStatusMutex);
+    aqimu::Edge edge=snapshotPps();
+    pthread_mutex_lock(&utcMutex); aqimu::Stamp stamp=imuUtc.at(monoUs(),edge); pthread_mutex_unlock(&utcMutex);
+    Serial.printf("# pps_count=%lu utc_source=%lu utc_sync_valid=%lu utc_age_us=%llu\n",(unsigned long)edge.count,(unsigned long)stamp.source,(unsigned long)stamp.sync_valid,(unsigned long long)stamp.age_us);
     Serial.printf("# gnss_first_fix_ms=%lu\n",(unsigned long)g.firstFixMs);
     Serial.printf("# gps_seq=%lu fix=%u satellites=%u visible=%u max_signal=%.1f flags=%u tx_bytes=%lu tx_errors=%lu\n",
       (unsigned long)g.sequence,g.fix,g.used,g.visible,g.maxSignal,g.flags,(unsigned long)g.txBytes,(unsigned long)g.txErrors);

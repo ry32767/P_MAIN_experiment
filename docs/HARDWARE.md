@@ -42,3 +42,7 @@ SpresenseはCXD5602PWBMAIN1、拡張CXD5602PWBEXT1、SonyマルチIMU CXD5602PWB
 - [Sony拡張ボード](https://developer.sony.com/ja/spresense/products/spresense-extension-board/)：レベル変換・ジャンパー設定。
 - [TI INA226](https://www.ti.com/lit/ds/symlink/ina226.pdf)：レジスター分解能・シャント電流換算。
 - [Arduino-Pico](https://github.com/earlephilhower/arduino-pico)：PIO UART、マルチコア、Wi-Fi、SdFat。
+
+## Spresense IMU UTC追加配線（2026-09-21）
+
+拡張D02（GNSS PPS出力）から同じ拡張ボードD03（入力）へ短いジャンパーを追加。既存D02→親機GP6は維持。JP1=3.3V。D03のPWM3/Wire1とは併用しない。接続完了のユーザー申告あり。詳細と検証状態は[保存形式](SPRESENSE_LOG_FORMAT.md)、[レポート021](../reports/2026-09-21_021_spresense_imu_utc/README.md)。

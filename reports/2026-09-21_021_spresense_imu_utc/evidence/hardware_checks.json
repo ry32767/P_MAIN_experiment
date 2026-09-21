@@ -1,0 +1,30 @@
+{
+  "imu.csv": {
+    "rows": 5825,
+    "crc_errors": 0,
+    "sources": {
+      "0": 5825
+    },
+    "utc_mismatch_rows": 0,
+    "sensor_interval_us": {
+      "min": 639.6354166666667,
+      "median": 1072.109375,
+      "max": 1086.5104166666667
+    },
+    "sequence_gaps": 0,
+    "duration_host_s": 6.029053,
+    "host_average_rate_hz": 965.9891860297131
+  },
+  "gps.csv": {
+    "rows": 125,
+    "crc_errors": 0,
+    "time_valid_rows": 0,
+    "pps_count_max": 1
+  },
+  "utc_valid_mapping_checks_performed": 0,
+  "note": "No fixed GNSS rows; zero UTC mismatches does not validate PPS or GPS UTC mapping.",
+  "safe_stop": true,
+  "sd_errors": 0,
+  "formatter_errors": 0,
+  "max_visible_satellites": 2
+}

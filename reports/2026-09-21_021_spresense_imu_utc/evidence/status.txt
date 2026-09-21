@@ -1,0 +1,18 @@
+# imu=0 imu_errors=0 gaps=0 queue_drops=0 gps_drops=0 sd=1 sd_rows=16 sd_errors=0
+# formatter_batches=0 formatter_errors=0 pending=0 rate_hz=960
+# pps_count=1 utc_source=0 utc_sync_valid=0 utc_age_us=0
+# imu=0 imu_errors=0 gaps=0 queue_drops=0 gps_drops=0 sd=1 sd_rows=17 sd_errors=0
+# formatter_batches=0 formatter_errors=0 pending=0 rate_hz=960
+# pps_count=1 utc_source=0 utc_sync_valid=0 utc_age_us=0
+# imu=7755 imu_errors=0 gaps=0 queue_drops=0 gps_drops=0 sd=0 sd_rows=5952 sd_errors=0
+# formatter_batches=289 formatter_errors=0 pending=0 rate_hz=960
+# pps_count=1 utc_source=0 utc_sync_valid=0 utc_age_us=0
+# imu=8721 imu_errors=0 gaps=0 queue_drops=0 gps_drops=0 sd=0 sd_rows=5952 sd_errors=0
+# formatter_batches=289 formatter_errors=0 pending=0 rate_hz=960
+# pps_count=1 utc_source=0 utc_sync_valid=0 utc_age_us=0
+# imu=9687 imu_errors=0 gaps=0 queue_drops=0 gps_drops=0 sd=0 sd_rows=5952 sd_errors=0
+# formatter_batches=289 formatter_errors=0 pending=0 rate_hz=960
+# pps_count=1 utc_source=0 utc_sync_valid=0 utc_age_us=0
+# imu=10653 imu_errors=0 gaps=0 queue_drops=0 gps_drops=0 sd=0 sd_rows=5952 sd_errors=0
+# formatter_batches=289 formatter_errors=0 pending=0 rate_hz=960
+# pps_count=1 utc_source=0 utc_sync_valid=0 utc_age_us=0

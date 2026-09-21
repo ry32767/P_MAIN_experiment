@@ -1,0 +1,24 @@
+{
+  "host_imu_utc_and_batch": "pass",
+  "host_protocol": "pass",
+  "python_tests_passed": 5,
+  "sony_main_build": "pass",
+  "sony_sub1_build": "pass",
+  "rtc_counter_hz": 32768,
+  "rtc_tick_us": 30.517578125,
+  "hardware_validation": "SD readback and invalid UTC passed; no GNSS fix, valid UTC/PPS unverified",
+  "pico_builds": {
+    "pico2w": "pass",
+    "pico2w_logger": "pass"
+  },
+  "packages": {
+    "build\\formatter\\formatter.ino.spk": {
+      "bytes": 68992,
+      "sha256": "9eddb1ffed8b51e8d2ea56155d66c2112e2bfeed25281e690fb6c54aaf0368f8"
+    },
+    "build\\spresense\\logger.ino.spk": {
+      "bytes": 189408,
+      "sha256": "6fcb400cf2b54b0f27716c258207a3ac54e96c692ba23f9e6de9b1ae4f2e9cf1"
+    }
+  }
+}
