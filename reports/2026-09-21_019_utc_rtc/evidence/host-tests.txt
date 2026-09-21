@@ -1,0 +1,9 @@
+PASS CRC, parser resync, 64-bit time, signed offset, queue full/empty/wrap, timing bounds; packet_bytes=130 air_us=11285
+PASS: CRC, frame corruption/resync, coordinate/date bounds, PPS lock/timeout/duplicates/jumps, sequence and 64-bit time wrap
+PASS phone numeric validation, bounds, RTT, token replay, expiry, 64-bit uptime, position age and clear
+PASS SD retry delays, exhaustion, explicit stop, manual reset, stability and millis wrap
+PASS UTC priority/expiry, signed child mapping, overflow, RTC dates/OSF/BCD, fixed packet size, early GNSS frames and spurious PPS
+IMU 50 Hz: 20000 us; 512-row queue covers 10.24 seconds
+IMU 100 Hz: 10000 us; 512-row queue covers 5.12 seconds
+PIO: divider=187.5, period=5.0 us, burst=25.0 us
+200 us early window = 0.3 m; 100 us timestamp uncertainty = 0.15 m

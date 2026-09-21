@@ -1,0 +1,5 @@
+Public source build: PlatformIO parent SUCCESS, child100 SUCCESS.
+Parent RAM 188196 / 524288 bytes; Flash 456528 / 4190208 bytes.
+Child100 RAM 237892 / 524288 bytes; Flash 394160 / 4190208 bytes.
+Both firmware images flashed after USB identity + role check and SD safe stop. Flash verification succeeded.
+Both local and Pages JavaScript syntax checks passed.

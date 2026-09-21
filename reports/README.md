@@ -43,3 +43,5 @@ reports/
 - [子機の再接続・IMU／SD／相対同期](2026-09-21_017_child_reconnect/README.md) — 再保存はCRC一致。旧ログ破損・センサー時刻逆転は未解決。
 
 - [GPS UTC同期の実機確認](2026-09-21_018_utc_validation/README.md) — 相対通信復帰、GPS有効時刻・PPS未確認。
+
+- [親子UTC同期・Wi-Fi時刻・RTC保持](2026-09-21_019_utc_rtc/README.md) — GPS親子同期、RTC保存・ソフト再起動復元を実機確認。Wi-Fi実受信・物理電源断は未確認。

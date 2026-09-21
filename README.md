@@ -186,3 +186,8 @@ Webの「親機SDの復旧」で、子機なしでも親機だけの復旧・記
 ## Spresense GNSS受信改善（2026-09-21）
 
 GPS+GLONASS+QZSS L1C/Aを使用し、初回測位を優先してからIMU 960Hzを開始します。IMU開始待ちは最大120秒で、測位後のFix喪失ではIMUを止めません。電源投入直後はIMUログが空の時間があります。実機ではGNSS開始から約34秒で3D測位し、IMU・SD稼働中も継続しました。[検証レポート016](reports/2026-09-21_016_gnss_multisystem/README.md)。親機UTC同期精度とは別の検証です。
+
+
+## 親機・子機のUTC同期とRTC保持
+
+[親子統合ファームウェア](firmware/main_control/README.md)に、GPS・Wi-Fi端末時計・RTCの優先選択、子機へのUTC配信、RTC保存・復元を追加しました。GPS同期の絶対精度や物理電源断保持の合否は検証レポートを参照してください。

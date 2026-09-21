@@ -1,0 +1,4 @@
+.pio/
+reports/raw/
+include/web_page.h
+__pycache__/

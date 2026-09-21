@@ -1,0 +1,248 @@
+{
+  "gps_installed": {
+    "COM3": {
+      "observations": 58,
+      "sources": {
+        "gps_pps_candidate": 55,
+        "rtc": 3
+      },
+      "rtc_write_errors_max": 0,
+      "rtc_restore_before_write": false,
+      "first_sources": [
+        "gps_pps_candidate",
+        "gps_pps_candidate",
+        "gps_pps_candidate",
+        "gps_pps_candidate",
+        "gps_pps_candidate"
+      ],
+      "last_source": "gps_pps_candidate",
+      "relative_sync_true": 58
+    },
+    "COM6": {
+      "observations": 61,
+      "sources": {
+        "gps_pps_candidate": 57,
+        "rtc": 4
+      },
+      "rtc_write_errors_max": 0,
+      "rtc_restore_before_write": false,
+      "first_sources": [
+        "gps_pps_candidate",
+        "gps_pps_candidate",
+        "gps_pps_candidate",
+        "gps_pps_candidate",
+        "gps_pps_candidate"
+      ],
+      "last_source": "gps_pps_candidate",
+      "relative_sync_true": 61
+    }
+  },
+  "fallback": {
+    "COM3": {
+      "observations": 21,
+      "sources": {
+        "gps_pps_candidate": 1,
+        "rtc": 20
+      },
+      "rtc_write_errors_max": 0,
+      "rtc_restore_before_write": false,
+      "first_sources": [
+        "gps_pps_candidate",
+        "rtc",
+        "rtc",
+        "rtc",
+        "rtc"
+      ],
+      "last_source": "rtc",
+      "relative_sync_true": 21
+    },
+    "COM6": {
+      "observations": 22,
+      "sources": {
+        "rtc": 22
+      },
+      "rtc_write_errors_max": 0,
+      "rtc_restore_before_write": false,
+      "first_sources": [
+        "rtc",
+        "rtc",
+        "rtc",
+        "rtc",
+        "rtc"
+      ],
+      "last_source": "rtc",
+      "relative_sync_true": 22
+    }
+  },
+  "reboot": {
+    "COM3": {
+      "observations": 26,
+      "sources": {
+        "none": 1,
+        "rtc": 1,
+        "gps_pps_candidate": 24
+      },
+      "rtc_write_errors_max": 0,
+      "rtc_restore_before_write": true,
+      "first_sources": [
+        "none",
+        "rtc",
+        "gps_pps_candidate",
+        "gps_pps_candidate",
+        "gps_pps_candidate"
+      ],
+      "last_source": "gps_pps_candidate",
+      "relative_sync_true": 25
+    },
+    "COM6": {
+      "observations": 29,
+      "sources": {
+        "none": 1,
+        "rtc": 2,
+        "gps_pps_candidate": 26
+      },
+      "rtc_write_errors_max": 0,
+      "rtc_restore_before_write": true,
+      "first_sources": [
+        "none",
+        "rtc",
+        "rtc",
+        "gps_pps_candidate",
+        "gps_pps_candidate"
+      ],
+      "last_source": "gps_pps_candidate",
+      "relative_sync_true": 26
+    }
+  },
+  "child_holdover": {
+    "COM3": {
+      "observations": 22,
+      "sources": {
+        "gps_pps_candidate": 11,
+        "rtc": 11
+      },
+      "rtc_write_errors_max": 0,
+      "rtc_restore_before_write": false,
+      "first_sources": [
+        "gps_pps_candidate",
+        "gps_pps_candidate",
+        "gps_pps_candidate",
+        "gps_pps_candidate",
+        "rtc"
+      ],
+      "last_source": "gps_pps_candidate",
+      "relative_sync_true": 22
+    },
+    "COM6": {
+      "observations": 23,
+      "sources": {
+        "gps_pps_candidate": 23
+      },
+      "rtc_write_errors_max": 0,
+      "rtc_restore_before_write": false,
+      "first_sources": [
+        "gps_pps_candidate",
+        "gps_pps_candidate",
+        "gps_pps_candidate",
+        "gps_pps_candidate",
+        "gps_pps_candidate"
+      ],
+      "last_source": "gps_pps_candidate",
+      "relative_sync_true": 23
+    }
+  },
+  "software_mapping_difference_us": {
+    "samples": 55,
+    "min": -603,
+    "median": 0,
+    "max": 681,
+    "warning": "Computed from shared software anchors; not independent physical clock accuracy."
+  },
+  "ntp_reference": {
+    "host_mid_utc_s": 1789958369.751615,
+    "offset_s": 0.08165740966796875,
+    "rtt_s": 0.02885150909423828,
+    "stratum": 4,
+    "root_dispersion_s": 0.0099945068359375
+  },
+  "usb_arrival_comparison_ms": {
+    "COM3": {
+      "min": -104.74038124084473,
+      "median": -17.739534378051758,
+      "max": -15.422821044921875,
+      "warning": "Includes USB and polling delay, not timestamp error."
+    },
+    "COM6": {
+      "min": -105.43084144592285,
+      "median": -24.68729019165039,
+      "max": -20.949602127075195,
+      "warning": "Includes USB and polling delay, not timestamp error."
+    }
+  },
+  "logs": {
+    "gps_child_imu": {
+      "rows": 8310,
+      "crc_errors": 0,
+      "sources": {
+        "none": 109,
+        "gps_pps_candidate": 7904,
+        "rtc": 297
+      },
+      "duration_s": 83.09,
+      "missing_grid_rows": 0
+    },
+    "gps_child_events": {
+      "rows": 29056,
+      "crc_errors": 0,
+      "sources": {
+        "none": 364,
+        "gps_pps_candidate": 27654,
+        "rtc": 1038
+      }
+    },
+    "gps_parent_time": {
+      "rows": 119,
+      "crc_errors": 0,
+      "sources": {
+        "none": 2,
+        "gps_pps_candidate": 110,
+        "rtc": 7
+      }
+    },
+    "final_child_imu": {
+      "rows": 10194,
+      "crc_errors": 0,
+      "sources": {
+        "none": 126,
+        "gps_pps_candidate": 7866,
+        "rtc": 2202
+      },
+      "duration_s": 101.93,
+      "missing_grid_rows": 0
+    },
+    "final_parent_time": {
+      "rows": 124,
+      "crc_errors": 0,
+      "sources": {
+        "rtc": 24,
+        "gps_pps_candidate": 100
+      }
+    }
+  },
+  "host_tests": "PASS CRC, parser resync, 64-bit time, signed offset, queue full/empty/wrap, timing bounds; packet_bytes=130 air_us=11285\nPASS: CRC, frame corruption/resync, coordinate/date bounds, PPS lock/timeout/duplicates/jumps, sequence and 64-bit time wrap\nPASS phone numeric validation, bounds, RTT, token replay, expiry, 64-bit uptime, position age and clear\nPASS SD retry delays, exhaustion, explicit stop, manual reset, stability and millis wrap\nPASS UTC priority/expiry, signed child mapping, overflow, RTC dates/OSF/BCD, fixed packet size, early GNSS frames and spurious PPS\nIMU 50 Hz: 20000 us; 512-row queue covers 10.24 seconds\nIMU 100 Hz: 10000 us; 512-row queue covers 5.12 seconds\nPIO: divider=187.5, period=5.0 us, burst=25.0 us\n200 us early window = 0.3 m; 100 us timestamp uncertainty = 0.15 m\n",
+  "source_sha256": {
+    "src\\main.cpp": "c26fa227641fcfc8b4e9d2c851da9cc0b868ad75bc3541c13ae1a949c67a4802",
+    "src\\i2c_devices.cpp": "2fa0d93752a85806a53e6559f53f3a239ebeb797a2d5212943c9ca53f1d1875c",
+    "common\\protocol.h": "0f140b618bc8aeef7b5da36fbbeb232ed2f1fee71d660afc7e264c4c03c0166b",
+    "common\\spresense_protocol.h": "244a220301896c09e8401c309711f41e5acc2d3807796b100e8cba8017341e38",
+    "common\\utc_clock.h": "44befbffeeec044e91261c4bc6aa19d654f88513da425c0319453e618ab5f178"
+  },
+  "final_state": {
+    "parent_and_child_recording": "STOPPED",
+    "utc_source": "gps_pps_candidate",
+    "rtc_write_errors": 0,
+    "test_suppression": false,
+    "phone_time_received": false,
+    "physical_power_cycle_verified": false
+  }
+}

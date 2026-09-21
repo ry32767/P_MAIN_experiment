@@ -1,0 +1,4 @@
+#include "sd_recovery.h"
+#include <cassert>
+#include <cstdio>
+int main(){SdRecovery r;r.failed(100);assert(!r.due(5099));assert(r.due(5100));r.attempting(5100);r.failed(5200);assert(!r.due(20199));assert(r.due(20200));r.attempting(20200);r.failed(20300);assert(!r.due(80299));assert(r.due(80300));r.attempting(80300);r.failed(80400);assert(r.exhausted()&&!r.due(200000));r.stop();assert(!r.exhausted()&&!r.due(300000));r.failed(400000);assert(!r.pending);r.manualStart();r.failed(500000);assert(r.due(505000));r.attempting(505000);r.mounted(505001);assert(r.recoveries==1&&!r.pending);r.healthy(535000);assert(r.attempts==1);r.healthy(535001);assert(r.attempts==0);r.failed(0xfffffff0u);assert(!r.due(100));assert(r.due(4984));puts("PASS SD retry delays, exhaustion, explicit stop, manual reset, stability and millis wrap");}
