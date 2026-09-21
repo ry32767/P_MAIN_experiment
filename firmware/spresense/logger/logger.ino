@@ -202,6 +202,16 @@ bool writeComplete(int fd,const char *data,size_t size) {
   }
   return true;
 }
+bool flushLog(int fd,const char *name) {
+  int result;
+  do { result=fsync(fd); } while(result<0 && errno==EINTR);
+  if(result<0) {
+    int error=errno;
+    Serial.printf("# SD_SYNC_FAILED file=%s errno=%d\n",name,error);
+    errno=error; return false;
+  }
+  return true;
+}
 bool saveLine(int fd,const char *line,bool checksum=true) {
   size_t len=strlen(line);
   char protectedLine[420];
@@ -377,7 +387,11 @@ void loop() {
   serviceFormatter();
   if(sdReady && millis()-lastFlush>=1000) {
     lastFlush=millis();
-    if(fsync(imuFile)!=0 || fsync(gpsFile)!=0) { ++sdErrors; sdReady=false; }
+    if(!flushLog(imuFile,"IMU") || !flushLog(gpsFile,"GPS")) {
+      ++sdErrors; sdReady=false;
+      pthread_mutex_lock(&recordingMutex); recording=false; pthread_mutex_unlock(&recordingMutex);
+      Serial.println("# RECORDING_FAILED reason=SD_SYNC recording_stopped");
+    }
   }
   if(Serial.available()) {
     int c=Serial.read();
@@ -393,7 +407,8 @@ void loop() {
     if(c=='v') reportSdSpace();
   }
   if(!recording && !workerPending && imuQueue.head==imuQueue.tail && gpsQueue.head==gpsQueue.tail && imuFile>=0) {
-    bool ok=fsync(imuFile)==0 && fsync(gpsFile)==0 && workerErrors==0;
+    bool imuFlushed=flushLog(imuFile,"IMU"), gpsFlushed=flushLog(gpsFile,"GPS");
+    bool ok=imuFlushed && gpsFlushed && workerErrors==0 && sdErrors.load()==0;
     ok=(close(imuFile)==0) && ok; ok=(close(gpsFile)==0) && ok;
     imuFile=gpsFile=-1; sdReady=false; if(!ok) ++sdErrors;
     Serial.println(ok ? "# STOPPED_REMOVE_SD" : "# STOP_FAILED");
