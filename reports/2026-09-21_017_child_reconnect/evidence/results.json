@@ -1,0 +1,134 @@
+{
+  "retest_imu": {
+    "rows": 4315,
+    "crc_bad_lines": [],
+    "zero_bytes": 0
+  },
+  "retest_events": {
+    "rows": 15108,
+    "crc_bad_lines": [],
+    "zero_bytes": 0
+  },
+  "retest_health": {
+    "rows": 42,
+    "crc_bad_lines": [],
+    "zero_bytes": 0
+  },
+  "sensors": {
+    "1": {
+      "rows": 5378,
+      "source_rate_hz": 124.60722768268793,
+      "sequence_missing": 0,
+      "duplicate_sequence": 0,
+      "nonpositive_source_steps": 0,
+      "minimum_source_step_us": 355,
+      "maximum_source_step_us": 17315
+    },
+    "2": {
+      "rows": 4325,
+      "source_rate_hz": 100.20305950715343,
+      "sequence_missing": 0,
+      "duplicate_sequence": 0,
+      "nonpositive_source_steps": 1,
+      "minimum_source_step_us": -2,
+      "maximum_source_step_us": 19451
+    },
+    "8": {
+      "rows": 4324,
+      "source_rate_hz": 100.20433292992765,
+      "sequence_missing": 0,
+      "duplicate_sequence": 0,
+      "nonpositive_source_steps": 1,
+      "minimum_source_step_us": -76,
+      "maximum_source_step_us": 19471
+    },
+    "3": {
+      "rows": 1081,
+      "source_rate_hz": 25.055878669413133,
+      "sequence_missing": 0,
+      "duplicate_sequence": 0,
+      "nonpositive_source_steps": 0,
+      "minimum_source_step_us": 30913,
+      "maximum_source_step_us": 49021
+    }
+  },
+  "status": {
+    "samples": 88,
+    "all_sync_ok": true,
+    "uncertainty_us_min": 294,
+    "uncertainty_us_median": 432.0,
+    "uncertainty_us_max": 1113,
+    "link_errors_start_end": [
+      0,
+      0
+    ],
+    "sd_errors_start_end": [
+      0,
+      0
+    ],
+    "dropped_start_end": [
+      98,
+      98
+    ],
+    "final_state": "STOPPED",
+    "files": [
+      "C_MAIN_IMU_100Hz_00013.csv",
+      "C_MAIN_BNO_EVENTS_00014.csv",
+      "C_MAIN_HEALTH_RANGE_00014.csv"
+    ]
+  },
+  "initial_integrity": {
+    "imu": {
+      "bytes": 1515426,
+      "leading_zero_bytes": 0,
+      "zero_bytes": 0,
+      "lines": 9706,
+      "crc_valid_lines": 9704,
+      "invalid_line_numbers": [
+        1,
+        16
+      ],
+      "invalid_count_including_header": 2
+    },
+    "events": {
+      "bytes": 2375940,
+      "leading_zero_bytes": 1536,
+      "zero_bytes": 1536,
+      "lines": 33886,
+      "crc_valid_lines": 33885,
+      "invalid_line_numbers": [
+        1
+      ],
+      "invalid_count_including_header": 1
+    },
+    "health": {
+      "bytes": 14762,
+      "leading_zero_bytes": 236,
+      "zero_bytes": 236,
+      "lines": 90,
+      "crc_valid_lines": 89,
+      "invalid_line_numbers": [
+        1
+      ],
+      "invalid_count_including_header": 1
+    }
+  },
+  "source_sha256": {
+    "src\\main.cpp": "d5ae1106a4508fdbdfc22e50e1737c68427d10909306ce781bc13c4b3f218121",
+    "include\\pins.h": "69e80987f32a762887d6d2b5c1cc51ec8372a0754cab59d567bcede13cc8d310"
+  },
+  "note": "Installed firmware commit is not exposed by status and was not proven. No flash or source change in this experiment.",
+  "imu_verifier": {
+    "rows": 4315,
+    "duration_s": 43.14,
+    "grid_hz": 100,
+    "missing_grid_rows": 0,
+    "max_lateness_us": 2395,
+    "median_lateness_us": 106,
+    "all_three_fresh_rows": 3710,
+    "new_quat_rows": 4114,
+    "unique_source_times": 4114,
+    "source_unique_rate_hz": 95.33666929002831,
+    "crc_errors": 0
+  }
+}
