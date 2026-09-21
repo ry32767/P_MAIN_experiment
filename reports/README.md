@@ -49,3 +49,5 @@ reports/
 - [Spresense保存形式の時刻確認](2026-09-21_020_spresense_time_format/README.md) — GPS UTCは保存済み、IMU行へのUTC付与は未実装。
 
 - [021 Spresense IMUへのUTC追加・SD実機確認](2026-09-21_021_spresense_imu_utc/README.md)：IMU 5,825行とGPS 125行のCRC合格。GPS未測位のため有効UTC/PPS精度は未検証。
+
+- [022 窓開放時のGPS・PPS・SD同時検証](2026-09-21_022_window_sd/README.md)：PPS継続中のSD異常は再現せず。正常停止でも親機に異常／未準備と表示される条件を確認。GPS未測位。

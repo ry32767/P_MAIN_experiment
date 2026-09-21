@@ -1,0 +1,33 @@
+{
+  "session": "016 (earlier experiment, not current measurement)",
+  "rows": [
+    {
+      "t": 58.696,
+      "line": "# imu=18890 imu_errors=0 gaps=0 queue_drops=0 gps_drops=0 sd=1 sd_rows=18903 sd_errors=0"
+    },
+    {
+      "t": 58.71,
+      "line": "# gps_seq=54 fix=3 satellites=6 visible=8 max_signal=33.3 flags=15 tx_bytes=3456 tx_errors=0"
+    },
+    {
+      "t": 58.774,
+      "line": "# STOPPED_REMOVE_SD"
+    },
+    {
+      "t": 59.698,
+      "line": "# imu=19858 imu_errors=0 gaps=0 queue_drops=0 gps_drops=0 sd=0 sd_rows=18989 sd_errors=0"
+    },
+    {
+      "t": 59.712,
+      "line": "# gps_seq=55 fix=3 satellites=6 visible=8 max_signal=33.4 flags=11 tx_bytes=3520 tx_errors=0"
+    },
+    {
+      "t": 60.697,
+      "line": "# imu=20824 imu_errors=0 gaps=0 queue_drops=0 gps_drops=0 sd=0 sd_rows=18989 sd_errors=0"
+    },
+    {
+      "t": 60.712,
+      "line": "# gps_seq=56 fix=3 satellites=6 visible=8 max_signal=36.3 flags=11 tx_bytes=3584 tx_errors=0"
+    }
+  ]
+}

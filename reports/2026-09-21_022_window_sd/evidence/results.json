@@ -1,0 +1,47 @@
+{
+  "firmware": "b7cd3c6",
+  "gps_rows": 392,
+  "gps_crc_errors": 0,
+  "gps_time_valid_rows": 0,
+  "pps_count_first": 1,
+  "pps_count_last": 338,
+  "pps_intervals": 337,
+  "pps_period_us": {
+    "min": 999938,
+    "median": 999969,
+    "max": 58319123
+  },
+  "max_visible": 4,
+  "safe_stop": true,
+  "sd_not_ready_status_before_stop": 0,
+  "last_status": {
+    "imu": 267909,
+    "imu_errors": 0,
+    "gaps": 0,
+    "queue_drops": 0,
+    "gps_drops": 0,
+    "sd": 0,
+    "sd_rows": 264311,
+    "sd_errors": 0
+  },
+  "first_status": {
+    "imu": 0,
+    "imu_errors": 0,
+    "gaps": 0,
+    "queue_drops": 0,
+    "gps_drops": 0,
+    "sd": 1,
+    "sd_rows": 94,
+    "sd_errors": 0
+  },
+  "max_utc_source": 0,
+  "observed_status_samples": 302,
+  "steady_pps_intervals": 336,
+  "steady_pps_period_us": {
+    "min": 999938,
+    "median": 999969.0,
+    "max": 1000000
+  },
+  "sd_rows_includes_two_headers": true,
+  "imu_rows_inferred_not_readback": 263917
+}
