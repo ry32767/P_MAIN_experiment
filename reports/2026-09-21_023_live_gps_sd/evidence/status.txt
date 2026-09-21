@@ -1,0 +1,30 @@
+# imu=449235 imu_errors=0 gaps=0 queue_drops=0 gps_drops=0 sd=0 sd_rows=264311 sd_errors=0
+# formatter_batches=12836 formatter_errors=0 pending=0 rate_hz=960
+# pps_count=530 utc_source=2 utc_sync_valid=1 utc_age_us=592133
+# gnss_first_fix_ms=463713
+# gps_seq=585 fix=3 satellites=6 visible=6 max_signal=35.0 flags=11 tx_bytes=37440 tx_errors=0
+# imu=450200 imu_errors=0 gaps=0 queue_drops=0 gps_drops=0 sd=0 sd_rows=264311 sd_errors=0
+# formatter_batches=12836 formatter_errors=0 pending=0 rate_hz=960
+# pps_count=531 utc_source=2 utc_sync_valid=1 utc_age_us=592071
+# gnss_first_fix_ms=463713
+# gps_seq=586 fix=3 satellites=6 visible=6 max_signal=35.4 flags=11 tx_bytes=37504 tx_errors=0
+# imu=451164 imu_errors=0 gaps=0 queue_drops=0 gps_drops=0 sd=0 sd_rows=264311 sd_errors=0
+# formatter_batches=12836 formatter_errors=0 pending=0 rate_hz=960
+# pps_count=532 utc_source=2 utc_sync_valid=1 utc_age_us=592224
+# gnss_first_fix_ms=463713
+# gps_seq=587 fix=3 satellites=6 visible=6 max_signal=35.2 flags=11 tx_bytes=37568 tx_errors=0
+# imu=452129 imu_errors=0 gaps=0 queue_drops=0 gps_drops=0 sd=0 sd_rows=264311 sd_errors=0
+# formatter_batches=12836 formatter_errors=0 pending=0 rate_hz=960
+# pps_count=533 utc_source=2 utc_sync_valid=1 utc_age_us=592407
+# gnss_first_fix_ms=463713
+# gps_seq=588 fix=3 satellites=6 visible=6 max_signal=35.0 flags=11 tx_bytes=37632 tx_errors=0
+# imu=453093 imu_errors=0 gaps=0 queue_drops=0 gps_drops=0 sd=0 sd_rows=264311 sd_errors=0
+# formatter_batches=12836 formatter_errors=0 pending=0 rate_hz=960
+# pps_count=534 utc_source=2 utc_sync_valid=1 utc_age_us=592102
+# gnss_first_fix_ms=463713
+# gps_seq=589 fix=3 satellites=6 visible=6 max_signal=34.8 flags=11 tx_bytes=37696 tx_errors=0
+# imu=454058 imu_errors=0 gaps=0 queue_drops=0 gps_drops=0 sd=0 sd_rows=264311 sd_errors=0
+# formatter_batches=12836 formatter_errors=0 pending=0 rate_hz=960
+# pps_count=535 utc_source=2 utc_sync_valid=1 utc_age_us=591949
+# gnss_first_fix_ms=463713
+# gps_seq=590 fix=3 satellites=6 visible=6 max_signal=34.7 flags=11 tx_bytes=37760 tx_errors=0
