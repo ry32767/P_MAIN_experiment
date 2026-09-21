@@ -1,0 +1,39 @@
+{
+  "observation_seconds": 90,
+  "final_status": {
+    "imu": 93872,
+    "imu_errors": 0,
+    "gaps": 0,
+    "queue_drops": 0,
+    "gps_drops": 0,
+    "sd": 1,
+    "sd_rows": 93926,
+    "sd_errors": 0,
+    "recording": 1,
+    "formatter_batches": 4598,
+    "formatter_errors": 0,
+    "pending": 1,
+    "rate_hz": 960,
+    "gnss_first_fix_ms": 0,
+    "gps_seq": 96,
+    "fix": 1,
+    "satellites": 0,
+    "visible": 5,
+    "max_signal": 31.4,
+    "flags": 12,
+    "tx_bytes": 6144,
+    "tx_errors": 0
+  },
+  "software_checks": {
+    "sony_main": true,
+    "sony_sub1": true,
+    "pico2w": true,
+    "pico2w_logger": true,
+    "python_tests": 8,
+    "cpp_suites": 2
+  },
+  "firmware_sha256": {
+    "main": "e80b3d5511b03cf51d91c67f8950dd695e01327dd83bf9483ea7dc1c2b8a5edc",
+    "sub1": "7492d71de54c538ddb56f03dee56f3ca827a8e6b86b45f30e32ab6eeba51ac96"
+  }
+}

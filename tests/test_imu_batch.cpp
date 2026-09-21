@@ -1,4 +1,6 @@
 #include <ImuBatch.h>
+#include <ImuUtc.h>
+#include <algorithm>
 #include <cassert>
 #include <cstdlib>
 #include <cfloat>
@@ -32,12 +34,14 @@ int main() {
   clock.update(true,second+4,0,4,2520000,{2500000,3});
   assert(!clock.at(2520001,{2500000,3}).sync_valid);
   aqimu::Batch b{}; b.version=aqimu::magic; b.count=aqimu::batchSize;
-  for(unsigned i=0;i<b.count;++i) { b.rows[i].seq=i+1; b.rows[i].received_us=1000000+i*1042; b.rows[i].data.timestamp=0xffff0000u+i*20000; b.rows[i].data.az=9.8f; b.rows[i].utc=stamp; }
+  for(unsigned i=0;i<b.count;++i) { b.rows[i].seq=i+1; b.rows[i].received_us=1000000+i*1042; b.rows[i].data.timestamp=0xffff0000u+i*20000; b.rows[i].data.az=9.8f; }
   assert(aqimu::format(b) && !b.error && b.length<=sizeof(b.csv));
   std::string csv(b.csv,b.length); size_t at=0; unsigned rows=0;
   while(at<csv.size()) { size_t end=csv.find('\n',at); assert(end!=std::string::npos); size_t comma=csv.rfind(',',end); assert(comma>=at); auto crc=strtoul(csv.substr(comma+1,end-comma-1).c_str(),nullptr,16); assert(crc==aq::crc32((const uint8_t*)csv.data()+at,comma-at)); at=end+1; ++rows; }
   assert(rows==aqimu::batchSize);
-  assert(csv.find(",1790000002021234,1,1,2,1234,3,")!=std::string::npos);
+  // Legacy IMU format: 10 values plus CRC, no GPS/UTC columns.
+  assert(std::count(csv.begin(),csv.end(),',')==aqimu::batchSize*10);
+  assert(csv.find("1790000002021234")==std::string::npos);
   b.count=aqimu::batchSize+1; assert(!aqimu::format(b));
   b.count=0; assert(!aqimu::format(b));
   b.count=1;b.version=0;assert(!aqimu::format(b));

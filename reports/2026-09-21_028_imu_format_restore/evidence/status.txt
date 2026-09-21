@@ -1,0 +1,16 @@
+# imu=8213 imu_errors=0 gaps=0 queue_drops=0 gps_drops=0 sd=1 sd_rows=8178 sd_errors=0
+# recording=1 sd_state=RECORDING
+# formatter_batches=406 formatter_errors=0 pending=1 rate_hz=960
+# gnss_first_fix_ms=0
+# gps_seq=7 fix=1 satellites=0 visible=3 max_signal=25.7 flags=12 tx_bytes=448 tx_errors=0
+# ...
+# imu=92898 imu_errors=0 gaps=0 queue_drops=0 gps_drops=0 sd=1 sd_rows=92951 sd_errors=0
+# recording=1 sd_state=RECORDING
+# formatter_batches=4551 formatter_errors=0 pending=1 rate_hz=960
+# gnss_first_fix_ms=0
+# gps_seq=95 fix=1 satellites=0 visible=5 max_signal=30.5 flags=12 tx_bytes=6080 tx_errors=0
+# imu=93872 imu_errors=0 gaps=0 queue_drops=0 gps_drops=0 sd=1 sd_rows=93926 sd_errors=0
+# recording=1 sd_state=RECORDING
+# formatter_batches=4598 formatter_errors=0 pending=1 rate_hz=960
+# gnss_first_fix_ms=0
+# gps_seq=96 fix=1 satellites=0 visible=5 max_signal=31.4 flags=12 tx_bytes=6144 tx_errors=0

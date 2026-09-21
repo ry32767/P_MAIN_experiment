@@ -61,3 +61,5 @@ reports/
 - [026 同じSDカードでの保存負荷切り分け](2026-09-21_026_sd_load/README.md)：45万行以上を保存、SDエラー0。GPS測位成立時の停止は未再現・未解決。
 
 - [027 IMU起動待機の撤廃](2026-09-21_027_immediate_start/README.md)：GPSを待たず取得・保存開始、実機書込みと65秒の記録確認。
+
+- [028 IMU保存形式の復元](2026-09-21_028_imu_format_restore/README.md)：IMUのGPS/UTC列を撤廃、待機なし960 HzとGPS別保存を維持。両コア更新後の記録継続を確認。
