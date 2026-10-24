@@ -193,3 +193,5 @@ GPS+GLONASS+QZSS L1C/Aを使用し、初回測位を優先してからIMU 960Hz�
 ## 親機・子機のUTC同期とRTC保持
 
 [親子統合ファームウェア](firmware/main_control/README.md)に、GPS・Wi-Fi端末時計・RTCの優先選択、子機へのUTC配信、RTC保存・復元を追加しました。GPS同期の絶対精度や物理電源断保持の合否は検証レポートを参照してください。
+
+SpresenseのSD保存状態・同期済み行数・復旧診断をmain-controlの状態タブとセンサー校正タブへ表示します。[検証記録](reports/2026-10-24_002_spresense_sd_console/README.md)。

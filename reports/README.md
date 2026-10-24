@@ -65,3 +65,5 @@ reports/
 - [028 IMU保存形式の復元](2026-09-21_028_imu_format_restore/README.md)：IMUのGPS/UTC列を撤廃、待機なし960 HzとGPS別保存を維持。両コア更新後の記録継続を確認。
 
 - [2026-10-24 公開親機画面の更新](2026-10-24_001_main_control_refresh/README.md) — 現行5タブ・Spresense操作・オフライン保存を反映。
+
+- [2026-10-24 Spresense SDコンソール](2026-10-24_002_spresense_sd_console/README.md)
