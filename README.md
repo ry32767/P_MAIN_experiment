@@ -195,3 +195,5 @@ GPS+GLONASS+QZSS L1C/Aを使用し、初回測位を優先してからIMU 960Hz�
 [親子統合ファームウェア](firmware/main_control/README.md)に、GPS・Wi-Fi端末時計・RTCの優先選択、子機へのUTC配信、RTC保存・復元を追加しました。GPS同期の絶対精度や物理電源断保持の合否は検証レポートを参照してください。
 
 SpresenseのSD保存状態・同期済み行数・復旧診断をmain-controlの状態タブとセンサー校正タブへ表示します。[検証記録](reports/2026-10-24_002_spresense_sd_console/README.md)。
+
+2026-10-25：公開main-controlのセンサー校正タブに親機校正セットとD02 PPS診断を追加。未設定・校正不一致と精度未検証を区別する。親機/Spresense両コアは対応ファームウェアが必要。

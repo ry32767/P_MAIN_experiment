@@ -67,3 +67,5 @@ reports/
 - [2026-10-24 公開親機画面の更新](2026-10-24_001_main_control_refresh/README.md) — 現行5タブ・Spresense操作・オフライン保存を反映。
 
 - [2026-10-24 Spresense SDコンソール](2026-10-24_002_spresense_sd_console/README.md)
+
+- [2026-10-25 親機校正セットの公開操作画面](2026-10-25_001_parent_calibration_set/README.md)
