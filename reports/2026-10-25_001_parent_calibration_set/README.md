@@ -11,3 +11,10 @@
 
 ## 未検証
 スマホの実接続/権限/キャッシュ更新、実機Web操作、PPS絶対精度、実機センサ校正・CAD配置・姿勢/位置精度は未検証。サンプル回路をPPSで駆動する方式ではなく、内部時計からの推定時刻である。
+
+## 公開結果
+
+- 画面更新commit：389714770a4dea7eb384fc254063e30efc3beb56、mainへpush済み。
+- [公開処理](https://github.com/ry32767/P_MAIN_experiment/actions/runs/40171754423)：success。
+- [公開画面](https://ry32767.github.io/P_MAIN_experiment/main-control/?v=20261025-v9)：HTTP 200、73794byte、公開commitのHTMLとバイト完全一致。作業フォルダーのCRLF変換とは区別して検査。
+- 5タブ、親機校正セット、PPS状態の要素あり。既存模擬試験と新規API転送検査成功。スマホ実接続は未検証。
