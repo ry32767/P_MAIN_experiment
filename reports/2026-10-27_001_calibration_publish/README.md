@@ -6,6 +6,7 @@
 | 目的 | 現行の親子校正・カメラ用動作収録をGitHubとPagesへ反映 |
 | 公開先 | ry32767/P_MAIN_experiment の main |
 | 対象 | firmware/main_control、web/main-control |
+| 更新commit | bdc291b1059386f8fd40e485551841f9c97f5085 |
 
 ## 前提
 
@@ -27,7 +28,9 @@
 - Spresense formatter / logger：Sony公式コア3.4.7でともにビルド成功。
 - `node scripts/test_main_control_pages.cjs`：PASS。5タブ・校正操作・JS構文・接続/機器役割/送信先ガード・接続後のみ端末時刻共有・オフラインキャッシュ更新を確認。
 - 非公開の実行出力は`reports/raw/2026-10-27_001_calibration_publish/`へ保存。
-- Pagesデプロイ先と配信ファイルの照合結果は公開後に追記する。
+- [Pagesデプロイ](https://github.com/ry32767/P_MAIN_experiment/actions/runs/40355133862)：success、対象commit `bdc291b1059386f8fd40e485551841f9c97f5085`。
+- [公開画面](https://ry32767.github.io/P_MAIN_experiment/main-control/)：index.htmlとsw.jsがHTTP 200。配信バイト列を対象commitのGit blobと照合し、両方一致。ハッシュ・サイズは[evidence/deployment.json](evidence/deployment.json)へ保存。
+- 公開後の確認はHTTP取得のみ。スマホから実機への操作は未検証。
 
 PC上のテスト結果を実測精度と扱わない。
 

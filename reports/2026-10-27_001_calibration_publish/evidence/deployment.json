@@ -1,0 +1,23 @@
+{
+  "verified_at_utc": "2026-10-26T16:03:57.164517+00:00",
+  "commit": "bdc291b1059386f8fd40e485551841f9c97f5085",
+  "deployment": "https://github.com/ry32767/P_MAIN_experiment/actions/runs/40355133862",
+  "conclusion": "success",
+  "public_url": "https://ry32767.github.io/P_MAIN_experiment/main-control/",
+  "files": [
+    {
+      "file": "index.html",
+      "http_status": 200,
+      "bytes": 118169,
+      "sha256": "c0b34ab09f64d88f692a6a343e53612afb741ad41f418bf1fb8e0fcad61ff9ea",
+      "matches_commit": true
+    },
+    {
+      "file": "sw.js",
+      "http_status": 200,
+      "bytes": 1225,
+      "sha256": "012c0f44f78cd8fbfd780a54a9ab880b4b7b09b4387b72c83d7f1c2627463055",
+      "matches_commit": true
+    }
+  ]
+}
