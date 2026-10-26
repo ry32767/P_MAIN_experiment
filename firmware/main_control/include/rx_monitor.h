@@ -15,7 +15,7 @@ static void monitorStop(){
  monitorActive=false;Serial.println("# MONITOR_STOPPED");
 }
 static void monitorStart(){
- if(monitorActive || !stopped || !powered){Serial.println("# MONITOR_REQUIRES_STOPPED_SD");return;}
+ if(monitorActive || multipathActive || !stopped || !powered){Serial.println("# MONITOR_REQUIRES_STOPPED_SD");return;}
  if(monitorDma<0)monitorDma=dma_claim_unused_channel(false);
  if(monitorDma<0){Serial.println("# MONITOR_DMA_UNAVAILABLE");return;}
  adc_init();adc_gpio_init(PIN_RX_ENV);adc_select_input(PIN_RX_ENV-26);adc_fifo_drain();adc_set_clkdiv(479);

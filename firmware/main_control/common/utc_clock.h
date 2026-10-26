@@ -13,6 +13,10 @@ struct Anchor {
 inline Anchor select(const Anchor& gps,const Anchor& phone,const Anchor& rtc,uint64_t now){
  return gps.valid(now)?gps:phone.valid(now)?phone:rtc.valid(now)?rtc:Anchor{};
 }
+inline Anchor ppsAnchor(uint64_t mono,uint64_t epoch,uint64_t now,bool valid){
+ if(!valid||!mono||!epochValid(epoch)||now<mono||now-mono>=1500000)return {};
+ return {mono,epoch,mono+1500000,GPS};
+}
 // offset = child monotonic - parent monotonic; never add UART receipt latency to UTC.
 inline Anchor transfer(uint64_t parentMono,uint64_t epoch,int64_t offset,Source source,uint64_t now){
  if(parentMono>INT64_MAX || !epochValid(epoch) || source<GPS || source>RTC)return {};

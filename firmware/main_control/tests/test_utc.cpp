@@ -5,6 +5,12 @@
 using namespace utcclock;
 int main(){
  constexpr uint64_t e=1789952400000000ULL;
+ {auto live=ppsAnchor(1000000,e,1400000,true);assert(live.valid(1400000)&&live.at(1400000)==e+400000);
+  Anchor stalled;assert(select(live,stalled,stalled,1400000).source==GPS);
+  assert(!ppsAnchor(1000000,e,2500000,true).valid(2500000));
+  assert(!ppsAnchor(1000000,e,1400000,false).valid(1400000));
+  assert(!ppsAnchor(2000000,e,1400000,true).valid(1400000));}
+
  Anchor g{100,e,1000,GPS},p{100,e,2000,PHONE},r{100,e,3000,RTC};
  assert(select(g,p,r,999).source==GPS);assert(select(g,p,r,1000).source==PHONE);
  assert(select(g,p,r,2000).source==RTC);assert(!select(g,p,r,3000).valid(3000));
@@ -23,7 +29,7 @@ int main(){
  assert(decodeRtc(b,0,out));assert(!decodeRtc(b,0x80,out));b[6]=0x25;assert(!decodeRtc(b,0,out));
  b[6]=0x24;b[5]=0x82;assert(!decodeRtc(b,0,out));b[5]=2;b[0]=0x6a;assert(!decodeRtc(b,0,out));
  b[0]=0;b[2]=0x72;assert(decodeRtc(b,0,out));assert(out==spnav::unix_seconds(2024,2,29,12,59,0)*1000000ULL);
- aq::Packet packet;packet.kind=aq::UTC_ANCHOR;aq::seal(packet);assert(aq::valid(packet));assert(sizeof(packet)==130);
+ aq::Packet packet;packet.kind=aq::UTC_ANCHOR;aq::seal(packet);assert(aq::valid(packet));assert(sizeof(packet)==163);
  spnav::Clock early;
  for(unsigned i=0;i<3;i++){early.pps(1000000ULL*(i+1));assert(early.accept([](unsigned j){spnav::Nav n;n.flags=spnav::time_valid;n.sequence=j;n.utc_s=1800000000+j;return n;}(i),1000000ULL*(i+1)+10000));}
  assert(early.locked(3010000));early.pps(3500000);assert(!early.locked(3500010));

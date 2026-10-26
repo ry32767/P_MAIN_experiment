@@ -19,18 +19,23 @@ struct Health {
  uint32_t imuAgeUs=0xffffffff, maxLatenessUs=0, rxEdges=0;
  uint16_t flags=0, envMv=0, buttonsMv=0;
  float volts=0, currentMa=0, temperature=0, pressure=0, magX=0, magY=0, magZ=0;
+ uint32_t observationShot=0,observationSamples=0,observationLost=0,observationSkipped=0;
+ uint8_t observationActive=0;
 };
 // Flags indicate current health, never prove physical sensor calibration.
-enum Flags:uint16_t {POWER=1,SD=2,IMU=4,LEAK=8,INA=16,TEMP=32,PRESSURE=64,RTC=128,MAG=256,RX_HIGH=512,UTC_VALID=1024,RTC_SAVED=2048};
+enum Flags:uint16_t {POWER=1,SD=2,IMU=4,LEAK=8,INA=16,TEMP=32,PRESSURE=64,RTC=128,MAG=256,RX_HIGH=512,UTC_VALID=1024,RTC_SAVED=2048,CAMERA_READY=16384,CALIBRATING=32768};
 struct Packet {
- uint16_t magic=0xa751; uint8_t version=1, kind=0; uint32_t session=0,seq=0;
+ uint16_t magic=0xa751; uint8_t version=5, kind=0; uint32_t session=0,seq=0;
  uint64_t t1=0,t2=0,t3=0; int64_t offset=0;
- uint32_t uncertainty=0; Health health{}; uint32_t crc=0;
+ uint32_t uncertainty=0; Health health{};
+ uint32_t frequency=200000;uint16_t observationSeconds=3,observationEvery=30;uint8_t observation=0,rate=1,pattern=0;
+ uint8_t patternId=255;uint16_t patternGap1=0,patternGap2=0;
+ uint32_t crc=0;
 };
 #pragma pack(pop)
 constexpr uint32_t airUs=(sizeof(Packet)*10*1000000ull+115199)/115200;
 inline void seal(Packet& p){p.crc=crc32(&p,sizeof(p)-4);}
-inline bool valid(const Packet&p){return p.magic==0xa751 && p.version==1 && p.kind>=PROBE && p.kind<=UTC_ANCHOR && p.crc==crc32(&p,sizeof(p)-4);}
+inline bool valid(const Packet&p){return p.magic==0xa751 && p.version==5 && p.kind>=PROBE && p.kind<=UTC_ANCHOR && p.crc==crc32(&p,sizeof(p)-4);}
 struct Parser {
  uint8_t bytes[sizeof(Packet)]{};size_t used=0;uint32_t errors=0;
  bool push(uint8_t b,Packet& p){

@@ -1446,6 +1446,8 @@ static void saveDcdNowRx(sh2_t *pSh2, const uint8_t *payload, uint16_t len)
 }
 
 const sh2_Op_t saveDcdNowOp = {
+    // AquaBeacon: bound missing-hub responses so tether service resumes.
+    .timeout_us = 750000,
     .start = saveDcdNowStart,
     .rx = saveDcdNowRx,
 };
@@ -1516,6 +1518,8 @@ static void setCalConfigRx(sh2_t *pSh2, const uint8_t *payload, uint16_t len)
 }
 
 const sh2_Op_t setCalConfigOp = {
+    // AquaBeacon: bound missing-hub responses so tether service resumes.
+    .timeout_us = 750000,
     .start = setCalConfigStart,
     .rx = setCalConfigRx,
 };
@@ -1564,6 +1568,8 @@ static void getCalConfigRx(sh2_t *pSh2, const uint8_t *payload, uint16_t len)
 
 
 const sh2_Op_t getCalConfigOp = {
+    // AquaBeacon: bound missing-hub responses so tether service resumes.
+    .timeout_us = 750000,
     .start = getCalConfigStart,
     .rx = getCalConfigRx,
 };

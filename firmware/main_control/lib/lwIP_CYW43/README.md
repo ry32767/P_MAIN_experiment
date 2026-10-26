@@ -1,0 +1,11 @@
+# AquaBeacon用CYW43接続待ち修正
+
+導入済Arduino-Pico framework-arduinopico 1.50601.0+sha.832f2c06のlibraries/lwIP_CYW43をコピー。元の著作権・LGPL表示を保持。変更箇所はsrc/utility/CYW43shim.cppのCYW43::beginのSTA分岐と、CYW43lwIP::beginのSTA既定経路選択。
+
+CYW43へのjoin要求成功で戻り、認証・接続完了を待たない。LwipIntfDevは引き続きインターフェース登録とDHCPを開始し、アプリはWiFi.connected/statusで完了を判定する。従来はWiFi.beginNoBlockから呼んでも内部で最大15秒の待ちと終了期限のない交渉待ちがあり、Web・SD処理を止めていた。AP分岐・送受信・イベント処理は元のまま。
+
+PlatformIOのプロジェクトlib探索優先順位によりこのコピーを使用する。共有frameworkや隣接リポジトリは編集しない。上流更新時は差分を再確認する。tests/test_cyw43_async.pyは実際の変更済みbeginをスタブで実行し、未接続のjoin受付で即時復帰、joinエラー伝播、AP経路を確認する。実機の電波品質・AP+STA安定性を保証する試験ではない。
+
+非同期STA初期化ではjoin前にnetifのLINK_UPを解除し、実際の無線リンク成立イベントでDHCPを進める。初期値LINK_UPのままでは、認証前に送ったDHCPが失敗してもlink-upイベントでの再通知が起きない。ホスト試験でjoin時点のLINK_DOWNも検査する。
+
+CYW43lwIP::beginでSTAを_default=true、APをfalseに設定する。AP先行起動でAP自身のgatewayが既定経路を占有しても、STAのDHCP成立時には外向き通信をSTA側gatewayへ切り替える。APのサブネット内宛先は通常の経路選択で維持する。

@@ -1,6 +1,7 @@
 // I2C0 上のデバイス (DS3231 / MS5837-30BA / TSYS01 / INA226) のスキャンと非ブロッキング読み出し
 #pragma once
 #include <Arduino.h>
+#include "mag_calibration.h"
 
 struct I2cReadings {
     bool  rtc_ok, prs_ok, tsys_ok, ina_ok;
@@ -14,6 +15,9 @@ struct I2cReadings {
     float ina_ma;           // INA226 シャント電流 [mA] (R_SH 20mΩ)
     bool  lis_ok;           // LIS3MDL (親機 J_MAG1) 読めた
     float lis_x, lis_y, lis_z;  // LIS3MDL 地磁気 [uT]
+    float lis_raw[3];uint32_t lis_sample_ms,lis_samples;bool lis_saturated,lis_raw_ok;
+    uint64_t lis_begin_us,lis_end_us;
+    uint8_t lis_status;
     uint8_t lis_addr;       // 検出アドレス (0 = 無し)
 };
 
@@ -25,3 +29,10 @@ void   i2c_sensors_tick(uint32_t now_ms);         // loop から毎回呼ぶ (�
 const I2cReadings& i2c_readings();
 bool   i2c_rtc_set(uint16_t y, uint8_t mo, uint8_t d, uint8_t h, uint8_t mi, uint8_t s);  // OSF もクリア
 bool i2c_rtc_store(uint64_t epoch_us);
+
+#ifdef BOARD_PARENT
+magcal::Calibration& i2c_mag_calibration();
+const magcal::Coefficients& i2c_mag_coefficients();
+void i2c_mag_apply(const magcal::Coefficients&);
+bool i2c_mag_present();
+#endif

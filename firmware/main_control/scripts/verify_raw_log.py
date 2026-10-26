@@ -1,7 +1,8 @@
 import csv,zlib,statistics,argparse,json
 from pathlib import Path
 p=argparse.ArgumentParser();p.add_argument('file');a=p.parse_args()
-lines=Path(a.file).read_bytes().splitlines()
+from binary_log import input_lines
+lines=input_lines(a.file,2)
 for i,line in enumerate(lines[1:],2):
  body,crc=line.rsplit(b',',1);assert zlib.crc32(body)==int(crc,16),f'CRC row {i}'
 rows=list(csv.DictReader(x.decode() for x in lines));groups={}

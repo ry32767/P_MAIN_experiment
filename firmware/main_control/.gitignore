@@ -1,4 +1,8 @@
 .pio/
 reports/raw/
-include/web_page.h
 __pycache__/
+include/secrets.h
+
+build/
+
+include/web_page.h

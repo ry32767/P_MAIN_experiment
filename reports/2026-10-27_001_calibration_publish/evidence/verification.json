@@ -1,0 +1,12 @@
+{
+  "host_test_exit_code": 0,
+  "host_pass_lines": 43,
+  "pico_parent": "SUCCESS",
+  "pico_child100": "SUCCESS",
+  "spresense_formatter": "SUCCESS",
+  "spresense_logger": "SUCCESS",
+  "pages_mock_test": "PASS",
+  "secret_path_scan": "PASS",
+  "real_device_access": false,
+  "wifi_changed": false
+}

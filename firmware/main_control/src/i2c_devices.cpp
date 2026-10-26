@@ -9,6 +9,12 @@
 #include <pico/time.h>
 
 static I2cReadings R;
+#ifdef BOARD_PARENT
+static magcal::Calibration magCalibration;static magcal::Coefficients magCoefficients;
+magcal::Calibration& i2c_mag_calibration(){return magCalibration;}
+const magcal::Coefficients& i2c_mag_coefficients(){return magCoefficients;}
+void i2c_mag_apply(const magcal::Coefficients& c){if(magcal::valid(c))magCoefficients=c;}
+#endif
 static bool have_rtc = false, have_prs = false, have_tsys = false, have_ina = false, have_lis = false;
 static uint16_t prs_C[8] = {0};
 static uint16_t tsys_C[8] = {0};
@@ -108,7 +114,8 @@ void i2c_sensors_setup() {
             Serial.printf("# LIS3MDL @0x%02X WHO_AM_I=0x%02X (expect 0x3D)\n", a, who);
             if (who == 0x3D) {
                 uint8_t c1[2] = {0x20, 0x70}, c2[2] = {0x21, 0x00}, c3[2] = {0x22, 0x00}, c4[2] = {0x23, 0x0C};
-                wr(a, c1, 2); wr(a, c2, 2); wr(a, c3, 2); wr(a, c4, 2);   // UHP XY/Z, 10Hz, +-4 gauss, continuous
+                uint8_t c5[2] = {0x24, 0x40}; // BDU
+                if (!wr(a,c1,2) || !wr(a,c2,2) || !wr(a,c3,2) || !wr(a,c4,2) || !wr(a,c5,2)) continue;
                 have_lis = true; R.lis_addr = a; break;
             }
         }
@@ -145,6 +152,34 @@ void i2c_sensors_setup() {
     step = 0; next_ms = millis();
 }
 
+
+#ifdef BOARD_PARENT
+bool i2c_mag_present(){return have_lis;}
+#endif
+static void read_lis(uint32_t now){
+    static uint32_t previous=0;
+    if(uint32_t(now-previous)<LIS_POLL_PERIOD_MS)return;previous=now;
+    R.lis_ok=R.lis_raw_ok && R.lis_samples && uint32_t(now-R.lis_sample_ms)<300 && !R.lis_saturated;
+    if(!have_lis){R.lis_raw_ok=R.lis_ok=false;return;}
+    uint64_t began=time_us_64();
+    uint8_t b[6],status;
+    if(!rd_reg(R.lis_addr,0x27,&status,1)){R.lis_raw_ok=R.lis_ok=false;return;}
+    if(!(status&0x08))return;
+    if(!rd_reg(R.lis_addr,0x80|0x28,b,6)){R.lis_raw_ok=R.lis_ok=false;return;}
+    int16_t raw[3];R.lis_saturated=false;
+    for(unsigned i=0;i<3;i++){raw[i]=int16_t(uint16_t(b[i*2])|uint16_t(b[i*2+1])<<8);R.lis_raw[i]=raw[i]/68.42f;if(raw[i]>=32760||raw[i]<=-32760)R.lis_saturated=true;}
+    R.lis_status=status;
+    R.lis_begin_us=began;R.lis_end_us=time_us_64();
+    R.lis_sample_ms=now;++R.lis_samples;R.lis_raw_ok=true;float values[3];
+#ifdef BOARD_PARENT
+    if(magCalibration.timedOut(now))magCalibration.end();
+    magCalibration.add(R.lis_raw,R.lis_saturated,now);magcal::apply(magCoefficients,R.lis_raw,values);
+#else
+    memcpy(values,R.lis_raw,sizeof(values));
+#endif
+    R.lis_x=values[0];R.lis_y=values[1];R.lis_z=values[2];R.lis_ok=!R.lis_saturated;
+}
+
 static void read_fast() {
     // DS3231 時刻 + 温度
     R.rtc_ok = false;
@@ -157,16 +192,6 @@ static void read_fast() {
             R.rtc_temp = (int8_t)tp[0] + (tp[1] >> 6) * 0.25f;
             R.rtc_ok = utcclock::decodeRtc(t,status,R.rtc_epoch_us);
             R.rtc_mono_us=time_us_64();
-        }
-    }
-    // LIS3MDL (+-4 gauss: 6842 LSB/gauss -> uT = raw / 68.42)
-    R.lis_ok = false;
-    if (have_lis) {
-        uint8_t b[6];
-        if (rd_reg(R.lis_addr, 0x80 | 0x28, b, 6)) {
-            int16_t x = (int16_t)((b[1] << 8) | b[0]), y = (int16_t)((b[3] << 8) | b[2]), z = (int16_t)((b[5] << 8) | b[4]);
-            R.lis_x = x / 68.42f; R.lis_y = y / 68.42f; R.lis_z = z / 68.42f;
-            R.lis_ok = true;
         }
     }
     // INA226
@@ -224,6 +249,10 @@ static void compute_tsys(uint32_t adc24) {
 //   step1 (+25ms): MS5837 D1 読み + D2 変換開始, TSYS01 ADC 読み
 //   step2 (+25ms): MS5837 D2 読み → 計算
 void i2c_sensors_tick(uint32_t now) {
+    read_lis(now);
+#ifdef BOARD_PARENT
+    if(magCalibration.timedOut(now))magCalibration.end();
+#endif
     if ((int32_t)(now - next_ms) < 0) return;
     switch (step) {
         case 0:

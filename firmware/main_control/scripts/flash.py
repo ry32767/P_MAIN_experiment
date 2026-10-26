@@ -1,5 +1,5 @@
 from pathlib import Path
-import serial,serial.tools.list_ports,subprocess,time,json,argparse,shutil
+import serial,serial.tools.list_ports,subprocess,time,json,argparse
 p=argparse.ArgumentParser();p.add_argument('environment',choices=['parent','child50','child100']);a=p.parse_args()
 r=Path(__file__).resolve().parents[1];parent=a.environment=='parent'
 expected='A444A41EE9334705' if parent else 'A521D21EB1DCFB44';role='P_MAIN' if parent else 'C_MAIN'
@@ -16,10 +16,10 @@ with serial.Serial(port,115200,timeout=.2) as s:
  s.write(b'Xq');end=time.monotonic()+15;stopped=False
  while time.monotonic()<end:
   try:
-   v=json.loads(s.readline());stopped=v.get('sd_reason') in ('STOPPED','MOUNT_FAILED','NOT_STARTED')
+   v=json.loads(s.readline());stopped=v.get('sd_reason') in ('STOPPED','CREATE_FAILED','GNSS_WRITE_FAILED','RTCM_WRITE_FAILED','GNSS_META_WRITE_FAILED','MOUNT_FAILED','READBACK_FAILED','OPEN_FAILED','WRITE_FAILED','SYNC_FAILED','STOP_SYNC_FAILED','CARD_NOT_PRESENT','CARD_REMOVED','NOT_STARTED')
    if stopped:break
   except ValueError:pass
  assert stopped,'SD did not stop; refusing reset'
 print(f'Identified {role} at {port}; recording stopped')
-pio=shutil.which('pio') or r.parent/'P_MAIN_experiment/.venv/Scripts/pio.exe'
+pio=r.parent/'P_MAIN_experiment/.venv/Scripts/pio.exe'
 subprocess.run([str(pio),'run','-d',str(r),'-e',a.environment,'-t','upload','--upload-port',port],check=True)

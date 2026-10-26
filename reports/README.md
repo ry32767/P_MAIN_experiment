@@ -69,3 +69,5 @@ reports/
 - [2026-10-24 Spresense SDコンソール](2026-10-24_002_spresense_sd_console/README.md)
 
 - [2026-10-25 親機校正セットの公開操作画面](2026-10-25_001_parent_calibration_set/README.md)
+
+- [2026-10-27 校正機能・統合ソースと公開画面の更新](2026-10-27_001_calibration_publish/README.md)

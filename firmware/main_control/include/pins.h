@@ -47,16 +47,20 @@
 #define BNO_MAG_REPORT_US   50000       // 地磁気 20Hz
 #else
 // ---- 親機固有 ----
-#define PIN_GNSS_PPS        6           // J_SPR1.1 <- Spresense D02 1PPS、100Ω直列、入力
-#define PIN_SPRESENSE_RX    7           // J_SPR1.2 <- Spresense D01 UART TX、PIO受信専用
-#define PIN_GNSS_TX         8           // UART1 TX -> NEO-M9N RX
-#define PIN_GNSS_RX         9           // UART1 RX <- NEO-M9N TX
-#define PIN_TX_PWM          16          // PWM8A -> J_TX1 (本ファームでは Low 固定 = 送信停止)
+#define PIN_GNSS_PPS        6           // J_GNSS1.5 <- 親機GNSS PPS。Spresense D02は未接続。
+#define PIN_SPRESENSE_DATA  7           // J_SPR1.2 <-> 拡張ボードD03、1線半二重、LOW/解放のみ
+#define PIN_GNSS_TX         8           // UART1 TX -> 親機F9P RX
+#define PIN_GNSS_RX         9           // UART1 RX <- 親機F9P TX
+#define PIN_TX_PWM          16          // PIO -> J_TX1、待機時Low、200 kHz×5波
 #define PIN_TX_TEMP_ADC     27          // ADC1: TX NTC 分圧 (25℃≈1.65V / 85℃≈0.32V / 未接続≈0V)
 #define GNSS_BAUD_FIRST     38400       // NEO-M9N 既定。NMEA が来なければ 9600 を試す
 #define GNSS_BAUD_SECOND    9600
 #define GNSS_AUTOBAUD_MS    3000
 #endif
+
+// Spresense extension PPS input: J_SPR1 pin1 -> D02; input only.
+// Common definitions are also copied to the local Spresense Arduino library.
+#include "spresense_pins.h"
 
 // ---- ログ ----
 #define SERIAL_BAUD         115200
@@ -68,6 +72,7 @@
 #define PIN_I2C_SDA         4
 #define PIN_I2C_SCL         5
 #define I2C_HZ              100000
+#define LIS_POLL_PERIOD_MS  10          // Poll DRDY faster than the 10Hz sensor ODR.
 #define I2C_ADDR_LIS_A      0x1C        // LIS3MDL (Adafruit 4479 既定。親機 J_MAG1)
 #define I2C_ADDR_LIS_B      0x1E        // LIS3MDL (SDO=High のとき)
 #define I2C_ADDR_LCD        0x3E        // NHD-C0216CiZ (未接続なら不在で正常)
@@ -82,7 +87,7 @@
 
 // ---- RS485 DATA (Waveshare 絶縁・自動方向, UART0) ----
 #define PIN_RS485_TX         0
-#define PIN_RS485_RX         1
+#define PIN_RS485_RX         1           // UART0 RX、子機は測距マーカー開始エッジも入力割込みで記録
 #define RS485_BAUD           115200
 #define RS485_PING_MS        1000
 #define RS485_REPLY_GUARD_MS 5
@@ -93,7 +98,11 @@
 #define PIN_SD_MISO         12
 #define PIN_SD_CS           13          // R_SDCS 10k で V3D にプルアップ
 #define PIN_SD_CD           15          // R_CD 47k で V3D にプルアップ。実測: カード挿入で Low (C-MAIN 2026-09-13)
-#define SD_SPI_HZ_FIRST     1000000     // まず 1MHz でマウント (配線長 ≈35mm)。通れば既定速度で再試行
+#ifdef BOARD_PARENT
+#define SD_SPI_MHZ          1           // P-MAIN: 間欠 MOUNT_FAILED 切り分けのため基板指針の低速値に固定
+#else
+#define SD_SPI_MHZ          4           // C-MAIN: 100 Hz IMU + 全BNOイベントの帯域を維持
+#endif
 #define SD_LOG_PERIOD_MS    5000        // CMLOG.CSV へ追記する周期
 #define SD_TEST_FILE        "CMTEST.TXT"
 #define SD_LOG_FILE         "CMLOG.CSV"

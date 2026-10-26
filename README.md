@@ -3,7 +3,7 @@
 
 ## 親子実験のWeb操作画面
 
-2026-10-24更新：現行の5タブ、Spresense IMU操作/校正、親機磁気校正、GNSS RTK/PPKに対応。オンライン時は最新画面を優先し、オフライン用の保存画面も更新します。最新のAquaBeacon MAIN統合ファーム用で、実機の操作確認は別途必要です。詳細は[更新レポート](reports/2026-10-24_001_main_control_refresh/README.md)。
+2026-10-27更新：校正の順序案内、親子の機体軸合わせ、保存済み補正の再利用、毎回必須のカメラ同期用動作収録、未校正警告、Spresense補正無効化の誤操作防止に対応。公開画面と[統合ファームウェアのソース・手順](firmware/main_control/README.md)を更新しました。詳細は[公開検証レポート](reports/2026-10-27_001_calibration_publish/README.md)。
 
 **[AquaBeacon 親子実験コントローラー](https://ry32767.github.io/P_MAIN_experiment/main-control/)**
 
@@ -15,6 +15,10 @@
 4. 接続できないブラウザでは、画面内の「機体内の操作画面を開く」から http://192.168.4.1/ を使用します。
 
 公開画面は端末から親機へ直接通信します。機体がインターネットにつながる構成ではありません。ログをGitHubへ送信しません。Pages用通信許可を追加した親機統合ファームが必要です。Wi-Fiパスワードは公開しません。
+
+## 従来の単体取得実験（以下は旧構成）
+
+以下のGP7受信専用・Spresense PPS出力の説明は従来版用です。現行統合版の配線・運用には[統合版のピン定義](firmware/main_control/include/pins.h)と[仕様](firmware/main_control/docs/spec.md)を使用してください。
 
 P-MAIN（Pico **2 W**）＋P-PWRと、Sony Spresense＋マルチIMU Add-onの取得・記録実験用です。AquaBeaconの基板設計と実機配線メモからピンを確認した独立リポジトリです。
 

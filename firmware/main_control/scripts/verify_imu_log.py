@@ -1,7 +1,8 @@
 import csv,zlib,statistics,argparse,json
 from pathlib import Path
 p=argparse.ArgumentParser();p.add_argument('file');p.add_argument('--hz',type=int,default=50);a=p.parse_args()
-lines=Path(a.file).read_bytes().splitlines();assert lines
+from binary_log import input_lines
+lines=input_lines(a.file,1);assert lines
 for i,line in enumerate(lines[1:],2):
  body,checksum=line.rsplit(b',',1)
  assert zlib.crc32(body)==int(checksum,16),f'CRC line {i}'
